@@ -1,0 +1,32 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/profile/profile/profile",
+        "pages/profile/about/about",
+        "pages/profile/identity/identity"
+    ],
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#c3c",
+        "navigationBarTitleText": "东农舞美",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath":"images/icon/home.png",
+                "selectedIconPath": "images/icon/home-sel.png"
+            },
+            {
+                "pagePath": "pages/profile/profile/profile",
+                "text": "我的",
+                "iconPath": "images/icon/wode.png",
+                "selectedIconPath": "images/icon/wode-sel.png"
+            }
+        ],
+        "selectedColor": "#c3c"
+    }
+}

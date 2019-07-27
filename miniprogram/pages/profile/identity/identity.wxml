@@ -1,0 +1,63 @@
+
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="cu-form-group margin-top pad-left">
+    <view class="title">姓名</view>
+    <input type='text' name="name"   placeholder="你的真实姓名" placeholder-class="text-margin"></input>
+  </view>
+  <view class="cu-form-group pad-left">
+    <view class="title">性别</view>
+   <!--  <input placeholder="你的性别" placeholder-class="text-margin"></input> -->
+    <radio-group class="radio-group text-center" bindchange="radioChange">
+   <!--      <label class="radio" wx:for="{{items}}"  wx:key="{{item.index}}">
+            <radio name="sex" value="{{item.name}}" checked="{{item.checked}}" />
+            {{item.value}}
+        </label> -->
+        <radio-group name="sex">
+            <label><radio value="man" checked='checked'/>男</label>
+            <label><radio value="woman"/>女</label>
+        </radio-group>
+    </radio-group>
+  </view>
+    <view class="cu-form-group pad-left">
+    <view class="title">学号</view>
+    <input type="text" name="studentNumber" placeholder="请填写"  placeholder-class="text-margin"></input>
+  </view>
+    <view class="cu-form-group pad-left">
+    <view class="title">学院</view>
+    <input type="numtextber" name="academy" placeholder="请填写" placeholder-class="text-margin"></input>
+  </view>
+    <view class="cu-form-group pad-left">
+    <view class="title">班级</view>
+    <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
+  </view>
+
+
+
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      本人近期照片上传
+    </view>
+    <view class="action">
+      {{imgList.length}}/1
+    </view>
+  </view>
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <view class="padding-xs bg-img" style="background-image:url({{imgList[index]}})" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+          <text class="icon-close"></text>
+        </view>
+      </view>
+      <view class="padding-xs solids" bindtap="ChooseImage" wx:if="{{imgList.length<2}}">
+        <text class="icon-cameraadd"></text>
+      </view>
+    </view>
+  </view>
+    <view class="padding flex flex-direction bg-white margin-top">
+        <button form-type="submit" class="cu-btn bg-green margin-tb-sm lg" >确认提交</button>
+    </view>
+</form>
+
+
+
+
