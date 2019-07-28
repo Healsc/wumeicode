@@ -23,7 +23,7 @@
     </view>
         <view class="cu-form-group pad-left">
         <view class="title">班级</view>
-        <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
+        <input type="text" name="major" placeholder="请填写" placeholder-class="text-margin"></input>
     </view>
 
 
@@ -48,9 +48,9 @@
     <view class="cu-form-group pad-left">
         <view class="title">是否服从调剂</view>
         <radio-group class="radio-group text-center" bindchange="radioChange">
-            <radio-group name="yiyuan">
-                <label><radio value="fucong" checked='checked'/>是</label>
-                <label><radio value="bufucong"/>否</label>
+            <radio-group name="adjust">
+                <label><radio value="yes" checked='checked'/>是</label>
+                <label><radio value="no"/>否</label>
             </radio-group>
         </radio-group>
     </view>
