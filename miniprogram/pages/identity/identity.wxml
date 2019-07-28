@@ -13,19 +13,22 @@
         </radio-group>
     </radio-group>
     </view>
-        <view class="cu-form-group pad-left">
+    <view class="cu-form-group pad-left">
         <view class="title">学号</view>
         <input type="text" name="studentNumber" placeholder="请填写"  placeholder-class="text-margin"></input>
     </view>
-        <view class="cu-form-group pad-left">
+    <view class="cu-form-group pad-left">
         <view class="title">学院</view>
         <input type="numtextber" name="academy" placeholder="请填写" placeholder-class="text-margin"></input>
     </view>
-        <view class="cu-form-group pad-left">
+    <view class="cu-form-group pad-left">
         <view class="title">班级</view>
         <input type="text" name="major" placeholder="请填写" placeholder-class="text-margin"></input>
     </view>
-
+    <view class="cu-form-group pad-left">
+        <view class="title">手机号</view>
+        <input type="number" name="phone" placeholder="请填写" placeholder-class="text-margin"></input>
+    </view>
 
     <view class="cu-form-group margin-top pad-left">
         <view class="title">第一志愿部门</view>

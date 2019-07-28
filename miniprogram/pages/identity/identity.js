@@ -22,14 +22,14 @@ Page({
         this.setData({
             index2: e.detail.value
         })
-        console.log(this.data.picker[this.data.index])
+        console.log(this.data.picker2[this.data.index2])
     },
     //表单   //验证 提交到数据库
     formSubmit(e) {
         this.setData({
             userInfo: e.detail.value,
         })
-        if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.major == "") {
+        if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.major == "" || this.data.userInfo.phone == "") {
             console.log("信息不完整")
             wx.showModal({
                 title: '',
@@ -61,6 +61,7 @@ Page({
                             academy: this.data.userInfo.academy,
                             major: this.data.userInfo.major, 
                             adjust: this.data.userInfo.adjust,
+                            phone: this.data.userInfo.phone,
                             department1: this.data.picker[this.data.index],
                             department2: this.data.picker2[this.data.index2]
                          },
