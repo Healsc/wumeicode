@@ -11,22 +11,25 @@ Page({
   
     PickerChange(e) {
         console.log(e);
+     
         this.setData({
             index: e.detail.value
         })
+        console.log(this.data.picker[this.data.index])
     },
     PickerChange2(e) {
         console.log(e);
         this.setData({
             index2: e.detail.value
         })
+        console.log(this.data.picker[this.data.index])
     },
     //表单   //验证 提交到数据库
     formSubmit(e) {
         this.setData({
             userInfo: e.detail.value,
         })
-        if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.mahor == "") {
+        if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.major == "") {
             console.log("信息不完整")
             wx.showModal({
                 title: '',
@@ -57,7 +60,9 @@ Page({
                             studentNumber: this.data.userInfo.studentNumber,
                             academy: this.data.userInfo.academy,
                             major: this.data.userInfo.major, 
-                            adjust: this.data.userInfo.adjust
+                            adjust: this.data.userInfo.adjust,
+                            department1: this.data.picker[this.data.index],
+                            department2: this.data.picker2[this.data.index2]
                          },
                         success: function (res) {
                             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

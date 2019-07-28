@@ -18,7 +18,7 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath":"images/icon/home.png",
+                "iconPath": "images/icon/home.png",
                 "selectedIconPath": "images/icon/home-sel.png"
             },
             {
@@ -29,5 +29,6 @@
             }
         ],
         "selectedColor": "#c3c"
-    }
+    },
+    "sitemapLocation": "sitemap.json"
 }
