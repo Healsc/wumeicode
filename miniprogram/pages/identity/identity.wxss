@@ -10,7 +10,7 @@
 
 .text-center{
     position: absolute;
-    left: 26vw;
+    left: 30vw;
 }
 .pad-left{
     padding-left:50rpx; 

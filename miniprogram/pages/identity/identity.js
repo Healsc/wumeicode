@@ -4,13 +4,21 @@ Page({
     data: {
         userInfo: {},
         index: null,
+        index2:null,
         picker: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
+        picker2: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
     },
   
     PickerChange(e) {
         console.log(e);
         this.setData({
             index: e.detail.value
+        })
+    },
+    PickerChange2(e) {
+        console.log(e);
+        this.setData({
+            index2: e.detail.value
         })
     },
     //表单   //验证 提交到数据库
