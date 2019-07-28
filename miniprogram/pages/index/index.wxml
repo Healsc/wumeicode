@@ -1,11 +1,15 @@
 <!--pages/index/index.wxml-->
-<image src='/images/haibao.jpg' style='width:100%;height:1200rpx'></image>
+<image src='/images/haibao.jpg' style='width:100%;height:100vh'></image>
 <view class=''>
 
     <view>
-    东北农业大学舞美协会成立于2017年，是学生工作部(处)下学生组织之一。
+    舞美协会,全称为东北农业大学舞台美术协会，成立于2017年，是学生工作部(处)下学生组织之一。
     </view>
     <view>
     舞美协会下设办公室、技术部、宣传部、纪检部、干训部、外勤部六个职能部门。负责管理、统筹、组织在音乐厅举办的各种类型演出、典礼、会议等大型活动。
+    </view>
 </view>
-</view>
+
+<navigator class="content" url="/pages/identity/identity" hover-class="none">
+    <text class="text-grey">报名入口</text>
+</navigator>

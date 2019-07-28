@@ -1,1 +1,17 @@
-/**index.wxss**/
+
+.cu-form-group .title {
+  min-width: calc(4em + 60rpx);
+}
+
+.steps-bottom.cu-steps .cu-item .num::before {
+  content: "\e668";
+  font-family: 'iconfont';
+}
+
+.text-center{
+    position: absolute;
+    left: 26vw;
+}
+.pad-left{
+    padding-left:50rpx; 
+}

@@ -1,66 +1,101 @@
-// pages/index/index.js
+const app = getApp();
+
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
+        userInfo: {},
+        index: null,
+        /*  multiIndex: [0, 0, 0], */
+        imgList: [],
+        basics: 0,
+        scroll: 0,
 
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
+    basicsSteps() {
+        this.setData({
+            basics: this.data.basics == this.data.basicsList.length - 1 ? 0 : this.data.basics + 1
+        })
+    },
+    //表单   //验证 提交到数据库
+    formSubmit(e) {
+        this.setData({
+            userInfo: e.detail.value,
+        })
+        if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.mahor == "") {
+            console.log("信息不完整")
+            wx.showModal({
+                title: '',
+                content: '信息不完整',
+                cancelText: '退出',
+                confirmText: '继续',
+                success: res => {
+                    console.log(this.data.userInfo)
+                }
+
+            })
+        } else {
+            wx.showModal({
+                title: '',
+                content: '确定提交信息',
+                cancelText: '否',
+                confirmText: '是',
+                success: res => {
+                    console.log(this.data.userInfo)
+                }
+
+            })
+        }
+
+
 
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
+    //重置
+    formReset() {
+        console.log('form发生了reset事件')
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
 
+
+
+    //上传图片
+    ViewImage(e) {
+        wx.previewImage({
+            urls: this.data.imgList,
+            current: e.currentTarget.dataset.url
+        });
     },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
+    ChooseImage() {
+        wx.chooseImage({
+            count: 1, //默认9
+            sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], //从相册选择
+            success: (res) => {
+                if (this.data.imgList.length != 0) {
+                    this.setData({
+                        imgList: this.data.imgList.concat(res.tempFilePaths)
+                    })
+                } else {
+                    this.setData({
+                        imgList: res.tempFilePaths
+                    })
+                }
+            }
+        });
     },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
+    DelImg(e) {
+        wx.showModal({
+            title: '',
+            content: '确定要删除这张照片？',
+            cancelText: '否',
+            confirmText: '是',
+            success: res => {
+                if (res.confirm) {
+                    this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+                    this.setData({
+                        imgList: this.data.imgList
+                    })
+                }
+            }
+        })
     },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })

@@ -1,35 +1,35 @@
 
 <form bindsubmit="formSubmit" bindreset="formReset">
-  <view class="cu-form-group margin-top pad-left">
-    <view class="title">姓名</view>
-    <input type='text' name="name"   placeholder="你的真实姓名" placeholder-class="text-margin"></input>
-  </view>
-  <view class="cu-form-group pad-left">
-    <view class="title">性别</view>
-   <!--  <input placeholder="你的性别" placeholder-class="text-margin"></input> -->
-    <radio-group class="radio-group text-center" bindchange="radioChange">
-   <!--      <label class="radio" wx:for="{{items}}"  wx:key="{{item.index}}">
-            <radio name="sex" value="{{item.name}}" checked="{{item.checked}}" />
-            {{item.value}}
-        </label> -->
-        <radio-group name="sex">
-            <label><radio value="man" checked='checked'/>男</label>
-            <label><radio value="woman"/>女</label>
+
+    <view class="cu-form-group margin-top pad-left">
+        <view class="title">姓名</view>
+        <input type='text' name="name"   placeholder="你的真实姓名" placeholder-class="text-margin"></input>
+    </view>
+
+    <view class="cu-form-group pad-left">
+        <view class="title">性别</view>
+        <radio-group class="radio-group text-center" bindchange="radioChange">
+            <radio-group name="sex">
+                <label><radio value="man" checked='checked'/>男</label>
+                <label><radio value="woman"/>女</label>
+            </radio-group>
         </radio-group>
-    </radio-group>
-  </view>
+    </view>
+
     <view class="cu-form-group pad-left">
-    <view class="title">学号</view>
-    <input type="text" name="studentNumber" placeholder="请填写"  placeholder-class="text-margin"></input>
-  </view>
+        <view class="title">学号</view>
+        <input type="text" name="studentNumber" placeholder="请填写"  placeholder-class="text-margin"></input>
+    </view>
+
     <view class="cu-form-group pad-left">
-    <view class="title">学院</view>
-    <input type="numtextber" name="academy" placeholder="请填写" placeholder-class="text-margin"></input>
-  </view>
+        <view class="title">学院</view>
+        <input type="numtextber" name="academy" placeholder="请填写" placeholder-class="text-margin"></input>
+    </view>
+
     <view class="cu-form-group pad-left">
-    <view class="title">班级</view>
-    <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
-  </view>
+        <view class="title">班级</view>
+        <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
+    </view>
 
 
 
