@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -56,6 +56,13 @@
 					"id": -1,
 					"name": "报名",
 					"pathName": "pages/identity/identity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "guanyu",
+					"pathName": "pages/profile/about/about",
 					"scene": null
 				}
 			]

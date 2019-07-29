@@ -28,7 +28,7 @@
         </view>
         <view class="cu-item arrow">
             <navigator class="content" url="/pages/profile/identity/identity" hover-class="none">
-                <text class="text-grey">我的认证</text>
+                <text class="text-grey">舞美认证</text>
             </navigator>
         </view>
     </view>
