@@ -2,6 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/profile/profile/profile",
+        "pages/info/naxininfo/naxininfo",
         "pages/profile/about/about",
         "pages/profile/identity/identity",
         "pages/identity/identity"

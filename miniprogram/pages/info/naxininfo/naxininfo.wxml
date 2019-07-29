@@ -1,0 +1,15 @@
+<image src='../../../images/huibiao-1.png'  style='width:100%;height:70vh' class='bg-img'></image> 
+
+
+
+    <view class='margin-xl bg-white padding-xl radius shadow-lg ab-content clearfix'>
+        <view class='text-center margin-bottom text-lg  text-grey'>纳新通知</view>
+        <view class='text-content'>
+            <view>Hi！19级的学弟学妹~欢迎了解东农舞美协会</view>
+            <view class='margin-top-sm'> 舞美协会,全称为东北农业大学舞台美术协会，成立于2017年，是学生工作部(处)下学生社团之一。</view>
+            <view class='margin-top-sm'>舞美协会下设办公室、技术部、宣传部、纪检部、干训部、外勤部六个职能部门。负责管理、统筹、组织在音乐厅举办的各种类型演出、典礼、会议等大型活动以及在科学文化中心举办的会议、讲座、招聘会等。</view>
+            <view class='margin-top-sm'>在这里你可以学到真正的灯光音响等操作技术，农大只此一家呦|</view>
+            <view class='margin-top-sm'>纳新QQ群：873338654</view>
+            <view class='margin-top-sm'>联系邮箱：DNWMXH@163.com</view>
+        </view>
+    </view>

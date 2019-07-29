@@ -6,8 +6,8 @@
         <view class='text-center margin-bottom text-lg  text-grey'>关于DNWM小程序</view>
         <view class='text-content'>
             <view>Hi！舞美爱好者~欢迎使用DNWM小程序！</view>
-            <view class='margin-top-sm'>该项目是我个人开发的一款微信小程序。这个项目是为了东农舞美协会进行信息统计，方便日常工作.</view>
-            <view class='margin-top-sm'> 舞美协会,全称为东北农业大学舞台美术协会，成立于2017年，是学生工作部(处)下学生组织之</view>
+            <view class='margin-top-sm'>该项目是我个人开发的一款微信小程序。这个项目是为了东农舞美协会进行信息统计，方便日常工作。</view>
+            <view class='margin-top-sm'> 舞美协会,全称为东北农业大学舞台美术协会，成立于2017年，是学生工作部(处)下学生组织之一。</view>
             <view class='margin-top-sm'>舞美协会下设办公室、技术部、宣传部、纪检部、干训部、外勤部六个职能部门。负责管理、统筹、组织在音乐厅举办的各种类型演出、典礼、会议等大型活动。</view>
             <view class='margin-top-sm'>更多功能敬请期待！</view>
             <view class='margin-top-sm'>联系邮箱：DNWMXH@163.com</view>
