@@ -2,7 +2,7 @@ const app = getApp();
 
 Page({
     data: {
-        userInfo: null,
+        userInfo: {},
         naxinInfo:{},
         index: null,
         index2:null,
@@ -14,49 +14,23 @@ Page({
 
 
     onLoad: function (options) {
-        const db = wx.cloud.database()
-        db.collection('naxinInfo').where({
-            _openid: '' // 填入当前用户 openid
-        }).get({
-            success: (res) => {
-                console.log(res.data[0])
-                this.setData({
-                    name: res.data[0].name,
-                    naxinInfo:res.data[0]
-                })
-                console.log(this.data.name)
-                console.log(123)
-                console.log("naxinInfo:", this.data.naxinInfo)
-               
-            }
-        })
+
     },
-
-
-   
-
-
-
-
-
-
-
-
-
 
 
     PickerChange(e) {
         console.log(e);
      
         this.setData({
-            index: e.detail.value
+            index: e.detail.value,
         })
         console.log(this.data.picker[this.data.index])
     },
     PickerChange2(e) {
         console.log(e);
         this.setData({
-            index2: e.detail.value
+            index2: e.detail.value,
+            
         })
         console.log(this.data.picker2[this.data.index2])
     },
@@ -64,8 +38,6 @@ Page({
     formSubmit(e) {
         this.setData({
             userInfo: e.detail.value,
-            naxinInfo: e.detail.value,
-            
         })
         console.log(this.data.naxinInfo.adjust)
         if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.major == "" || this.data.userInfo.phone == "") {
@@ -76,7 +48,7 @@ Page({
                 cancelText: '退出',
                 confirmText: '继续',
                 success: res => {
-                    console.log(this.data.userInfo)
+                    //console.log(this.data.userInfo)
                 }
 
             })
@@ -111,23 +83,18 @@ Page({
                                 icon: 'success',
                                 duration: 2000
                             })
-                            console.log(res)
+                           
+                            /* wx.reLaunch({
+                                url: 'pages/baominginfo/baominginfo'
+                            }) */
+                           
                         },
                         complete:function(res){
-                            /* const db = wx.cloud.database()
-                            db.collection('naxinInfo').where({
-                                _openid: '' // 填入当前用户 openid
-                            }).get({
-                                success: function (res) {
-
-                                    console.log(res.data)
-                                    console.log(res.data[0])
-                                    console.log(res.data[0].name)
-                                    naxinInfo:res.data[0]
-
-                                }
-                            }) */
-
+                            console.log("complete")
+                            wx.reLaunch({
+                                //前面加/ 绝对路径 否则报错
+                                url: '/pages/baominginfo/baominginfo'
+                            })
                         }
                   
                     })

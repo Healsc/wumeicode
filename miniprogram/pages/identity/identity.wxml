@@ -31,7 +31,7 @@
     </view>
 
     <view class="cu-form-group margin-top pad-left">
-        <view class="title">第一志愿部门</view>
+        <view class="title">第一意愿部门</view>
         <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
         <view class="picker">
             {{index?picker[index]:'请选择部门'}}
@@ -40,7 +40,7 @@
     </view>
 
     <view class="cu-form-group pad-left">
-        <view class="title">第二志愿部门</view>
+        <view class="title">第二意愿部门</view>
         <picker bindchange="PickerChange2" value="{{index2}}" range="{{picker2}}">
         <view class="picker">
             {{index2?picker[index2]:'请选择部门'}}
@@ -62,51 +62,6 @@
         <button form-type="submit" class="cu-btn bg-green margin-tb-sm lg" >确认提交</button>
     </view>
 </form>
-
-
-
-<view class='naxinInfo'>
-    <view class="cu-form-group margin-top pad-left">
-        <view class="title">姓名</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.name}}</text>
-    </view>
-    <view class="cu-form-group pad-left">
-        <view class="title">性别</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.sex}}</text>
-    </view>
-    <view class="cu-form-group pad-left">
-        <view class="title">学号</view>
-       <text class='text-center pad-left-cont'>{{naxinInfo.studentNumber}}</text>
-    </view>
-    <view class="cu-form-group pad-left">
-        <view class="title">学院</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.academy}}</text>
-    </view>
-    <view class="cu-form-group pad-left">
-        <view class="title">班级</view>
-       <text class='text-center pad-left-cont'>{{naxinInfo.major}}</text>
-    </view>
-    <view class="cu-form-group pad-left">
-        <view class="title">手机号</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.phone}}</text>
-    </view>
-
-    <view class="cu-form-group pad-left">
-        <view class="title">第一志愿部门</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.department1}}</text>
-    </view>
-    <view class="cu-form-group pad-left">
-        <view class="title">第二志愿部门</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.department2}}</text>
-    </view>
-
-    <view class="cu-form-group pad-left">
-        <view class="title">是否服从调剂</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.adjust}}</text>
-    </view>
-</view>
-
-
 
 
 
