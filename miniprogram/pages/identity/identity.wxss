@@ -15,3 +15,6 @@
 .pad-left{
     padding-left:50rpx; 
 }
+.pad-left-cont{
+    padding-left:100rpx; 
+}

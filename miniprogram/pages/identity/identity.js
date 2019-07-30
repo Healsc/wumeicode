@@ -2,13 +2,49 @@ const app = getApp();
 
 Page({
     data: {
-        userInfo: {},
+        userInfo: null,
+        naxinInfo:{},
         index: null,
         index2:null,
+        name:"",
         picker: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
         picker2: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
     },
-  
+
+
+
+    onLoad: function (options) {
+        const db = wx.cloud.database()
+        db.collection('naxinInfo').where({
+            _openid: '' // 填入当前用户 openid
+        }).get({
+            success: (res) => {
+                console.log(res.data[0])
+                this.setData({
+                    name: res.data[0].name,
+                    naxinInfo:res.data[0]
+                })
+                console.log(this.data.name)
+                console.log(123)
+                console.log("naxinInfo:", this.data.naxinInfo)
+               
+            }
+        })
+    },
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
     PickerChange(e) {
         console.log(e);
      
@@ -28,7 +64,10 @@ Page({
     formSubmit(e) {
         this.setData({
             userInfo: e.detail.value,
+            naxinInfo: e.detail.value,
+            
         })
+        console.log(this.data.naxinInfo.adjust)
         if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.major == "" || this.data.userInfo.phone == "") {
             console.log("信息不完整")
             wx.showModal({
@@ -50,8 +89,8 @@ Page({
                 success: res => {
                     console.log(this.data.userInfo)
                     const db = wx.cloud.database()
-                    const todos = db.collection('baomingxinxi')
-                    db.collection('baomingxinxi').add({
+                    const naxinInfo = db.collection('naxinInfo')
+                    db.collection('naxinInfo').add({
                         // data 字段表示需新增的 JSON 数据
                         data: {
                             // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
@@ -67,8 +106,30 @@ Page({
                          },
                         success: function (res) {
                             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+                            wx.showToast({
+                                title: '成功',
+                                icon: 'success',
+                                duration: 2000
+                            })
                             console.log(res)
+                        },
+                        complete:function(res){
+                            /* const db = wx.cloud.database()
+                            db.collection('naxinInfo').where({
+                                _openid: '' // 填入当前用户 openid
+                            }).get({
+                                success: function (res) {
+
+                                    console.log(res.data)
+                                    console.log(res.data[0])
+                                    console.log(res.data[0].name)
+                                    naxinInfo:res.data[0]
+
+                                }
+                            }) */
+
                         }
+                  
                     })
                 }
 
@@ -76,9 +137,12 @@ Page({
         }
     },
 
-  
+
 })
 
+
+
+ 
 
 /*校验姓名是否中文名称组成 */
 function ischina(str) {
@@ -91,13 +155,13 @@ function isStudentNo(str) {
     var reg = /^[012][0123456789][1][89]\d{4} $/;   /*定义验证表达式*/
     return reg.test(str);     /*进行验证*/
 }
-console.log(isStudentNo("07190472"))
+//console.log(isStudentNo("07190472"))
 function isSNo(str) {
     var reg = /^(1[3584]\d{9})$/;
     return reg.test(str);     /*进行验证*/
 }
 
-console.log(isSNo("15636214551"));
+//console.log(isSNo("15636214551"));
 //conosle.log(isSNo("A07170472"));
 /*校验电话码格式 */
 function isTelCode(str) {
