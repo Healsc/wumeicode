@@ -2,100 +2,53 @@ const app = getApp();
 
 Page({
     data: {
-        userInfo: {},
-        index: null,
-        /*  multiIndex: [0, 0, 0], */
-        imgList: [],
-        basics: 0,
-        scroll: 0,
-
+        openid: '',
     },
-
-    basicsSteps() {
-        this.setData({
-            basics: this.data.basics == this.data.basicsList.length - 1 ? 0 : this.data.basics + 1
-        })
+    onLoad: function (options) {
+        this.getOpenid();
     },
-    //表单   //验证 提交到数据库
-    formSubmit(e) {
-        this.setData({
-            userInfo: e.detail.value,
-        })
-        if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.mahor == "") {
-            console.log("信息不完整")
-            wx.showModal({
-                title: '',
-                content: '信息不完整',
-                cancelText: '退出',
-                confirmText: '继续',
-                success: res => {
-                    console.log(this.data.userInfo)
-                }
-
-            })
-        } else {
-            wx.showModal({
-                title: '',
-                content: '确定提交信息',
-                cancelText: '否',
-                confirmText: '是',
-                success: res => {
-                    console.log(this.data.userInfo)
-                }
-
-            })
-        }
-
-
-
-    },
-    //重置
-    formReset() {
-        console.log('form发生了reset事件')
-    },
-
-
-
-
-    //上传图片
-    ViewImage(e) {
-        wx.previewImage({
-            urls: this.data.imgList,
-            current: e.currentTarget.dataset.url
-        });
-    },
-    ChooseImage() {
-        wx.chooseImage({
-            count: 1, //默认9
-            sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-            sourceType: ['album', 'camera'], //从相册选择
-            success: (res) => {
-                if (this.data.imgList.length != 0) {
-                    this.setData({
-                        imgList: this.data.imgList.concat(res.tempFilePaths)
-                    })
-                } else {
-                    this.setData({
-                        imgList: res.tempFilePaths
-                    })
-                }
-            }
-        });
-    },
-    DelImg(e) {
-        wx.showModal({
-            title: '',
-            content: '确定要删除这张照片？',
-            cancelText: '否',
-            confirmText: '是',
-            success: res => {
-                if (res.confirm) {
-                    this.data.imgList.splice(e.currentTarget.dataset.index, 1);
-                    this.setData({
-                        imgList: this.data.imgList
-                    })
-                }
+    // 获取用户openid
+    getOpenid() {
+        let that = this;
+        wx.cloud.callFunction({
+            name: 'login', 
+            complete: res => {
+                console.log(res.result)
+                console.log('云函数获取到的openid: ', res.result.openid)
+                var openid = res.result.openid;
+                that.setData({
+                    openid: openid
+                })
+                console.log(this.data.openid)
             }
         })
+    },
+
+ 
+    //跳转到报名信息页面
+    goIdentity(){
+        const db = wx.cloud.database()
+        const a = db.collection('naxinInfo').where({
+            _openid: this.data.openid
+        })
+        console.log(a.name)
+/*         db.collection('naxinInfo').doc("id").get({
+            success: function (res) {
+                wx.navigateTo({
+                    url: '/pages/baominginfo/baominginfo',
+                })
+                // res.data 包含该记录的数据
+                console.log(res.data)
+                console.log("y")
+            },
+            fail:function(){
+                wx.navigateTo({
+                    url: '/pages/identity/identity',
+                })
+                console.log("n0")
+               
+            }
+        }) */
+      
     },
 })

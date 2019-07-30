@@ -60,7 +60,9 @@ Page({
                 confirmText: '是',
                 success: res => {
                     console.log(this.data.userInfo)
-                    const db = wx.cloud.database()
+                    const db = wx.cloud.database({
+                       
+                    })
                     const naxinInfo = db.collection('naxinInfo')
                     db.collection('naxinInfo').add({
                         // data 字段表示需新增的 JSON 数据
@@ -74,7 +76,8 @@ Page({
                             adjust: this.data.userInfo.adjust,
                             phone: this.data.userInfo.phone,
                             department1: this.data.picker[this.data.index],
-                            department2: this.data.picker2[this.data.index2]
+                            department2: this.data.picker2[this.data.index2],
+                            
                          },
                         success: function (res) {
                             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -91,7 +94,7 @@ Page({
                         },
                         complete:function(res){
                             console.log("complete")
-                            wx.reLaunch({
+                            wx.redirectTo({
                                 //前面加/ 绝对路径 否则报错
                                 url: '/pages/baominginfo/baominginfo'
                             })
