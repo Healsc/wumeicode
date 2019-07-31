@@ -5,6 +5,7 @@
         "pages/info/naxininfo/naxininfo",
         "pages/profile/about/about",
         "pages/profile/identity/identity",
+        "pages/profile/showinfo/showinfo",
         "pages/identity/identity",
         "pages/baominginfo/baominginfo"
     ],

@@ -4,25 +4,128 @@ Page({
     data: {
         userInfo: {},
         index: null,
-        /*  multiIndex: [0, 0, 0], */
         imgList: [],
-        basics: 0,
-        scroll: 0, 
-
+        multiIndex: [0, 0],
+        multiArray: [
+            ['办公室', '技术部','干训部','宣传部','纪检部','外勤部','会长团'],
+            ['干事', '副主任', '主任'],
+        ],
+        objectMultiArray: [
+            [{
+                id: 0,
+                name: '办公室'
+            },
+            {
+                id: 1,
+                name: '技术部'
+            },
+            {
+                id: 2,
+                name: '干训部'
+            },
+            {
+                id: 3,
+                name: '宣传部'
+            },
+            {
+                id: 4,
+                name: '纪检部'
+            },
+            {
+                id: 5,
+                name: '外勤部'
+                },
+            {
+                id: 6,
+                name: '会长团'
+            }],
+            [{
+                id: 0,
+                name: '干事'
+            },
+            {
+                id: 1,
+                name: '副部长'
+            },
+            {
+                id: 2,
+                name: '部长'
+            },
+            {
+                id: 3,
+                name: '会长'
+            },
+            {
+                id: 4,
+                name: '执行会长'
+            }]
+        ],
     },
-
-    basicsSteps() {
+    MultiChange(e) {
         this.setData({
-            basics: this.data.basics == this.data.basicsList.length - 1 ? 0 : this.data.basics + 1
+            multiIndex: e.detail.value
         })
     },
+    MultiColumnChange(e) {
+        let data = {
+            multiArray: this.data.multiArray,
+            multiIndex: this.data.multiIndex
+        };
+        data.multiIndex[e.detail.column] = e.detail.value;
+        switch (e.detail.column) {
+            case 0:
+                switch (data.multiIndex[0]) {
+                    case 0:
+                        data.multiArray[1] = ['干事', '副主任', '主任'];           
+                        break;
+                    case 1:
+                        data.multiArray[1] = ['干事', '副部长', '部长'];  
+                        break;
+                    case 1:
+                        data.multiArray[1] = ['干事', '副部长', '部长'];
+                        break;
+                    case 2:
+                        data.multiArray[1] = ['干事', '副部长', '部长'];
+                        break;
+                    case 3:
+                        data.multiArray[1] = ['干事', '副部长', '部长'];
+                        break;
+                    case 4:
+                        data.multiArray[1] = ['干事', '副部长', '部长'];
+                        break;
+                    case 5:
+                        data.multiArray[1] = ['干事', '副部长', '部长'];
+                        break;
+                    case 6:
+                        data.multiArray[1] = ['会长', '执行会长'];
+                        break;
+                }
+                data.multiIndex[1] = 0;   
+                break;
+           
+        }
+        this.setData(data);
+    },
+
+
+
+
+
+
+
+
+
+
+
+
     //表单   //验证 提交到数据库
     formSubmit(e) {
+        console.log(this.data.multiArray[0][this.data.multiIndex[0]])
+        console.log(this.data.multiArray[1][this.data.multiIndex[1]])
             this.setData({
                 userInfo: e.detail.value,
             })
         if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber =="" ||this.data.userInfo.academy == "" || this.data.userInfo.mahor == ""){
-            console.log("信息不完整")
             wx.showModal({
                 title: '',
                 content: '信息不完整',
@@ -98,4 +201,6 @@ Page({
             }
         })
     },
+
+
 })

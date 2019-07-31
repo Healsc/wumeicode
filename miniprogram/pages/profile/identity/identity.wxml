@@ -30,6 +30,25 @@
         <view class="title">班级</view>
         <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
     </view>
+   <view class="cu-form-group pad-left">
+        <view class="title">联系方式</view>
+        <input type="number" name="phone" placeholder="请填写11位手机号" placeholder-class="text-margin"></input>
+    </view>
+    
+    <view class="cu-form-group pad-left">
+        <view class="title">所属部门</view>
+        <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+            <view class="picker">
+                <view class='pad-right'>
+                {{multiArray[0][multiIndex[0]]}}\r\t\r\t\r\t\r\t\r\t\r\t{{multiArray[1][multiIndex[1]]}}
+                </view>
+            </view>
+        </picker>
+    </view>
+
+
+
+
 
 
 

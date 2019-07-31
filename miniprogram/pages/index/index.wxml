@@ -1,13 +1,13 @@
 <!--pages/index/index.wxml-->
 <image src='/images/haibao.jpg' style='width:100%;height:100vh'></image>
 
-<navigator class="content" url="/pages/info/naxininfo/naxininfo" hover-class="none">
-    <text class="text-grey">纳新通知</text>
+<navigator class="content indexLeft" url="/pages/info/naxininfo/naxininfo" hover-class="none">
+    <text class="text-grey indexColor">纳新通知</text>
 </navigator>
 <navigator class="content" url="/pages/identity/identity" hover-class="none">
     
 </navigator>
 
-<view class="content" bindtap='goIdentity' hover-class="none">
-    <text class="text-grey">报名入口</text>
+<view class="content indexRight" bindtap='goIdentity' hover-class="none">
+    <text class="text-grey indexColor">报名入口</text>
 </view>

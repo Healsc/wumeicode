@@ -13,5 +13,19 @@
     left: 26vw;
 }
 .pad-left{
-    padding-left:50rpx; 
+    padding-left:50!adasdas3221}
+.indexLeft{
+    position: absolute;
+    bottom: 10rpx;
+    left: 6vw;
+    font-size: 32rpx;
+}
+.indexRight{
+    position: absolute;
+    bottom: 10rpx;
+    right: 6vw;
+    font-size: 32rpx;
+}
+.indexColor{
+    color: #c3c
 }
