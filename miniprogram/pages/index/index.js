@@ -3,6 +3,7 @@ const app = getApp();
 Page({
     data: {
         openid: '',
+        naxinInfoLength:0
     },
     onLoad: function (options) {
         this.getOpenid();
@@ -25,30 +26,26 @@ Page({
     },
 
  
-    //跳转到报名信息页面
+    //跳转到报名信息页面 已提交报名信息跳转到已经提交的信息
     goIdentity(){
         const db = wx.cloud.database()
-        const a = db.collection('naxinInfo').where({
-            _openid: this.data.openid
-        })
-        console.log(a.name)
-/*         db.collection('naxinInfo').doc("id").get({
-            success: function (res) {
-                wx.navigateTo({
-                    url: '/pages/baominginfo/baominginfo',
-                })
-                // res.data 包含该记录的数据
-                console.log(res.data)
-                console.log("y")
-            },
-            fail:function(){
-                wx.navigateTo({
-                    url: '/pages/identity/identity',
-                })
-                console.log("n0")
-               
+        db.collection('naxinInfo').where({
+            _openid: this.data.openid // 填入当前用户 openid
+        }).get({
+            success: (res) => {
+                console.log(res.data.length)
+                console.log(this.data.openid)
+                //数据库返回来的是一个数组 使用数组长度判断跳转
+                if (res.data.length){
+                    wx.navigateTo({
+                        url: '/pages/baominginfo/baominginfo',
+                    })
+               }else{
+                    wx.navigateTo({
+                        url: '/pages/identity/identity',
+                    })
+               }
             }
-        }) */
-      
+        })  
     },
 })
