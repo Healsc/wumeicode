@@ -60,6 +60,8 @@ Page({
                 name: '执行会长'
             }]
         ],
+        date: '1999-01-23',
+        region: ['黑龙江', '哈尔滨市', '香坊区']
     },
     MultiChange(e) {
         this.setData({
@@ -108,7 +110,16 @@ Page({
     },
 
 
-
+    DateChange(e) {
+        this.setData({
+            date: e.detail.value
+        })
+    },
+    RegionChange: function (e) {
+        this.setData({
+            region: e.detail.value
+        })
+    },
 
 
 

@@ -30,21 +30,52 @@
         <view class="title">班级</view>
         <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
     </view>
-   <view class="cu-form-group pad-left">
-        <view class="title">联系方式</view>
-        <input type="number" name="phone" placeholder="请填写11位手机号" placeholder-class="text-margin"></input>
+    <view class="cu-form-group pad-left">
+        <view class="title">民族</view>
+        <input type="text" name="minzu" placeholder="汉（例）" placeholder-class="text-margin"></input>
     </view>
-    
+    <view class="cu-form-group pad-left">
+        <view class="title">联系方式</view>
+        <input type="number" name="phone" placeholder="11位手机号" placeholder-class="text-margin"></input>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">寝室号</view>
+        <input type="text" name="phone" placeholder="B5-738（例）" placeholder-class="text-margin"></input>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">政治面貌</view>
+        <input type="text" name="zzmianmao" placeholder="共青团员（例）" placeholder-class="text-margin"></input>
+    </view>
+
     <view class="cu-form-group pad-left">
         <view class="title">所属部门</view>
         <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
             <view class="picker">
                 <view class='pad-right'>
-                {{multiArray[0][multiIndex[0]]}}\r\t\r\t\r\t\r\t\r\t\r\t{{multiArray[1][multiIndex[1]]}}
+                {{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
                 </view>
             </view>
         </picker>
     </view>
+
+
+  <view class="cu-form-group pad-left">
+    <view class="title">出生日期</view>
+    <picker mode="date" value="{{date}}" start="1990-01-01" end="2005-01-01" bindchange="DateChange">
+      <view class="picker">
+        {{date}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group pad-left">
+    <view class="title">家庭所在地</view>
+    <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+
 
 
 
@@ -77,6 +108,8 @@
     </view>
 </form>
 
-
+<view class='beizhu'>
+注：此页面所收集信息仅为舞美协会认证和存档使用，不会另作他用
+</view>
 
 

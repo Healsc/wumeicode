@@ -1,14 +1,34 @@
-<image src='../../../images/huibiao-1.png'  style='width:100%;height:70vh' class='bg-img'></image> 
+<view class='info-top'>
 
-
-
+    <image src='../../../images/huibiao-1.png'  style='width:100%;height:70vh' class='bg-img'></image> 
     <view class='margin-xl bg-white padding-xl radius shadow-lg ab-content clearfix'>
         <view class='text-center margin-bottom text-lg  text-grey'>纳新通知</view>
         <view class='text-content'>
             <view>Hi！19级的学弟学妹~欢迎了解东农舞美协会</view>
             <view class='margin-top-sm'> 舞美协会,全称为东北农业大学舞台美术协会，成立于2017年，是学生工作部(处)下学生社团之一。</view>
-            <view class='margin-top-sm'>舞美协会下设办公室、技术部、宣传部、纪检部、干训部、外勤部六个职能部门。负责管理、统筹、组织在音乐厅举办的各种类型演出、典礼、会议等大型活动以及在科学文化中心举办的会议、讲座、招聘会等。</view>
-                <view class='margin-top-sm'>在这里你可以学到真正的灯光音响等操作技术，农大只此一家呦!</view>
+            <view class='margin-top-sm'>舞美协会下设办公室、技术部、宣传部、纪检部、干训部、外勤部六个职能部门。</view>
+            <view class='margin-top-sm'>   以活跃校园文化氛围、建设优良学术学风为宗旨，秉承“团结、进取、求是、创新”的理念，负责管理、统筹、组织在音乐厅举办的各种类型演出、典礼、会议等大型活动以及在科学文化中心举办的会议、讲座、招聘会等。</view>
+            <view class='margin-top-sm'>加入舞美协会，走进舞台幕后的工作。在这里，感受最温暖的协会氛围，收获最有趣的工作伙伴。在这里你可以学到真正的灯光音响等操作技术，农大只此一家呦!</view>
             <view class='margin-top-sm'>纳新QQ群：87333xxxx</view>
+        </view>
+    </view>
+
+</view>
+
+
+    <view class='margin-xl bg-white padding-xl radius shadow-lg clearfix'>
+        <view class='text-center margin-bottom text-lg  text-grey'>办公室</view>
+        <view class='text-content'>
+            <view>Hi！19级的小可爱~欢迎了解办公室</view>
+            <view class='margin-top-sm'>负责东北农业大学舞美协会人员档案管理；</view>
+            <view class='margin-top-sm'>负责音乐厅活动与科学文化中心活动档案管理；</view>
+            <view class='margin-top-sm'>负责协调协会各部门的关系分配活动人员的安排对会议做好记录；</view>
+            <view class='margin-top-sm'>负责协会日常公文的起草及处理工作以协会的名义发布通知和公告；</view>
+            <view class='margin-top-sm'>负责完善更新音乐厅及新大学生活动中心使用规定；</view>
+            <view class='margin-top-sm'>定期负责音乐厅各项活动；</view>
+            <text>
+            负责东北农业大学舞美协会人员档案管理;
+ 负责音乐厅活动与科学文化中心活动档案管理；
+            </text>
         </view>
     </view>

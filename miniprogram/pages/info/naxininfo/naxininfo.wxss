@@ -8,6 +8,10 @@
     top: 5rpx;
     opacity: 0.7;
 }
+.info-top{
+      margin-bottom: 200rpx;
+}
+
 .clearfix::after{
     content: "";
     display: block;

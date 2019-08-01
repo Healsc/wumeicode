@@ -21,3 +21,7 @@
 .pad-right{
     padding-right:6rpx; 
 }
+.beizhu{
+    text-align: center;
+    font-size: 20rpx;
+}
