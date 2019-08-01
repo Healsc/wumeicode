@@ -1,2 +1,54 @@
-<!--pages/profile/showinfo/showinfo.wxml-->
-<text>pages/profile/showinfo/showinfo.wxml</text>
+
+
+<view class='naxinInfo'>
+    <view class="cu-form-group margin-top pad-left">
+        <view class="title">姓名</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._name}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">性别</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._sex}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">学号</view>
+       <text class='text-center pad-left-cont'>{{naxinInfo._studentNumber}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">学院</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._academy}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">班级</view>
+       <text class='text-center pad-left-cont'>{{naxinInfo._major}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">手机号</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._phone}}</text>
+    </view>
+
+    <view class="cu-form-group pad-left">
+        <view class="title">民族</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._nation}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">寝室号</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._dormitory}}</text>
+    </view>
+
+    <view class="cu-form-group pad-left">
+        <view class="title">政治面貌</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._politicsFace}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">所属部门</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._department}}\r\t{{naxinInfo._position}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">出生日期</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._birth}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">家庭所在地</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._familyAddress}}</text>
+    </view>
+</view>

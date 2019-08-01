@@ -21,7 +21,6 @@ Page({
             success: (res) => {
                 //console.log(res.data[0])
                 this.setData({
-                    name: res.data[0].name,
                     naxinInfo: res.data[0]
                 })
                 //console.log(this.data.name)

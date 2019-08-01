@@ -155,7 +155,7 @@ Page({
 
         //console.log("0",e.detail.value)
         //console.log("1",this.data.wumeiInfo)
-        if (this.data.wumeiInfo.name == "" || this.data.wumeiInfo.sex == "" || this.data.wumeiInfo.studentNumber == "" || this.data.wumeiInfo.academy == "" || this.data.wumeiInfo.mahor == "" || this.data.wumeiInfo.minzu == "" || this.data.wumeiInfo.phone == "" || this.data.wumeiInfo.qinshi == ""){
+        if (this.data.wumeiInfo.name == "" || this.data.wumeiInfo.sex == "" || this.data.wumeiInfo.studentNumber == "" || this.data.wumeiInfo.academy == "" || this.data.wumeiInfo.major == "" || this.data.wumeiInfo.nation == "" || this.data.wumeiInfo.phone == "" || this.data.wumeiInfo.dormitory == ""){
             wx.showModal({
                 title: '',
                 content: '信息不完整',
@@ -175,51 +175,59 @@ Page({
                 confirmText: '是',
                 success: res => {
                     //console.log(this.data.userInfo)
-                    this.setData({
-                        //设置时间 数据库增加个time字段为提交时间
-                        time: this.getDate()
-                    })
-                    const db = wx.cloud.database({
-                        env: 'wumei-test-37e2a6'
-                    })
-                    const naxinInfo = db.collection('wumeiInfo')
-                    db.collection('wumeiInfo').add({
-                        // data 字段表示需新增的 JSON 数据
-                        data: {
-                            // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-                            _name: this.data.wumeiInfo.name,//协会成员姓名
-                            _sex: this.data.wumeiInfo.sex,//性别
-                            _studentNumber: this.data.wumeiInfo.studentNumber,//学号
-                            _academy: this.data.wumeiInfo.academy,//学院
-                            _major: this.data.wumeiInfo.major,//专业
-                            _phone: this.data.wumeiInfo.phone,//联系方式手机
-                            _dormitory: this.data.wumeiInfo.dormitory,//寝室
-                            _nation:this.data.wumeiInfo.nation,//民族
-                            _department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
-                            _postion: this.data.multiArray[1][this.data.multiIndex[1]],//职务
-                            _politicsFace: this.data.picker[this.data.index],//政治面貌
-                            _familyAddress:this.data.address,//家庭住址
-                            _birth: this.data.date,
-                            _isGL:0,
-                            _isWM:0,
-                            _time: this.data.time,//提交时间
-                        },
-                        success: function (res) {
-                            wx.showToast({
-                                title: '成功',
-                                icon: 'success',
-                                duration: 3000
-                            })
-                        },
-                        complete: function (res) {
-                            console.log("complete gotoshowInfo")
-                            wx.redirectTo({
-                                //前面加/ 绝对路径 否则报错
-                                url: '/pages/profile/showinfo/showinfo'
-                            })
-                        }
+                   
+                    if (res.confirm) {
+                        this.setData({
+                            //设置时间 数据库增加个time字段为提交时间
+                            time: this.getDate()
+                        })
+                        const db = wx.cloud.database({
+                            env: 'wumei-test-37e2a6'
+                        })
+                        const naxinInfo = db.collection('wumeiInfo')
+                        db.collection('wumeiInfo').add({
+                            // data 字段表示需新增的 JSON 数据
+                            data: {
+                                // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+                                _name: this.data.wumeiInfo.name,//协会成员姓名
+                                _sex: this.data.wumeiInfo.sex,//性别
+                                _studentNumber: this.data.wumeiInfo.studentNumber,//学号
+                                _academy: this.data.wumeiInfo.academy,//学院
+                                _major: this.data.wumeiInfo.major,//专业
+                                _phone: this.data.wumeiInfo.phone,//联系方式手机
+                                _dormitory: this.data.wumeiInfo.dormitory,//寝室
+                                _nation: this.data.wumeiInfo.nation,//民族
+                                _department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
+                                _postion: this.data.multiArray[1][this.data.multiIndex[1]],//职务
+                                _politicsFace: this.data.picker[this.data.index],//政治面貌
+                                _familyAddress: this.data.address,//家庭住址
+                                _birth: this.data.date,
+                                _isGL: 0,
+                                _isWM: 0,
+                                _time: this.data.time,//提交时间
+                            },
+                            success: function (res) {
+                                wx.showToast({
+                                    title: '成功',
+                                    icon: 'success',
+                                    duration: 3000
+                                })
 
-                    })
+                            },
+                            complete: function (res) {
+                                console.log("complete gotoshowInfo")
+                                wx.redirectTo({
+                                    //前面加/ 绝对路径 否则报错
+                                    url: '/pages/profile/showinfo/showinfo'
+                                })
+                            }
+
+                        })
+                        console.log('用户点击确定')
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
+
                 }
 
             })

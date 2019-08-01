@@ -20,12 +20,12 @@ Page({
 
 
     PickerChange(e) {
-        console.log(e);
+        //console.log(e);
      
         this.setData({
             index: e.detail.value,
         })
-        console.log(this.data.picker[this.data.index])
+        //console.log(this.data.picker[this.data.index])
     },
     PickerChange2(e) {
         console.log(e);
@@ -33,16 +33,14 @@ Page({
             index2: e.detail.value,
             
         })
-        console.log(this.data.picker2[this.data.index2])
+        //console.log(this.data.picker2[this.data.index2])
     },
     //表单   //验证 提交到数据库
     formSubmit(e) {
         this.setData({
             userInfo: e.detail.value,
         })
-        console.log(this.data.naxinInfo.adjust)
         if (this.data.userInfo.name == "" || this.data.userInfo.sex == "" || this.data.userInfo.studentNumber == "" || this.data.userInfo.academy == "" || this.data.userInfo.major == "" || this.data.userInfo.phone == "") {
-            console.log("信息不完整")
             wx.showModal({
                 title: '',
                 content: '信息不完整',
@@ -60,52 +58,50 @@ Page({
                 cancelText: '否',
                 confirmText: '是',
                 success: res => {
-                    //console.log(this.data.userInfo)
-                    this.setData({
-                        //设置时间 数据库增加个time字段为提交时间
-                        time: this.getDate()
-                    })
-                    const db = wx.cloud.database({
-                        env: 'wumei-test-37e2a6'
-                    })
-                    const naxinInfo = db.collection('naxinInfo')
-                    db.collection('naxinInfo').add({
-                        // data 字段表示需新增的 JSON 数据
-                        data: {
-                            // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-                            _name: this.data.userInfo.name,
-                            _sex: this.data.userInfo.sex,
-                            _studentNumber: this.data.userInfo.studentNumber,
-                            _academy: this.data.userInfo.academy,
-                            _major: this.data.userInfo.major, 
-                            _adjust: this.data.userInfo.adjust,
-                            _phone: this.data.userInfo.phone,
-                            _department1: this.data.picker[this.data.index],
-                            _department2: this.data.picker2[this.data.index2],
-                            _time: this.data.time,
-                         },
-                        success: function (res) {
-                            // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-                            wx.showToast({
-                                title: '成功',
-                                icon: 'success',
-                                duration: 2000
-                            })
-                           
-                            /* wx.reLaunch({
-                                url: 'pages/baominginfo/baominginfo'
-                            }) */
-                           
-                        },
-                        complete:function(res){
-                            console.log("complete")
-                            wx.redirectTo({
-                                //前面加/ 绝对路径 否则报错
-                                url: '/pages/baominginfo/baominginfo'
-                            })
-                        }
-                  
-                    })
+                    if (res.confirm) {
+                        console.log('用户点击确定')
+                        this.setData({
+                            //设置时间 数据库增加个time字段为提交时间
+                            time: this.getDate()
+                        })
+                        const db = wx.cloud.database({
+                            env: 'wumei-test-37e2a6'
+                        })
+                        const naxinInfo = db.collection('naxinInfo')
+                        db.collection('naxinInfo').add({
+                            // data 字段表示需新增的 JSON 数据
+                            data: {
+                                // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+                                _name: this.data.userInfo.name,
+                                _sex: this.data.userInfo.sex,
+                                _studentNumber: this.data.userInfo.studentNumber,
+                                _academy: this.data.userInfo.academy,
+                                _major: this.data.userInfo.major,
+                                _adjust: this.data.userInfo.adjust,
+                                _phone: this.data.userInfo.phone,
+                                _department1: this.data.picker[this.data.index],
+                                _department2: this.data.picker2[this.data.index2],
+                                _time: this.data.time,
+                            },
+                            success: function (res) {
+                                // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+                                wx.showToast({
+                                    title: '成功',
+                                    icon: 'success',
+                                    duration: 3000
+                                })
+                            },
+                            complete: function (res) {
+                                wx.redirectTo({
+                                    //前面加/ 绝对路径 否则报错
+                                    url: '/pages/baominginfo/baominginfo'
+                                })
+                                console.log("complete 跳转到显示所填写信息")
+                            }
+                        })
+                    } else if (res.cancel) {
+                        console.log('用户点击取消')
+                    }
                 }
 
             })

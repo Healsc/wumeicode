@@ -3,40 +3,40 @@
 <view class='naxinInfo'>
     <view class="cu-form-group margin-top pad-left">
         <view class="title">姓名</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.name}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._name}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">性别</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.sex}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._sex}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">学号</view>
-       <text class='text-center pad-left-cont'>{{naxinInfo.studentNumber}}</text>
+       <text class='text-center pad-left-cont'>{{naxinInfo._studentNumber}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">学院</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.academy}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._academy}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">班级</view>
-       <text class='text-center pad-left-cont'>{{naxinInfo.major}}</text>
+       <text class='text-center pad-left-cont'>{{naxinInfo._major}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">手机号</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.phone}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._phone}}</text>
     </view>
 
     <view class="cu-form-group pad-left">
         <view class="title">第一意愿部门</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.department1}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._department1}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">第二意愿部门</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.department2}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._department2}}</text>
     </view>
 
     <view class="cu-form-group pad-left">
         <view class="title">是否服从调剂</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo.adjust}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._adjust}}</text>
     </view>
 </view>

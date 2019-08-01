@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -78,6 +78,12 @@
 					"name": "naxinnfo",
 					"pathName": "pages/info/naxininfo/naxininfo",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "wumei/shouInfo",
+					"pathName": "pages/profile/showinfo/showinfo",
 					"scene": null
 				}
 			]
