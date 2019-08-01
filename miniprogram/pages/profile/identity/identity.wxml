@@ -3,36 +3,36 @@
 
     <view class="cu-form-group margin-top pad-left">
         <view class="title">姓名</view>
-        <input type='text' name="name"   placeholder="你的真实姓名" placeholder-class="text-margin"></input>
+        <input type='text' name="name"   placeholder="你的真实姓名（例：张三）" placeholder-class="text-margin"></input>
     </view>
 
     <view class="cu-form-group pad-left">
         <view class="title">性别</view>
         <radio-group class="radio-group text-center" bindchange="radioChange">
             <radio-group name="sex">
-                <label><radio value="man" checked='checked'/>男</label>
-                <label><radio value="woman"/>女</label>
+                <label><radio value="男" checked='checked'/>男</label>
+                <label><radio value="女"/>女</label>
             </radio-group>
         </radio-group>
     </view>
 
     <view class="cu-form-group pad-left">
         <view class="title">学号</view>
-        <input type="text" name="studentNumber" placeholder="请填写"  placeholder-class="text-margin"></input>
+        <input type="text" name="studentNumber" placeholder="请填写（例：A07170472）"  placeholder-class="text-margin"></input>
     </view>
 
     <view class="cu-form-group pad-left">
         <view class="title">学院</view>
-        <input type="numtextber" name="academy" placeholder="请填写" placeholder-class="text-margin"></input>
+        <input type="numtextber" name="academy" placeholder="请填写（例：电信学院）" placeholder-class="text-margin"></input>
     </view>
 
     <view class="cu-form-group pad-left">
         <view class="title">班级</view>
-        <input type="text" name="mahor" placeholder="请填写" placeholder-class="text-margin"></input>
+        <input type="text" name="major" placeholder="请填写（例：管一1703）" placeholder-class="text-margin"></input>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">民族</view>
-        <input type="text" name="minzu" placeholder="汉（例）" placeholder-class="text-margin"></input>
+        <input type="text" name="nation" placeholder="请填写（例：汉）" placeholder-class="text-margin"></input>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">联系方式</view>
@@ -40,13 +40,16 @@
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">寝室号</view>
-        <input type="text" name="phone" placeholder="B5-738（例）" placeholder-class="text-margin"></input>
+        <input type="text" name="dormitory" placeholder="请填写（例：B5-738）" placeholder-class="text-margin"></input>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">政治面貌</view>
-        <input type="text" name="zzmianmao" placeholder="共青团员（例）" placeholder-class="text-margin"></input>
+        <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+        <view class="picker">
+            {{index?picker[index]:'请选择'}}
+        </view>
+        </picker>
     </view>
-
     <view class="cu-form-group pad-left">
         <view class="title">所属部门</view>
         <picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
@@ -61,7 +64,7 @@
 
   <view class="cu-form-group pad-left">
     <view class="title">出生日期</view>
-    <picker mode="date" value="{{date}}" start="1990-01-01" end="2005-01-01" bindchange="DateChange">
+    <picker mode="date" value="{{date}}" start="1996-01-01" end="2004-12-31" bindchange="DateChange">
       <view class="picker">
         {{date}}
       </view>
@@ -77,13 +80,7 @@
   </view>
 
 
-
-
-
-
-
-
-  <view class="cu-bar bg-white margin-top">
+  <view class="cu-bar bg-white margin-top pad-left">
     <view class="action">
       本人近期照片上传
     </view>

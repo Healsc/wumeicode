@@ -9,6 +9,7 @@ Page({
         name:"",
         picker: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
         picker2: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
+        time:null
     },
 
 
@@ -59,9 +60,13 @@ Page({
                 cancelText: '否',
                 confirmText: '是',
                 success: res => {
-                    console.log(this.data.userInfo)
+                    //console.log(this.data.userInfo)
+                    this.setData({
+                        //设置时间 数据库增加个time字段为提交时间
+                        time: this.getDate()
+                    })
                     const db = wx.cloud.database({
-                       
+                        env: 'wumei-test-37e2a6'
                     })
                     const naxinInfo = db.collection('naxinInfo')
                     db.collection('naxinInfo').add({
@@ -77,7 +82,7 @@ Page({
                             phone: this.data.userInfo.phone,
                             department1: this.data.picker[this.data.index],
                             department2: this.data.picker2[this.data.index2],
-                            
+                            time: this.data.time,
                          },
                         success: function (res) {
                             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -107,7 +112,24 @@ Page({
         }
     },
 
-
+    //获取系统时间
+    getDate() {
+        var date = new Date();
+        //年
+        var Y = date.getFullYear();
+        //月
+        var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+        //日
+        var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+        //时
+        var h = date.getHours();
+        //分
+        var m = date.getMinutes();
+        //秒
+        var s = date.getSeconds();
+        return Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
+        console.log("当前时间：" + Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s);
+    }
 })
 
 

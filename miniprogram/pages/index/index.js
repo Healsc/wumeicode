@@ -28,7 +28,9 @@ Page({
  
     //跳转到报名信息页面 已提交报名信息跳转到已经提交的信息
     goIdentity(){
-        const db = wx.cloud.database()
+        const db = wx.cloud.database({
+            env: 'wumei-test-37e2a6'
+        })
         db.collection('naxinInfo').where({
             _openid: this.data.openid // 填入当前用户 openid
         }).get({
