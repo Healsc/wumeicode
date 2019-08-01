@@ -73,16 +73,16 @@ Page({
                         // data 字段表示需新增的 JSON 数据
                         data: {
                             // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-                            name: this.data.userInfo.name,
-                            sex: this.data.userInfo.sex,
-                            studentNumber: this.data.userInfo.studentNumber,
-                            academy: this.data.userInfo.academy,
-                            major: this.data.userInfo.major, 
-                            adjust: this.data.userInfo.adjust,
-                            phone: this.data.userInfo.phone,
-                            department1: this.data.picker[this.data.index],
-                            department2: this.data.picker2[this.data.index2],
-                            time: this.data.time,
+                            _name: this.data.userInfo.name,
+                            _sex: this.data.userInfo.sex,
+                            _studentNumber: this.data.userInfo.studentNumber,
+                            _academy: this.data.userInfo.academy,
+                            _major: this.data.userInfo.major, 
+                            _adjust: this.data.userInfo.adjust,
+                            _phone: this.data.userInfo.phone,
+                            _department1: this.data.picker[this.data.index],
+                            _department2: this.data.picker2[this.data.index2],
+                            _time: this.data.time,
                          },
                         success: function (res) {
                             // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id

@@ -119,6 +119,7 @@ Page({
         this.setData({
             date: e.detail.value
         })
+        console.log(this.data.date)
         //console.log(e)
         //console.log(e.detail.value)
     },
@@ -186,21 +187,22 @@ Page({
                         // data 字段表示需新增的 JSON 数据
                         data: {
                             // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-                            name: this.data.wumeiInfo.name,//协会成员姓名
-                            sex: this.data.wumeiInfo.sex,//性别
-                            studentNumber: this.data.wumeiInfo.studentNumber,//学号
-                            academy: this.data.wumeiInfo.academy,//学院
-                            major: this.data.wumeiInfo.major,//专业
-                            phone: this.data.wumeiInfo.phone,//联系方式手机
-                            dormitory: this.data.wumeiInfo.dormitory,//寝室
-                            nation:this.data.wumeiInfo.nation,//民族
-                            department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
-                            postion: this.data.multiArray[1][this.data.multiIndex[1]],//职务
-                            politicsFace: this.data.picker[this.data.index],//政治面貌
-                            familyAddress:this.data.address,//家庭住址
-                            isGL:0,
-                            isWM:0,
-                            time: this.data.time,//提交时间
+                            _name: this.data.wumeiInfo.name,//协会成员姓名
+                            _sex: this.data.wumeiInfo.sex,//性别
+                            _studentNumber: this.data.wumeiInfo.studentNumber,//学号
+                            _academy: this.data.wumeiInfo.academy,//学院
+                            _major: this.data.wumeiInfo.major,//专业
+                            _phone: this.data.wumeiInfo.phone,//联系方式手机
+                            _dormitory: this.data.wumeiInfo.dormitory,//寝室
+                            _nation:this.data.wumeiInfo.nation,//民族
+                            _department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
+                            _postion: this.data.multiArray[1][this.data.multiIndex[1]],//职务
+                            _politicsFace: this.data.picker[this.data.index],//政治面貌
+                            _familyAddress:this.data.address,//家庭住址
+                            _birth: this.data.date,
+                            _isGL:0,
+                            _isWM:0,
+                            _time: this.data.time,//提交时间
                         },
                         success: function (res) {
                             wx.showToast({

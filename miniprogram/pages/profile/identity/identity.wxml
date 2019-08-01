@@ -80,7 +80,7 @@
   </view>
 
 
-  <view class="cu-bar bg-white margin-top pad-left">
+  <view class="cu-bar bg-white margin-top pl-img">
     <view class="action">
       本人近期照片上传
     </view>
