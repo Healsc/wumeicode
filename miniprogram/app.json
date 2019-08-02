@@ -6,6 +6,7 @@
         "pages/profile/about/about",
         "pages/profile/identity/identity",
         "pages/profile/showinfo/showinfo",
+        "pages/profile/showWMinfo/showWMinfo",
         "pages/identity/identity",
         "pages/baominginfo/baominginfo"
     ],

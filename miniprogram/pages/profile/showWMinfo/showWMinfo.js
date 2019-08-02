@@ -19,8 +19,9 @@ Page({
             _openid: '' // 填入当前用户 openid
         }).get({
             success: (res) => {
+                console.log(res.data[0])
                 this.setData({
-                    naxinInfo: res.data[res.data.length-1]
+                    naxinInfo: res.data[res.data.length - 1]
                 })
             }
         })

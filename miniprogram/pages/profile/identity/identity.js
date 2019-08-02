@@ -198,7 +198,7 @@ Page({
                                 _dormitory: this.data.wumeiInfo.dormitory,//寝室
                                 _nation: this.data.wumeiInfo.nation,//民族
                                 _department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
-                                _postion: this.data.multiArray[1][this.data.multiIndex[1]],//职务
+                                _position: this.data.multiArray[1][this.data.multiIndex[1]],//职务
                                 _politicsFace: this.data.picker[this.data.index],//政治面貌
                                 _familyAddress: this.data.address,//家庭住址
                                 _birth: this.data.date,

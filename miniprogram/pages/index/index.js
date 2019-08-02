@@ -3,7 +3,6 @@ const app = getApp();
 Page({
     data: {
         openid: '',
-        naxinInfoLength:0
     },
     onLoad: function (options) {
         this.getOpenid();
@@ -20,7 +19,7 @@ Page({
                 that.setData({
                     openid: openid
                 })
-                console.log(this.data.openid)
+                //console.log(this.data.openid)
             }
         })
     },

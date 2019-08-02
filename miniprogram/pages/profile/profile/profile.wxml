@@ -1,19 +1,14 @@
-<view class='top shadow-lg'>
-    <view class="margin-xl padding-xl  radius  top-nav">
-        <view class="flex justify-center">
-            <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='cu-btn round bg-green shadow'>登录</button>
-        <block wx:else>
-            <view class='text-center'>
-                <view class="cu-avatar xl round solids" style="background-image:url({{userInfo.avatarUrl}})"></view>
-                <view class="padding">{{userInfo.nickName}}</view>
-            </view>
-        </block>
-        </view>
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+    <!-- <image src="" class="png" mode="widthFix"></image> -->
+    <view class="png user-img">
+        <open-data type="userAvatarUrl" style></open-data>
     </view>
-</view>
-
-  
-  
+    <view class="text-xl">    <open-data type="userNickName"></open-data></view>
+    <view class="margin-top text-xl"></view>
+    <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-wave"></image>
+  </view>
+</scroll-view>
 <scroll-view scroll-y class="scrollPage">
     <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
         <view class="cu-item arrow">
@@ -27,9 +22,9 @@
             </button>
         </view>
         <view class="cu-item arrow">
-            <navigator class="content" url="/pages/profile/identity/identity" hover-class="none">
+            <view class="content" bindtap='goIdenitity' hover-class="none">
                 <text class="text-grey">舞美认证</text>
-            </navigator>
+            </view>
         </view>
     </view>
     <view class="cu-tabbar-height"></view>

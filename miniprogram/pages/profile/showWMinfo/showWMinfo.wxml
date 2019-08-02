@@ -1,0 +1,34 @@
+<view class="cu-form-group margin-top">
+    <text>亲爱的{{naxinInfo._name}}同学，欢迎加入舞美协会这个大家庭</text>
+</view>
+<view class='naxinInfo'>
+    <view class="cu-form-group margin-top pad-left">
+        <view class="title">姓名</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._name}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">性别</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._sex}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">部门</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._department}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+    <view class="title">职务</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._position}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">学号</view>
+       <text class='text-center pad-left-cont'>{{naxinInfo._studentNumber}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">学院</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._academy}}</text>
+    </view>
+    <view class="cu-form-group pad-left">
+        <view class="title">班级</view>
+       <text class='text-center pad-left-cont'>{{naxinInfo._major}}</text>
+    </view>
+
+</view>

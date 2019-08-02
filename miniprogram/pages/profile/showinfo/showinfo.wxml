@@ -1,4 +1,4 @@
-
+<image class="renzheng-img" src='/images/shenhezhong.png' style='width:150rpx;height:150rpx'></image>
 
 <view class='naxinInfo'>
     <view class="cu-form-group margin-top pad-left">
@@ -22,11 +22,6 @@
        <text class='text-center pad-left-cont'>{{naxinInfo._major}}</text>
     </view>
     <view class="cu-form-group pad-left">
-        <view class="title">手机号</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo._phone}}</text>
-    </view>
-
-    <view class="cu-form-group pad-left">
         <view class="title">民族</view>
         <text class='text-center pad-left-cont'>{{naxinInfo._nation}}</text>
     </view>
@@ -34,14 +29,17 @@
         <view class="title">寝室号</view>
         <text class='text-center pad-left-cont'>{{naxinInfo._dormitory}}</text>
     </view>
-
+    <view class="cu-form-group pad-left">
+        <view class="title">联系方式</view>
+        <text class='text-center pad-left-cont'>{{naxinInfo._phone}}</text>
+    </view>
     <view class="cu-form-group pad-left">
         <view class="title">政治面貌</view>
         <text class='text-center pad-left-cont'>{{naxinInfo._politicsFace}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">所属部门</view>
-        <text class='text-center pad-left-cont'>{{naxinInfo._department}}\r\t{{naxinInfo._position}}</text>
+        <text class='text-center pad-left-cont'>{{naxinInfo._department}}{{naxinInfo._position}}</text>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">出生日期</view>
