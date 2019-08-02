@@ -12,28 +12,35 @@ Page({
         time:null
     },
 
-
-
     onLoad: function (options) {
 
     },
+    /*检验中文 */
+    ischina(str) {
+        var reg = /^[\u4E00-\u9FA5]{2,4}$/;   /*定义验证表达式*/
+        return reg.test(str);     /*进行验证*/
+    },
+    /*校验学号 */
+    isSNo(str) {
+        var reg = /^(A([012]\d{1}[1][9]\d{4}))$/;
+        return reg.test(str);     /*进行验证*/
+    },
 
-
+    isTelCode(str) {
+        var reg = /^(1[356789]\d{9})$/;
+        return reg.test(str);
+    },
     PickerChange(e) {
-        //console.log(e);
-     
         this.setData({
             index: e.detail.value,
         })
-        //console.log(this.data.picker[this.data.index])
     },
     PickerChange2(e) {
-        console.log(e);
+        //console.log(e);
         this.setData({
             index2: e.detail.value,
             
         })
-        //console.log(this.data.picker2[this.data.index2])
     },
     //表单   //验证 提交到数据库
     formSubmit(e) {
@@ -47,11 +54,38 @@ Page({
                 cancelText: '退出',
                 confirmText: '继续',
                 success: res => {
-                    //console.log(this.data.userInfo)
                 }
 
             })
-        } else {
+        } else if (!this.ischina(this.data.userInfo.name)){
+            wx.showModal({
+                title: '',
+                content: '姓名有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.isSNo(this.data.userInfo.studentNumber)){
+            wx.showModal({
+                title: '',
+                content: '学号有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.ischina(this.data.userInfo.academy)){
+            wx.showModal({
+                title: '',
+                content: '学院有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.isTelCode(this.data.userInfo.phone)) {
+            wx.showModal({
+                title: '',
+                content: '手机号有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        }  else {
             wx.showModal({
                 title: '',
                 content: '确定提交信息',
@@ -72,16 +106,16 @@ Page({
                             // data 字段表示需新增的 JSON 数据
                             data: {
                                 // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-                                _name: this.data.userInfo.name,
-                                _sex: this.data.userInfo.sex,
-                                _studentNumber: this.data.userInfo.studentNumber,
-                                _academy: this.data.userInfo.academy,
-                                _major: this.data.userInfo.major,
-                                _adjust: this.data.userInfo.adjust,
-                                _phone: this.data.userInfo.phone,
-                                _department1: this.data.picker[this.data.index],
-                                _department2: this.data.picker2[this.data.index2],
-                                _time: this.data.time,
+                                _name: this.data.userInfo.name,//姓名
+                                _sex: this.data.userInfo.sex,//性别
+                                _studentNumber: this.data.userInfo.studentNumber,//学号
+                                _academy: this.data.userInfo.academy,//学院
+                                _major: this.data.userInfo.major,//专业
+                                _adjust: this.data.userInfo.adjust,//调剂
+                                _phone: this.data.userInfo.phone,//联系方式
+                                _department1: this.data.picker[this.data.index],//部门一
+                                _department2: this.data.picker2[this.data.index2],//部门二
+                                _time: this.data.time,//提交时间
                             },
                             success: function (res) {
                                 // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -90,6 +124,7 @@ Page({
                                     icon: 'success',
                                     duration: 3000
                                 })
+
                             },
                             complete: function (res) {
                                 wx.redirectTo({
@@ -101,12 +136,14 @@ Page({
                         })
                     } else if (res.cancel) {
                         console.log('用户点击取消')
-                    }
+                      }
                 }
-
             })
         }
     },
+    /*校验姓名是否中文名称组成 */
+
+
 
     //获取系统时间
     getDate() {
@@ -124,7 +161,6 @@ Page({
         //秒
         var s = date.getSeconds();
         return Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
-        console.log("当前时间：" + Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s);
     }
 })
 
@@ -132,28 +168,5 @@ Page({
 
  
 
-/*校验姓名是否中文名称组成 */
-function ischina(str) {
-    var reg = /^[\u4E00-\u9FA5]{2,4}$/;   /*定义验证表达式*/
-    return reg.test(str);     /*进行验证*/
-}
 
-/*校验是否全由8位数字组成 */
-function isStudentNo(str) {
-    var reg = /^[012][0123456789][1][89]\d{4} $/;   /*定义验证表达式*/
-    return reg.test(str);     /*进行验证*/
-}
-//console.log(isStudentNo("07190472"))
-function isSNo(str) {
-    var reg = /^(1[3584]\d{9})$/;
-    return reg.test(str);     /*进行验证*/
-}
-
-//console.log(isSNo("15636214551"));
-//conosle.log(isSNo("A07170472"));
-/*校验电话码格式 */
-function isTelCode(str) {
-    var reg = /^((0\d{2,3}-\d{7,8})|(1[3584]\d{9}))$/;
-    return reg.test(str);
-} 
 

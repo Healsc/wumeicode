@@ -8,7 +8,10 @@
         "pages/profile/showinfo/showinfo",
         "pages/profile/showWMinfo/showWMinfo",
         "pages/identity/identity",
-        "pages/baominginfo/baominginfo"
+        "pages/baominginfo/baominginfo",
+        "pages/wumei/wumei/wumei",
+        "pages/wumei/getclass/getclass",
+        "pages/wumei/showclass/showcalss"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -26,11 +29,18 @@
                 "selectedIconPath": "images/icon/home-sel.png"
             },
             {
+                "pagePath": "pages/wumei/wumei/wumei",
+                "text": "舞美",
+                "iconPath": "images/icon/wm.png",
+                "selectedIconPath": "images/icon/wm-sel.png"
+            },
+            {
                 "pagePath": "pages/profile/profile/profile",
                 "text": "我的",
                 "iconPath": "images/icon/wode.png",
                 "selectedIconPath": "images/icon/wode-sel.png"
             }
+            
         ],
         "selectedColor": "#c3c"
     },

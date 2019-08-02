@@ -1,0 +1,109 @@
+<form bindsubmit="formSubmit" bindreset="formReset" bindreset="formReset">
+    <view class="table">
+        <view class="tr bg-w">
+            <view class="th">课\r\t\周</view>
+            <view class="th">周\r\t一</view>
+            <view class="th">周\r\t二</view>
+            <view class="th">周\r\t三</view>
+            <view class="th">周\r\t四</view>
+            <view class="th">周\r\t五</view>
+        </view>
+    <block wx:for="{{listData}}" wx:key="{{code}}">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view bindtap='change' class="td">{{item.code}}</view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.one}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.two}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.three}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.four}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.five}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+        </view>
+
+        <view class="tr bg-z" wx:else>
+            <view bindtap='change' class="td">{{item.code}}</view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.one}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.two}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.three}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.four}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+            <view class="td">
+                <radio-group class="have-class" bindchange="radioChange">
+                    <radio-group name="{{item.five}}">
+                        <label><radio value="有课"/>有</label>
+                        <label><radio value="无课"  checked='checked'/>无</label>
+                    </radio-group>
+                </radio-group>
+            </view>
+        </view>
+
+    </block>
+    </view>
+    <view class="padding  bg-white margin-top" style='height:120rpx;margin-bottom:20rpx'>
+        <button form-type="reset" class="cu-btn round  bg-green btn-left" >清空选择</button>
+        <button form-type="submit" class="cu-btn round  bg-red btn-right" >确认提交</button>
+    </view>
+ 
+</form>
+
+

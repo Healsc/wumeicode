@@ -49,5 +49,5 @@
     border: 1rpx solid #ccc;
     width: 150rpx;
     height: 150rpx;
-
+    overflow: hidden;
 }

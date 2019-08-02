@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 9,
 			"list": [
 				{
 					"id": -1,
@@ -91,6 +91,13 @@
 					"id": -1,
 					"name": "wumeishouwinfo",
 					"pathName": "pages/profile/showWMinfo/showWMinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "wumei",
+					"pathName": "pages/wumei/wumei/wumei",
 					"scene": null
 				}
 			]

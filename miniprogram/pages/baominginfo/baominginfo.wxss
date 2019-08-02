@@ -18,3 +18,9 @@
 .pad-left-cont{
     padding-left:150rpx; 
 }
+.renzheng-img{
+    position: absolute;
+    top: 50rpx;
+    right: 50rpx;
+    opacity: 0.5;
+}

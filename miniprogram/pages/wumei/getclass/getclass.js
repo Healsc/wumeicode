@@ -1,34 +1,18 @@
-// pages/baominginfo/baominginfo.js
+// pages/wumei/getclass/getclass.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        naxinInfo: {},
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
-        })
-        db.collection('naxinInfo').where({
-            _openid: '' // 填入当前用户 openid
-        }).get({
-            success: (res) => {
-                //console.log(res.data[0])
-                this.setData({
-                    naxinInfo: res.data[0]
-                })
-                //console.log(this.data.name)
-                //console.log(123)
-                //console.log("naxinInfo:", this.data.naxinInfo)
 
-            }
-        })
     },
 
     /**

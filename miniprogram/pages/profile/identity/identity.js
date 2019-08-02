@@ -142,8 +142,21 @@ Page({
             index: e.detail.value,
         })
     },
+    /*检验中文 */
+    ischina(str) {
+        var reg = /^[\u4E00-\u9FA5]{1,9}$/;   /*定义验证表达式*/
+        return reg.test(str);     /*进行验证*/
+    },
+    /*校验学号 */
+    isSNo(str) {
+        var reg = /^(A([012]\d{1}[1][56789]\d{4}))$/;
+        return reg.test(str);     /*进行验证*/
+    },
 
-
+    isTelCode(str) {
+        var reg = /^(1[356789]\d{9})$/;
+        return reg.test(str);
+    },
     //表单   //验证 提交到数据库
     formSubmit(e) {
         //console.log("b",this.data.picker[this.data.index])//政治面貌
@@ -165,6 +178,41 @@ Page({
                     
                 }
 
+            })
+        } else if (!this.ischina(this.data.wumeiInfo.name)) {
+            wx.showModal({
+                title: '',
+                content: '姓名有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.isSNo(this.data.wumeiInfo.studentNumber)) {
+            wx.showModal({
+                title: '',
+                content: '学号有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.ischina(this.data.wumeiInfo.academy)) {
+            wx.showModal({
+                title: '',
+                content: '学院有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.ischina(this.data.wumeiInfo.nation)) {
+            wx.showModal({
+                title: '',
+                content: '民族信息填写有误！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        } else if (!this.isTelCode(this.data.wumeiInfo.phone)) {
+            wx.showModal({
+                title: '',
+                content: '手机号有误！',
+                cancelText: '退出',
+                confirmText: '继续',
             })
         } else {
             //console.log("e", this.data.wumeiInfo)
