@@ -6,17 +6,38 @@ Page({
      */
     data: {
         naxinInfo: {},
+        openid:""
     },
-
+    onLoad: function (options) {
+        
+    },
+    // 获取用户openid
+    getOpenid() {
+        
+        let that = this;
+        wx.cloud.callFunction({
+            name: 'login',
+            complete: res => {
+                //console.log(res.result)
+                //console.log('云函数获取到的openid: ', res.result.openid)
+                var openid = res.result.openid;
+                that.setData({
+                    openid: openid
+                })
+                //console.log(this.data.openid)
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.getOpenid();
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
         db.collection('wumeiInfo').where({
-            _openid: '' // 填入当前用户 openid
+            _openid: this.data.openid // 填入当前用户 openid
         }).get({
             success: (res) => {
                 console.log(res.data[0])
