@@ -24,13 +24,6 @@ Page({
             }
         })
     },
-    getUserInfo: function (e) {
-        app.globalData.userInfo = e.detail.userInfo
-        this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true
-        })
-    },
     goIdenitity(){
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
@@ -39,6 +32,9 @@ Page({
             _openid: this.data.openid // 填入当前用户 openid
         }).get({
             success: (res) => {
+                console.log(res.data[0]._isWM)
+                console.log(res.data.length)
+                console.log(res.data)
                 //数据库返回来的是一个数组 使用数组长度判断跳转
                 if (res.data.length && res.data[0]._isWM) {
                     wx.navigateTo({

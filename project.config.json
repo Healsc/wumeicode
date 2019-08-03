@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -46,7 +46,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "renzheng",
 					"pathName": "pages/profile/identity/identity",
 					"query": "",
@@ -98,6 +98,21 @@
 					"id": -1,
 					"name": "wumei",
 					"pathName": "pages/wumei/wumei/wumei",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "showclass",
+					"pathName": "pages/wumei/showclass/showclass",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "profile/profile",
+					"pathName": "pages/profile/profile/profile",
+					"query": "",
 					"scene": null
 				}
 			]

@@ -5,26 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-        naxinInfo: {},
-        openid: '',
+        classInfo: [],
+        openid: ""
     },
-    // 获取用户openid
-    getOpenid() {
-        let that = this;
-        wx.cloud.callFunction({
-            name: 'login',
-            complete: res => {
-                //console.log(res.result)
-                //console.log('云函数获取到的openid: ', res.result.openid)
-                var openid = res.result.openid;
-                that.setData({
-                    openid: openid
-                })
-                //console.log(this.data.openid)
-            }
-        })
-    },
+    onLoad: function (options) {
 
+    },
+  
     /**
      * 生命周期函数--监听页面加载
      */
@@ -32,20 +19,19 @@ Page({
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
-        db.collection('naxinInfo').where({
-            _openid: this.data.openid // 填入当前用户 openid
-        }).get({
-            success: (res) => {
-                //console.log(res.data[0])
+        db.collection('class-week-1').get({
+            //如果查询成功的话    
+            success: res => {
+                console.log(res.data)
+                //这一步很重要，给ne赋值，没有这一步的话，前台就不会显示值      
                 this.setData({
-                    naxinInfo: res.data[0]
+                    classInfo: res.data
                 })
-                //console.log(this.data.name)
-                //console.log(123)
-                //console.log("naxinInfo:", this.data.naxinInfo)
-
+                
             }
         })
+        console.log(this.data.classInfo)
+       
     },
 
     /**

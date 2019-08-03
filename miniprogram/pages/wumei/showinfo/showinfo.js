@@ -1,41 +1,18 @@
-// pages/baominginfo/baominginfo.js
+// pages/wumei/showinfo/showinfo.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        naxinInfo: {},
-        openid: '',
+
     },
-    getOpenid() {
-        let that = this;
-        wx.cloud.callFunction({
-            name: 'login',
-            complete: res => {
-                var openid = res.result.openid;
-                that.setData({
-                    openid: openid
-                })
-            }
-        })
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
-        })
-        db.collection('wumeiInfo').where({
-            _openid: this.data.openid // 填入当前用户 openid
-        }).get({
-            success: (res) => {
-                this.setData({
-                    naxinInfo: res.data[0]
-                })
-            }
-        })
+
     },
 
     /**

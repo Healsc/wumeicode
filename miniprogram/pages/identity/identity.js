@@ -9,7 +9,24 @@ Page({
         name:"",
         picker: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
         picker2: ['办公室', '技术部', '宣传部', '干训部', '纪检部', '外勤部'],
-        time:null
+        time:null,
+        openid: '',
+    },
+    // 获取用户openid
+    getOpenid() {
+        let that = this;
+        wx.cloud.callFunction({
+            name: 'login',
+            complete: res => {
+                //console.log(res.result)
+                //console.log('云函数获取到的openid: ', res.result.openid)
+                var openid = res.result.openid;
+                that.setData({
+                    openid: openid
+                })
+                //console.log(this.data.openid)
+            }
+        })
     },
 
     onLoad: function (options) {
@@ -93,7 +110,7 @@ Page({
                 confirmText: '是',
                 success: res => {
                     if (res.confirm) {
-                        console.log('用户点击确定')
+                        //console.log('用户点击确定')
                         this.setData({
                             //设置时间 数据库增加个time字段为提交时间
                             time: this.getDate()

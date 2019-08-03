@@ -1,4 +1,4 @@
-// pages/wumei/showclass/showcalss.js
+// pages/wumei/sorry/sorry.js
 Page({
 
     /**

@@ -11,12 +11,15 @@
         "pages/baominginfo/baominginfo",
         "pages/wumei/wumei/wumei",
         "pages/wumei/getclass/getclass",
-        "pages/wumei/showclass/showcalss"
+        "pages/wumei/showclass/showclass",
+        "pages/wumei/classdetail/classdetail",
+        "pages/wumei/showinfo/showinfo",
+        "pages/wumei/sorry/sorry"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#c3c",
+        "navigationBarBackgroundColor": "#A0EEE1",
         "navigationBarTitleText": "东农舞美",
         "navigationBarTextStyle": "black"
     },
