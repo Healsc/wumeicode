@@ -7,22 +7,100 @@
     <view class="th">周四</view>
     <view class="th">周五</view>
   </view>
-  <block wx:for="{{listData}}" wx:key="{{code}}">
-    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-       <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-    </view>
-    <view class="tr" wx:else>
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-      <view class="td">{{item.code}}</view>
-      <view class="td">{{item.text}}</view>
-      <view class="td">{{item.type}}</view>
-    </view>
-  </block>
+  
+    <!-- 第一节课开始 -->
+    <block>
+        <view class="tr">
+        <view class="td">第一节</view>
+        <view class="td">
+            <view wx:for="{{Mon1List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Tue1List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Wed1List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Thu1List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Fri1List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        </view>
+    </block>
+    <!-- 第一节课结束 -->
+
+    <!-- 第二节课开始 -->
+    <block>
+        <view class="tr bg-g">
+        <view class="td">第二节</view>
+        <view class="td">
+            <view wx:for="{{Mon2List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Tue2List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Wed2List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Thu2List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Fri2List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        </view>
+    </block>
+    <!-- 第二节课结束 -->
+
+    <!-- 第三节课开始 -->
+    <block>
+        <view class="tr">
+        <view class="td">第三节</view>
+        <view class="td">
+            <view wx:for="{{Mon3List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Tue3List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Wed3List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Thu3List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Fri3List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        </view>
+    </block>
+    <!-- 第三节课结束 -->
+
+    <!-- 第四节课开始 -->
+    <block>
+        <view class="tr bg-g">
+        <view class="td">第四节</view>
+        <view class="td">
+            <view wx:for="{{Mon4List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Tue4List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Wed4List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Thu4List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        <view class="td">
+            <view wx:for="{{Fri4List}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+        </view>
+    </block>
+    <!-- 第四节课结束 -->
+    
+    
+     
+
 </view>
