@@ -10,6 +10,7 @@ Page({
     },
     //事件处理函数
     onLoad: function () {
+        this.getOpenid();
     },
     // 获取用户openid
     getOpenid() {

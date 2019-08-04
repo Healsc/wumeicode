@@ -1,2 +1,28 @@
-<!--pages/wumei/classdetail/classdetail.wxml-->
-<text>pages/wumei/classdetail/classdetail.wxml</text>
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th">课\r\t\周</view>
+    <view class="th">周一</view>
+    <view class="th">周二</view>
+    <view class="th">周三</view>
+    <view class="th">周四</view>
+    <view class="th">周五</view>
+  </view>
+  <block wx:for="{{listData}}" wx:key="{{code}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.text}}</view>
+      <view class="td">{{item.type}}</view>
+       <view class="td">{{item.code}}</view>
+      <view class="td">{{item.text}}</view>
+      <view class="td">{{item.type}}</view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.text}}</view>
+      <view class="td">{{item.type}}</view>
+      <view class="td">{{item.code}}</view>
+      <view class="td">{{item.text}}</view>
+      <view class="td">{{item.type}}</view>
+    </view>
+  </block>
+</view>

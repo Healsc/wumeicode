@@ -30,7 +30,7 @@ Page({
     },
 
     onLoad: function (options) {
-
+        this.getOpenid();
     },
     /*检验中文 */
     ischina(str) {

@@ -9,7 +9,7 @@ Page({
         openid:""
     },
     onLoad: function (options) {
-        
+        this.getOpenid();
     },
     // 获取用户openid
     getOpenid() {

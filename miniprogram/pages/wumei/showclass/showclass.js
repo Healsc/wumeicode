@@ -19,11 +19,10 @@ Page({
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
-        db.collection('class-week-1').get({
-            //如果查询成功的话    
+        db.collection('class-week-1').get({    
             success: res => {
                 console.log(res.data)
-                //这一步很重要，给ne赋值，没有这一步的话，前台就不会显示值      
+                //这一步很重要，给classInfo赋值，没有这一步的话，前台就不会显示值      
                 this.setData({
                     classInfo: res.data
                 })
@@ -33,7 +32,12 @@ Page({
         console.log(this.data.classInfo)
        
     },
-
+    goClassDetail(event){
+        console.log(event)
+        wx.navigateTo({
+            url: '/pages/wumei/classdetail/classdetail?bumenid=' + event.target.dataset.bumenid,
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

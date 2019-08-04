@@ -14,13 +14,8 @@ Page({
             _openid: this.data.openid,  /* 填入当前用户 openid */
         }).get({
             success: (res) => {
-                console.log(res.data)
-                console.log(res.data.length)
                 /* 判断是否提交过 */
                 if (res.data.length) {
-                   /*  wx.navigateTo({
-                        url: '/pages/wumei/showinfo/showinfo',
-                    }) */
                     wx.showModal({
                         title: '提示',
                         content: '你已提交课表信息',

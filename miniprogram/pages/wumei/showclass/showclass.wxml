@@ -1,7 +1,7 @@
  <scroll-view scroll-y class="scrollPage">
     <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" >
         <view class="cu-item arrow"  wx:for="{{classInfo[0].bm}}" wx:key="{{index}}">
-            <view class="content" bindtap='goClassDetail' hover-class="none">
+            <view class="content" bindtap='goClassDetail' data-bumenid="{{item}}" hover-class="none">
                 <text class="text-grey">{{item}}</text>
             </view>
         </view>

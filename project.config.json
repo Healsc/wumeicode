@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -113,6 +113,27 @@
 					"name": "profile/profile",
 					"pathName": "pages/profile/profile/profile",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "classdetail",
+					"pathName": "pages/wumei/classdetail/classdetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "classdetail",
+					"pathName": "pages/wumei/classdetail/classdetail",
+					"query": "bumenid=\"办公室\"",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "classdetail",
+					"pathName": "pages/wumei/classdetail/classdetail",
+					"query": "bumenid=办公室",
 					"scene": null
 				}
 			]

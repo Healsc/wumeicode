@@ -55,14 +55,13 @@ Page({
     },
 
     change(e) {
-        console.log(e)
+       
     },
     formSubmit(e) {
         this.setData({
             classInfo: e.detail.value,
         })
-        console.log(this.data.classInfo)
-        console.log(this.data.wumeiInfo._name)
+
         wx.showModal({
             title: '',
             content: '确定提交课表信息',
