@@ -13,13 +13,11 @@ Page({
         wx.cloud.callFunction({
             name: 'login', 
             complete: res => {
-                //console.log(res.result)
-                //console.log('云函数获取到的openid: ', res.result.openid)
                 var openid = res.result.openid;
                 that.setData({
                     openid: openid
                 })
-                //console.log(this.data.openid)
+                console.log(this.data.openid)
             }
         })
     },

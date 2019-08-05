@@ -34,7 +34,7 @@ Page({
     },
     /*检验中文 */
     ischina(str) {
-        var reg = /^[\u4E00-\u9FA5]{2,4}$/;   /*定义验证表达式*/
+        var reg = /^[\u4E00-\u9FA5]{2,15}$/;   /*定义验证表达式*/
         return reg.test(str);     /*进行验证*/
     },
     /*校验学号 */

@@ -8,9 +8,6 @@ Page({
         naxinInfo: {},
         openid:""
     },
-    onLoad: function (options) {
-        this.getOpenid();
-    },
     // 获取用户openid
     getOpenid() {
         
@@ -24,7 +21,7 @@ Page({
                 that.setData({
                     openid: openid
                 })
-                //console.log(this.data.openid)
+                console.log(this.data.openid)
             }
         })
     },
@@ -32,7 +29,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getOpenid();
+       
+        
+        //this.getOpenid();
+        console.log(this.data.openid)
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
@@ -40,6 +40,7 @@ Page({
             _openid: this.data.openid // 填入当前用户 openid
         }).get({
             success: (res) => {
+                console.log(res.data)
                 console.log(res.data[0])
                 this.setData({
                     naxinInfo: res.data[res.data.length - 1]
