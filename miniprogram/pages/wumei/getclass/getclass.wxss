@@ -39,8 +39,17 @@
     left: 50rpx;
     line-height: 120rpx;
 }
+.hint{
+    margin-top: 12rpx;
+    height: rpx;
+    background: #f0fcff;
+    width: 100vw;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 28rpx;
+}
 .wumei-btn{
     width: 100%;
     height: 120rpx;
-margin-top: 30rpx
+    margin-top: 18rpx
 }

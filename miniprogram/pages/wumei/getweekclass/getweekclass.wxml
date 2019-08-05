@@ -1,0 +1,11 @@
+
+<scroll-view scroll-y class="scrollPage">
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" >
+        <view class="cu-item arrow"  wx:for="{{weekList}}" wx:key="{{index}}">
+            <view class="content" bindtap='goGetClass' data-weekid="{{item}}" hover-class="none">
+                <text class="text-grey">第{{item}}周课表收集</text>
+            </view>
+        </view>
+    </view>
+    <view class="cu-tabbar-height"></view>
+</scroll-view>

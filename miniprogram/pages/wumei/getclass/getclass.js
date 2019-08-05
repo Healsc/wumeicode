@@ -8,34 +8,15 @@ Page({
             { "code": "第四节", "one": "Mon4", "two": "Tue4", "three": "Wed4", "four": "Thu4", "five": "Fri4" }
         ],
         wumeiInfo: {},
-        classInfo:{}
+        classInfo:{},
+        weekId:""
     },
     onLoad: function (options) {
+        this.setData({
+            weekId:options.weekid
+        })
+        console.log("weekid",this.data.weekId)
         this.getOpenid();
-        const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'/* 当前环境ID */
-        })
-        db.collection('wumeiInfo').where({
-            _openid: this.data.openid,  /* 填入当前用户 openid */
-            _isWM: 1 /* 判断是否为舞美成员 */
-        }).get({
-            success: (res) => {
-                    /* if判断数据库返回数组 找到所查找集合 返回数组为空既数组长度为0 */
-                    if (res.data.length) {
-                        this.setData({
-                            wumeiInfo: res.data[0]
-                        })
-                    }        
-            },
-            fail: (res) => {
-                /* if判断数据库返回数组 找到所查找集合 返回数组为空既数组长度为0 */
-      
-                wx.showModal({
-                    title: '错误提示',
-                    content: '请刷新重试',
-                })
-            }
-        })
     },
     // 获取用户openid
     getOpenid() {
@@ -43,13 +24,10 @@ Page({
         wx.cloud.callFunction({
             name: 'login',
             complete: res => {
-                //console.log(res.result)
-                //console.log('云函数获取到的openid: ', res.result.openid)
                 var openid = res.result.openid;
                 that.setData({
                     openid: openid
                 })
-                //console.log(this.data.openid)
             }
         })
     },
@@ -61,7 +39,18 @@ Page({
         this.setData({
             classInfo: e.detail.value,
         })
-
+        const db = wx.cloud.database({
+            env: 'wumei-test-37e2a6'
+        })
+        db.collection('wumeiInfo').where({
+            _openid: this.data.openid // 填入当前用户 openid
+        }).get({
+            success: (res) => {
+                this.setData({
+                    wumeiInfo:res.data[0]
+                })   
+            }
+        })
         wx.showModal({
             title: '',
             content: '确定提交课表信息',
@@ -77,7 +66,7 @@ Page({
                     const db = wx.cloud.database({
                         env: 'wumei-test-37e2a6'
                     })
-                    db.collection('class-week-1').add({
+                    db.collection('class-week-' +this.data.weekId).add({
                         // data 字段表示需新增的 JSON 数据
                         data: {
                             // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
@@ -145,4 +134,5 @@ Page({
         var s = date.getSeconds();
         return Y + "-" + M + "-" + D + " " + h + ":" + m + ":" + s;
     }
+    
 })

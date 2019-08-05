@@ -1,64 +1,53 @@
 Page({
     data: {
         openid: "",
-        wumeiInfo: {}
     },
     onLoad: function (options) {
         this.getOpenid();
     },
-    goToClass(){
+    goToWeekClass(){
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'/* 当前环境ID */
+            env: 'wumei-test-37e2a6'
         })
-        db.collection('class-week-1').where({
-            _openid: this.data.openid,  /* 填入当前用户 openid */
+        db.collection('wumeiInfo').where({
+            _openid: this.data.openid,// 填入当前用户 openid
+            _isWM:1 //验证是否为舞美成员
         }).get({
             success: (res) => {
-                /* 判断是否提交过 */
-                if (res.data.length) {
+                if(res.data.length){
+                    wx.navigateTo({
+                        url: '/pages/wumei/getweekclass/getweekclass',
+                    })
+                }else{
                     wx.showModal({
-                        title: '提示',
-                        content: '你已提交课表信息',
-                        success(res) {
-                            if (res.confirm) {
-                                //console.log('用户点击确定')
-                            } else if (res.cancel) {
-                                //console.log('用户点击取消')
-                            }
-                        }
+                        title: '抱歉',
+                        content: '您尚未进行舞美认证或认证审核中',
+                    })
+                }
+            }
+        })
+        
+    },
+    goShowClass() {
+        const db = wx.cloud.database({
+            env: 'wumei-test-37e2a6'
+        })
+        db.collection('wumeiInfo').where({
+            _openid: this.data.openid,// 填入当前用户 openid
+            _isWM: 1 //验证是否为舞美成员
+        }).get({
+            success: (res) => {
+                if (res.data.length) {
+                    wx.navigateTo({
+                        url: '/pages/wumei/showclass/showclass',
                     })
                 } else {
-                    const db = wx.cloud.database({
-                        env: 'wumei-test-37e2a6'/* 当前环境ID */
+                    wx.showModal({
+                        title: '抱歉',
+                        content: '您尚未进行舞美认证或认证审核中',
                     })
-                    db.collection('wumeiInfo').where({
-                        _openid: this.data.openid,  /* 填入当前用户 openid */
-                        _isWM: 1 /* 判断是否为舞美成员 */
-                    }).get({
-                        success: (res) => {
-                            /* if判断数据库返回数组 找到所查找集合 返回数组为空既数组长度为0 */
-                            if (res.data.length) {
-                                wx.navigateTo({
-                                    url: '/pages/wumei/getclass/getclass',
-                                })
-                            }else{
-                                wx.showModal({
-                                    title: '抱歉',
-                                    content: '尚未进行舞美认证或认证审核中',
-                                })
-                            }
-                        },
-                        fail: (res) => {
-                            wx.showModal({
-                                title: '提示',
-                                content: '请刷新',
-                            })
-                       
-                        }
-                    })
-                    
                 }
-            },
+            }
         })
     },
     // 获取用户openid
@@ -67,19 +56,11 @@ Page({
         wx.cloud.callFunction({
             name: 'login',
             complete: res => {
-                //console.log(res.result)
-                //console.log('云函数获取到的openid: ', res.result.openid)
                 var openid = res.result.openid;
                 that.setData({
                     openid: openid
                 })
-                //console.log(this.data.openid)
             }
         })
-    },
-    goShowClass(){
-        wx.navigateTo({
-            url: '/pages/wumei/showclass/showclass',
-        })
-    },
+    },  
 })

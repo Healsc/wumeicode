@@ -19,7 +19,7 @@ Page({
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
-        db.collection('class-week-1').get({    
+        db.collection('class-week-'+"1").get({    
             success: res => {
                 console.log(res.data)
                 //这一步很重要，给classInfo赋值，没有这一步的话，前台就不会显示值      

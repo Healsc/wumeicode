@@ -99,6 +99,7 @@
 
     </block>
     </view>
+    <view class='hint shadow-lg'>第{{weekId}}周课表收集</view>
     <view class="padding flex flex-direction bg-white margin-top">
         <button form-type="submit" class="cu-btn bg-green margin-tb-sm lg" >确认提交</button>
     </view>
