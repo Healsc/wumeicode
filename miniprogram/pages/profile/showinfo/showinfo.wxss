@@ -19,8 +19,10 @@
     padding-left:150rpx; 
 }
 .renzheng-img{
+    width: 300rpx;
+    height: 300rpx;
     position: absolute;
-    top: 50rpx;
+    top: 40rpx;
     right: 50rpx;
     opacity: 0.5;
 }

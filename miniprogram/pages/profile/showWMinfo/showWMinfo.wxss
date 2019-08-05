@@ -18,3 +18,11 @@
 .pad-left-cont{
     padding-left:150rpx; 
 }
+.show-img{
+    width: 240rpx;
+    height: 180rpx;
+    position: absolute;
+    top: 60rpx;
+    right: 30rpx;
+    opacity: .6;
+}
