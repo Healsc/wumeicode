@@ -1,0 +1,3 @@
+<!--pages/wumei/zhiban/zhiban.wxml-->
+<text>pages/wumei/zhiban/zhiban.wxml</text>
+<button bindtap='image'>上传图片</button>

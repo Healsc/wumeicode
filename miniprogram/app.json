@@ -14,7 +14,8 @@
         "pages/wumei/getweekclass/getweekclass",
         "pages/wumei/showclass/showclass",
         "pages/wumei/classdetail/classdetail",
-        "pages/wumei/showweekclass/showweekclass"
+        "pages/wumei/showweekclass/showweekclass",
+        "pages/wumei/zhiban/zhiban"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -45,7 +46,7 @@
             }
             
         ],
-        "selectedColor": "#c3c"
+        "selectedColor": "#A0EEE1"
     },
     "sitemapLocation": "sitemap.json"
 }

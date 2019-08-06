@@ -1,20 +1,31 @@
-
+<view class='wumei-bg'>
 <scroll-view scroll-y class="scrollPage">
-
-    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
-        <view class="cu-item arrow">
-            <view  class="content" bindtap='goToWeekClass' hover-class="none">
-                <text class="text-grey">课表收集</text>
-            </view>
-        </view>
-
-      
-        <view class="cu-item arrow">
-            <view class="content" bindtap='goShowClass' hover-class="none">
-                <text class="text-grey">课表信息</text>
-            </view>
+  <view class="cu-card">
+    <view class="cu-item bg-img shadow-blur" 
+        style="background-image:url(https://image.weilanwl.com/color2.0/plugin/sylb2244.jpg)" bindtap='goToWeekClass'>
+      <view class="cardTitle">
+        课表收集
+      </view>
+    </view>
+     <view class="cu-item bg-img shadow-blur" 
+        style="background-image:url(https://image.weilanwl.com/color2.0/plugin/qpct2148.jpg)" bindtap='goShowClass'>
+      <view class="cardTitle">
+        课表信息
+      </view>
+    </view>
+    <view class="cu-item bg-img shadow-blur" 
+        style="background-image:url(https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg)" bindtap='goZhibanWeek'>
+        <view class="cardTitle">
+            值班信息
         </view>
     </view>
-    <view class="cu-tabbar-height"></view>
+    <view class="cu-item bg-img shadow-blur" 
+        style="background-image:url(https://image.weilanwl.com/color2.0/plugin/qpczdh2307.jpg)" bindtap='goQiandao'>
+        <view class="cardTitle">
+            位置签到
+        </view>
+    </view>
+  </view>
 </scroll-view>
 
+</view>
