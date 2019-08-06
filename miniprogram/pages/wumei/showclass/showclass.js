@@ -20,7 +20,6 @@ Page({
         this.setData({
             weekId:options.weekid
         })
-        console.log("0002",this.data.weekId)
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })

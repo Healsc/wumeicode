@@ -1,1 +1,26 @@
+.cont-center{
+    text-align: center
+}
 /* pages/wumei/zhiban/zhiban.wxss */
+.content-nav,.sub-nav{
+    height: 100rpx;
+    background-color:#fff;
+    font-size: 30rpx;
+    line-height:100rpx;
+    text-align: center; 
+    margin-top: 10rpx;
+}
+.show-img{
+    width: 100vw;
+    height: 60vw;
+}
+.sub-nav{
+    padding: 30rpx 30rpx;
+}
+.show-img{
+    width: 100vw;
+    height: 500rpx;
+}
+.conten-top{
+    padding: 10rpx 10rpx;
+}
