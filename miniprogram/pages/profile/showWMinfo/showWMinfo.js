@@ -45,7 +45,13 @@ Page({
                 this.setData({
                     naxinInfo: res.data[res.data.length - 1]
                 })
-            }
+            },
+            fail: (res) => {
+                wx.showModal({
+                    title: '提示',
+                    content: '请刷新',
+                })
+            } 
         })
     },
 

@@ -8,3 +8,6 @@
 .top-nav{
     margin-top: 0;
 }
+.show-content{
+    text-align: center;
+}

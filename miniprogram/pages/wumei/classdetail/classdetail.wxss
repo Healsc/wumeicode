@@ -5,7 +5,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 5rem;
+  min-height: 5rem;
   align-items: center;
 }
 .td {
@@ -44,3 +44,7 @@
     height: 120rpx;
 margin-top: 30rpx
 }
+.show-content{
+    text-align: center;
+}
+

@@ -1,7 +1,14 @@
  <scroll-view scroll-y class="scrollPage">
+    <view class="cu-list menu card-menu margin-top-xl shadow-lg radius" >
+        <view class="cu-item ">
+            <view class="content show-content">
+                <text class="text-grey">第{{weekId}}周课表信息</text>
+            </view>
+        </view>
+    </view>
     <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" >
-        <view class="cu-item arrow"  wx:for="{{classInfo[0].bm}}" wx:key="{{index}}">
-            <view class="content" bindtap='goClassDetail' data-bumenid="{{item}}" hover-class="none">
+        <view class="cu-item arrow"  wx:for="{{department.bumen}}" wx:key="{{index}}">
+            <view class="content" bindtap='goClassDetail' data-weekid="{{weekId}}" data-departmentid="{{item}}" hover-class="none">
                 <text class="text-grey">{{item}}</text>
             </view>
         </view>

@@ -39,7 +39,7 @@ Page({
             success: (res) => {
                 if (res.data.length) {
                     wx.navigateTo({
-                        url: '/pages/wumei/showclass/showclass',
+                        url: '/pages/wumei/showweekclass/showweekclass',
                     })
                 } else {
                     wx.showModal({
@@ -47,7 +47,13 @@ Page({
                         content: '您尚未进行舞美认证或认证审核中',
                     })
                 }
-            }
+            },
+            fail: (res) => {
+                wx.showModal({
+                    title: '提示',
+                    content: '请刷新',
+                })
+            } 
         })
     },
     // 获取用户openid

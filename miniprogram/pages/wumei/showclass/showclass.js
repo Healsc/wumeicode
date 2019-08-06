@@ -5,8 +5,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-        classInfo: [],
-        openid: ""
+        department: [],
+        openid: "",
+        weekId:""
     },
     onLoad: function (options) {
 
@@ -16,26 +17,35 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.setData({
+            weekId:options.weekid
+        })
+        console.log("0002",this.data.weekId)
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
-        db.collection('class-week-'+"1").get({    
+        db.collection('department').get({    
             success: res => {
                 console.log(res.data)
                 //这一步很重要，给classInfo赋值，没有这一步的话，前台就不会显示值      
                 this.setData({
-                    classInfo: res.data
+                    department: res.data[0]
                 })
+                console.log(this.data.department)
                 
-            }
+            },
+            fail: (res) => {
+                wx.showModal({
+                    title: '提示',
+                    content: '请刷新',
+                })
+            } 
         })
-        console.log(this.data.classInfo)
-       
     },
     goClassDetail(event){
         console.log(event)
         wx.navigateTo({
-            url: '/pages/wumei/classdetail/classdetail?bumenid=' + event.target.dataset.bumenid,
+            url: '/pages/wumei/classdetail/classdetail?departmentId=' + event.target.dataset.departmentid + '&weekId=' + event.target.dataset.weekid,
         })
     },
     /**

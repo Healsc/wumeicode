@@ -99,8 +99,12 @@
         </view>
     </block>
     <!-- 第四节课结束 -->
-    
-    
-     
+    <view class="cu-list menu  margin-top-xl shadow-lg radius" >
+        <view class="cu-item">
+            <view class="content show-content ">
+                <text class="text-grey">第{{weekId}}周{{departmentId}}课表信息</text>
+            </view>
+        </view>
+    </view> 
 
 </view>

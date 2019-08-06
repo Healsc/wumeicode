@@ -5,17 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        bumenid:null,
+        departmentId:"",
+        weekId:'',
         classInfo: [], 
         Mon1List: [], Mon2List: [], Mon3List: [], Mon4List: [],
         Tue1List: [], Tue2List: [], Tue3List: [], Tue4List: [],
         Wed1List: [], Wed2List: [], Wed3List: [], Wed4List: [],
         Thu1List: [], Thu2List: [], Thu3List: [], Thu4List: [],
         Fri1List: [], Fri2List: [], Fri3List: [], Fri4List: [],
-
-
-   
-
         ListIndex:1,
         testMon1:[],
         listData: [
@@ -31,25 +28,23 @@ Page({
      */
     onLoad: function (options) {
         this.setData({
-            bumenid:options.bumenid,
+            departmentId: options.departmentId,
+            weekId:options.weekId
         })
-        //console.log(this.data.bumenid)
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'
         })
-        db.collection('class-week-1').where({
-            _department: this.data.bumenid  /* 判断是否为舞美成员 */
+        db.collection('class-week-' + this.data.weekId).where({
+            _department: this.data.departmentId  
         }).get({
             success: (res) => {
                 this.setData({
                     classInfo: res.data
                 })
-                console.log("001",this.data.classInfo)
-                console.log("001", this.data.classInfo.length)
                
                 this.setList();
                 
-                console.log("Mon1List", this.data.Mon1List)
+                /* console.log("Mon1List", this.data.Mon1List)
                 console.log("Mon2List", this.data.Mon2List)
                 console.log("Mon3List", this.data.Mon3List)
                 console.log("Mon4List", this.data.Mon4List)
@@ -72,27 +67,20 @@ Page({
                 console.log("Fri1List", this.data.Fri1List)
                 console.log("Fri2List", this.data.Fri2List)
                 console.log("Fri3List", this.data.Fri3List)
-                console.log("Fri4List", this.data.Fri4List)
+                console.log("Fri4List", this.data.Fri4List) */
             },
             fail: (res) => {
                 wx.showModal({
                     title: '提示',
                     content: '请刷新',
                 })
-            }
-            
-        })
-        console.log("aa",this.data.classInfo)
-        console.log("aa",this.data.classInfo.length);
-        
-
+            }         
+        }) 
     },
-    setList:function(){
-        //console.log("test", this.data.classInfo)
-        //console.log("test", this.data.classInfo.length)
+    setList:function(){     
         var classInfoLen = this.data.classInfo.length;
         for (let i = 0; i < classInfoLen;i++){
-            //console.log("1",this.data.classInfo[i])
+           
             /* 周一开始 */
             if (this.data.classInfo[i]._Mon1 == "无课") {
                 this.setData({

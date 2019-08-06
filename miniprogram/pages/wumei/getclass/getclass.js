@@ -49,7 +49,13 @@ Page({
                 this.setData({
                     wumeiInfo:res.data[0]
                 })   
-            }
+            },
+            fail: (res) => {
+                wx.showModal({
+                    title: '提示',
+                    content: '请刷新',
+                })
+            } 
         })
         wx.showModal({
             title: '',

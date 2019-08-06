@@ -18,7 +18,7 @@ Page({
         const db = wx.cloud.database({
             env: 'wumei-test-37e2a6'/* 当前环境ID */
         })
-        db.collection('get-week-class').get({
+        db.collection('show-week-class').get({
             success: (res) => {
                 this.setData({
                     weekList:res.data[0].weekid
@@ -46,7 +46,14 @@ Page({
             }
         })
     },
-
+    goShowClass(event) {
+        this.setData({
+            weekId: event.target.dataset.weekid
+        })
+        wx.navigateTo({
+            url: '/pages/wumei/showclass/showclass?weekid=' + event.target.dataset.weekid,
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -95,36 +102,5 @@ Page({
     onShareAppMessage: function () {
 
     },
-    goGetClass(event) {
-        this.setData({
-            weekId:event.target.dataset.weekid
-        })
-        const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'/* 当前环境ID */
-        })
-        db.collection('class-week-'+this.data.weekId).where({
-            _openid: this.data.openid,  /* 填入当前用户 openid */
-        }).get({
-            success: (res) => {
-                /* 判断是否提交过 */
-                if (res.data.length) {
-                    wx.showModal({
-                        title: '提示',
-                        content: '你已提交第'+event.target.dataset.weekid+'周课表信息',
-                        success(res) {
-                            if (res.confirm) {
-                                //console.log('用户点击确定')
-                            } else if (res.cancel) {
-                                //console.log('用户点击取消')
-                            }
-                        }
-                    })
-                } else {
-                    wx.navigateTo({
-                        url: '/pages/wumei/getclass/getclass?weekid=' + event.target.dataset.weekid,
-                    })
-                }
-            },
-        })
-    },
+   
 })

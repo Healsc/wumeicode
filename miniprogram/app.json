@@ -13,7 +13,8 @@
         "pages/wumei/getclass/getclass",
         "pages/wumei/getweekclass/getweekclass",
         "pages/wumei/showclass/showclass",
-        "pages/wumei/classdetail/classdetail"
+        "pages/wumei/classdetail/classdetail",
+        "pages/wumei/showweekclass/showweekclass"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
