@@ -49,4 +49,10 @@ Page({
             }
         })
     }, 
+    showQrcode() {
+        wx.previewImage({
+            urls: ['cloud://wumei-test-37e2a6.7775-wumei-test-37e2a6/zanshang.jpg'],
+            current: 'cloud://wumei-test-37e2a6.7775-wumei-test-37e2a6/zanshang.jpg' // 当前显示图片的http链接      
+        })
+    },
 })
