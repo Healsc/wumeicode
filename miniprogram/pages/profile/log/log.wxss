@@ -1,0 +1,9 @@
+page {
+  background: #fff;
+}
+.log-bg{
+    background-color: #A0EEE1;
+}
+.log-color{
+    color: #A0EEE1;
+}

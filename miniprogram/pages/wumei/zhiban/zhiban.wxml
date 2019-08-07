@@ -1,6 +1,4 @@
 
-
-
 <view wx:for="{{showList}}" wx:key="{{index}}" class='conten-top'>
     <view class='content-nav' >
         <text>{{item.content}}</text>
@@ -11,9 +9,9 @@
         </block>
     </view>
 </view>
-
+<view class='fengexian' wx:if="{{isBGS}}"></view>
 <block wx:if="{{isBGS}}">
-    <view >
+    <view class=''>
         <form bindsubmit="submit" bindreset="formReset">
             <!-- <input type="text" name="content"  placeholder='内容'></input> -->
             <view class='sub-nav'>
@@ -21,11 +19,11 @@
             </view>
             <view>
             <block wx:for="{{images}}" wx:key="{{index}}">
-                <image class='img' src="{{item}}"></image>
+                <image class='show-img' src="{{item}}"></image>
             </block>
             </view>
             <button bindtap='uPLoadImage'>上传图片</button>
-            <button form-type="submit">提交</button>
+            <button form-type="submit">发布</button>
         </form>
     </view>
 </block>

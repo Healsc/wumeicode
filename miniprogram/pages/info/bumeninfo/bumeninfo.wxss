@@ -1,0 +1,7 @@
+.img-nav{
+    padding: 10rpx 30rpx;
+}
+.show-img{
+    width: 100vw;
+    height: 75vw;
+}

@@ -30,6 +30,12 @@
             </view>
         </view>
         <view class="cu-item arrow">
+            <navigator class="content" url="/pages/profile/log/log" hover-class="none">
+                <text class="icon-formfill text-green"></text>
+                <text class="text-grey">更新日志</text>
+            </navigator>    
+        </view>
+        <view class="cu-item arrow">
             <view class="content" bindtap='goIdenitity' hover-class="none">
                 <text class="icon-creativefill text-orange"></text>
                 <text class="text-grey">舞美认证</text>

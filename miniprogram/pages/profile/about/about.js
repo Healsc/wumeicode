@@ -1,11 +1,11 @@
-// pages/profile/about/about.js
+// pages/baominginfo/baominginfo.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        aboutWumei: []
     },
 
     /**
@@ -13,6 +13,25 @@ Page({
      */
     onLoad: function (options) {
 
+        const db = wx.cloud.database({
+            env: 'wumei-test-37e2a6'
+        })
+        db.collection('AboutWumei').get({
+            success: (res) => {
+
+                this.setData({
+                    aboutWumei: res.data
+                })
+                console.log(res.data)
+                console.log(this.data.aboutWumei)
+            },
+            fail: (res) => {
+                wx.showModal({
+                    title: '提示',
+                    content: '请刷新',
+                })
+            }
+        })
     },
 
     /**

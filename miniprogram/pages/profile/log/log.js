@@ -1,47 +1,34 @@
-// pages/wumei/getweekclass/getweekclass.js
+// pages/baominginfo/baominginfo.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        weekList:[],
-        openid:""
+       wumeiLog:[]
     },
-
+   
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.getOpenid();
+
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'/* 当前环境ID */
+            env: 'wumei-test-37e2a6'
         })
-        db.collection('show-week-class').get({
+        db.collection('wumeiLog').get({
             success: (res) => {
+
                 this.setData({
-                    weekList:res.data[0].weekid
+                    wumeiLog: res.data
                 })
-                //console.log("a",this.data.weekList)
+                console.log(this.data.wumeiLog)
             },
             fail: (res) => {
                 wx.showModal({
-                    title: '错误提示',
-                    content: '请刷新重试',
+                    title: '提示',
+                    content: '请刷新',
                 })
-            }
-        })
-    },
-    getOpenid() {
-        let that = this;
-        wx.cloud.callFunction({
-            name: 'login',
-            complete: res => {
-                var openid = res.result.openid;
-                that.setData({
-                    openid: openid
-                })
-                console.log(this.data.openid)
             }
         })
     },
@@ -93,6 +80,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-   
+    }
 })

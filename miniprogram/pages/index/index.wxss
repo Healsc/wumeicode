@@ -13,7 +13,8 @@
     left: 26vw;
 }
 .pad-left{
-    padding-left:50!adasdas3221}
+    padding-left:50!
+}
 .indexLeft{
     position: absolute;
     bottom: 10rpx;
@@ -29,3 +30,33 @@
 .indexColor{
     color: #c3c
 }
+.tower-swiper .tower-item {
+    transform: scale(calc(0.5 + var(--index) / 10));
+    margin-left: calc(var(--left) * 100rpx - 150rpx);
+    z-index: var(--index);
+}
+.page {
+  height: 100Vh;
+  width: 100vw;
+}
+
+.page.show {
+  overflow: hidden;
+}
+
+.switch-sex::after {
+  content: "\e716";
+}
+
+.switch-sex::before {
+  content: "\e7a9";
+}
+
+.switch-music::after {
+  content: "\e66a";
+}
+
+.switch-music::before {
+  content: "\e6db";
+}
+

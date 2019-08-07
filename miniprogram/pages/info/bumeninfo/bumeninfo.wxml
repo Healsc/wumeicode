@@ -1,0 +1,11 @@
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>{{bumenInfo._departmentID}}</view>
+  <view class='text-content'>
+    <view>{{bumenInfo._titile}}</view>
+    <view class='margin-top-sm' wx:for="{{bumenInfo._describe}}" wx:key="{{index}}">{{item}}</view>
+  </view>
+</view>
+    <view class='img-nav' wx:for="{{bumenInfo._url}}" wx:key="{{index}}">       
+         <image class='show-img' src="{{item}}"></image>
+    </view>

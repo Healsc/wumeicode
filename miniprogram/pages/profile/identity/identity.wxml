@@ -80,7 +80,7 @@
   </view>
 
 
-  <view class="cu-bar bg-white margin-top pl-img">
+ <!--  <view class="cu-bar bg-white margin-top pl-img">
     <view class="action">
       本人近期照片上传
     </view>
@@ -99,7 +99,7 @@
         <text class="icon-cameraadd"></text>
       </view>
     </view>
-  </view>
+  </view> -->
     <view class="padding flex flex-direction bg-white margin-top">
         <button form-type="submit" class="cu-btn bg-green margin-tb-sm lg" >确认提交</button>
     </view>
