@@ -2,7 +2,7 @@
     "pages": [
         "pages/index/index",
         "pages/profile/profile/profile",
-        "pages/info/naxininfo/naxininfo",
+        "pages/info/noticeinfo/noticeinfo",
         "pages/info/bumeninfo/bumeninfo",
         "pages/profile/about/about",
         "pages/profile/identity/identity",

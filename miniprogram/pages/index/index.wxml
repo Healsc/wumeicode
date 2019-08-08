@@ -8,20 +8,36 @@
 
  
 
-  <view class="cu-list grid col-4 no-border">
+  <view class="cu-list grid col-3 no-border">
     <view class="cu-item" wx:for="{{iconList}}" wx:key="{{index}}">
         <navigator url='/pages/info/bumeninfo/bumeninfo?bumenid={{item.name}}' hover-class="none">
             <view class="icon-{{item.icon}} text-{{item.color}}"></view>
             <text>{{item.name}}</text>
         </navigator>
     </view>
+     <view  class="cu-item" class="cu-item" bindtap='showQrcode' hover-class="none">
+        <view class="icon-evaluate_fill text-cyan"></view>
+        <text>公众号</text>
+    </view>
     <view  class="cu-item" class="cu-item" bindtap='goIdentity' hover-class="none">
-        <view class="icon-text text-cyan"></view>
+        <view class="icon-text text-pink"></view>
         <text>报名入口</text>
     </view>
   </view>
 
- 
+ <view class='notice-top'>
+    <view class='notice-nav'>
+        <view class="icon-notice text-cyan">信息通知</view>
+    </view>
+    <block wx:for="{{noticeInfo}}" wx:key="{{index}}">
+        <navigator url='/pages/info/noticeinfo/noticeinfo?titleid={{item._title}}' hover-class='none'>
+            <view class='notice-nav'>
+                <view class="" style='padding-left:14rpx'>{{item._title}}</view>
+                <view class='info-data'>{{item._date}}</view>
+            </view>
+        </navigator>
+    </block>    
+ </view>
 
 
 <!-- <navigator class="content indexLeft" url="/pages/info/naxininfo/naxininfo" hover-class="none">

@@ -1,18 +1,37 @@
-// pages/info/naxininfo/naxininfo.js
+// pages/info/noticeinfo/noticeinfo.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        noticeInfo:{}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.log(options.titleid)
+        const db = wx.cloud.database({
+            env: 'wumei-test-37e2a6'
+        })
+        db.collection('notice-info').where({
+            _title: options.titleid
+        }).get({
+            success: (res) => {
+                this.setData({
+                    noticeInfo:res.data[0]
+                })
+                
+            },
+            fail: (res) => {
+                wx.showModal({
+                    title: '提示',
+                    content: '请刷新',
+                })
+            }
+        })
     },
 
     /**

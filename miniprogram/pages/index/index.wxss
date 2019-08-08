@@ -12,24 +12,7 @@
     position: absolute;
     left: 26vw;
 }
-.pad-left{
-    padding-left:50!
-}
-.indexLeft{
-    position: absolute;
-    bottom: 10rpx;
-    left: 6vw;
-    font-size: 32rpx;
-}
-.indexRight{
-    position: absolute;
-    bottom: 10rpx;
-    right: 6vw;
-    font-size: 32rpx;
-}
-.indexColor{
-    color: #c3c
-}
+
 .tower-swiper .tower-item {
     transform: scale(calc(0.5 + var(--index) / 10));
     margin-left: calc(var(--left) * 100rpx - 150rpx);
@@ -60,3 +43,35 @@
   content: "\e6db";
 }
 
+
+
+
+.cu-form-group .title {
+  min-width: calc(4em + 60rpx);
+}
+
+.steps-bottom.cu-steps .cu-item .num::before {
+  content: "\e668";
+  font-family: 'iconfont';
+}
+
+.notice-top{
+    margin-top: 10rpx;
+    font-size: 28rpx;
+    color: #888;
+}
+.notice-nav{
+    border-bottom: 1rpx #ccc solid;
+    display: flex;
+    width: 100%;
+    padding-left: 50rpx;
+    min-height:100rpx;
+    align-items: center;
+    background-color: #fff;
+}
+.info-data{
+    padding-top: 20rpx;
+    position: absolute;
+    right: 40rpx;
+    font-size: 24rpx;
+}

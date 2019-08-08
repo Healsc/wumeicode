@@ -6,34 +6,41 @@ Page({
         showList:[],
         iconList: [{
             icon: 'cardboardfill',
-            color: 'red',
+            color: 'orange',
             name: '办公室'
         }, {
             icon: 'discoverfill',
-            color: 'orange',
+            color: 'yellow',
             name: '技术部'
         }, {
             icon: 'news',
-            color: 'yellow',
+            color: 'olive',
             name: '干训部'
             }, {    
             icon: 'picfill',
-            color: 'olive',
+            color: 'green',
             name: '宣传部'
         }, {
+            icon: 'likefill',
+            color: 'red',
+            name: '舞美'
+            }, 
+        {
             icon: 'upstagefill',
-            color: 'cyan',
+            color: 'blue',
             name: '纪检部'
         }, {
             icon: 'choiceness',
-            color: 'blue',
+            color: 'mauve',
             name: '外勤部'
         }],
-        bumenId:""
+        bumenId:"",
+        noticeInfo:[]
     },
     onLoad: function (options) {
         this.getOpenid();
         this.getImagesList();
+        this.upLoadNoticeInfo();
     },
     // 获取用户openid
     getOpenid() {
@@ -45,7 +52,6 @@ Page({
                 that.setData({
                     openid: openid
                 })
-                console.log(this.data.openid)
             }
         })
     },
@@ -95,4 +101,30 @@ Page({
             }
         })
     },
+    showQrcode() {
+        wx.previewImage({
+            urls: ['cloud://wumei-test-37e2a6.7775-wumei-test-37e2a6/gongzhonghao.png'],
+            current: 'cloud://wumei-test-37e2a6.7775-wumei-test-37e2a6/gongzhonghao.png' // 当前显示图片的http链接      
+        })
+    },
+    /* 数据库notice */
+    upLoadNoticeInfo(){
+        const db = wx.cloud.database({
+            env: 'wumei-test-37e2a6'
+        })
+        db.collection('notice-info').orderBy('_order', 'desc')
+            .get({
+                success:(res) =>{
+                    this.setData({
+                        noticeInfo:res.data
+                    })
+                }, 
+                fail: (res) => {
+                    wx.showModal({
+                        title: '提示',
+                        content: '请刷新',
+                    })
+                }
+        })
+    }
 })

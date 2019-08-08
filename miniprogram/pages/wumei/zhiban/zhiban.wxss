@@ -13,14 +13,10 @@
 .show-img{
     margin-top: 1rpx;
     width: 100vw;
-    height: 60vw;
+    height: 75vw;
 }
 .sub-nav{
     padding: 30rpx 30rpx;
-}
-.show-img{
-    width: 100vw;
-    height: 500rpx;
 }
 .conten-top{
     padding: 10rpx 10rpx;

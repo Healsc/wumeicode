@@ -1,0 +1,12 @@
+<view class=''>
+    <view class='margin-xl bg-white padding-xl radius shadow-lg'>
+    <view class='text-center margin-bottom text-lg  text-grey'>{{noticeInfo._title}}</view>
+    <view class='text-content'>
+        <view class='info-data'>{{noticeInfo._date}}</view>
+        <view class='margin-top-sm' wx:for="{{noticeInfo._describe}}" wx:key="{{index}}">{{item}}</view>
+    </view>
+    </view>
+</view>
+<view class='img-nav' wx:for="{{noticeInfo._url}}" wx:key="{{index}}">       
+        <image class='show-img' src="{{item}}"></image>
+</view>
