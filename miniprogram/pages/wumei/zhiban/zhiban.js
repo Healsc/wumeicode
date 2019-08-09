@@ -9,7 +9,7 @@ Page({
         fileIds:[],
         content:"",
         showList:[],
-        isBGS:0
+        isZB:0
     },
   
     uPLoadImage(){
@@ -48,7 +48,7 @@ Page({
                             // 上传图片
                             wx.cloud.uploadFile({
                                 config:{
-                                    env: 'wumei-test-37e2a6',
+                                    env: 'wumei-2070bb',
                                 }, 
                                 cloudPath: new Date().getTime() + '.png', // 上传至云端的路径
                                 filePath: item, // 小程序临时文件路径
@@ -72,12 +72,12 @@ Page({
                     // 插入到云数据库
                     Promise.all(promiseArr).then(res => {
                         const db = wx.cloud.database({
-                            env: 'wumei-test-37e2a6'/* 当前环境ID */
+                            env: 'wumei-2070bb'/* 当前环境ID */
                         })
                         db.collection('zhibanInfo').add({
                             data: {
-                                content: this.data.content,
-                                fileIds: this.data.fileIds
+                                _content: this.data.content,
+                                _fileIds: this.data.fileIds
                             }
                         }).then(res => {
                             wx.showToast({
@@ -109,7 +109,7 @@ Page({
      */
     upLoadData(e){
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
+            env: 'wumei-2070bb'
         })
         db.collection('zhibanInfo').get({
             success: res => {
@@ -127,21 +127,21 @@ Page({
             }
         })
     },
-    isBGS(){
+    isZB(){
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
+            env: 'wumei-2070bb'
         })
         db.collection('wumeiInfo').where({
-            _department:"办公室",
-            _isBGS:"1"
+            
         }).get({
             success: res => {
-                if(res.data.length){
+                console.log(res.data)
+                if (res.data[0]._isZB){
                     this.setData({
-                        isBGS: 1
+                        isZB: 1
                     })
                 }    
-                console.log(this.data.isBGS)
+                console.log(this.data.isZB)
             },
             fail: (res) => {
                 wx.showModal({
@@ -153,7 +153,7 @@ Page({
     },
     onLoad: function (options) {
         this.upLoadData();
-        this.isBGS();
+        this.isZB();
     },
 
     /**

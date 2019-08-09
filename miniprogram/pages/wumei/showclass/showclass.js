@@ -21,7 +21,7 @@ Page({
             weekId:options.weekid
         })
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
+            env: 'wumei-2070bb'
         })
         db.collection('department').get({    
             success: res => {

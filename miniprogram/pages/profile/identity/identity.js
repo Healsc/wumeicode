@@ -5,6 +5,7 @@ Page({
         wumeiInfo: {},
         index: null,
         imgList: [],
+        fileIds:[],
         multiIndex: [0, 0],
         multiArray: [
             ['办公室', '技术部','干训部','宣传部','纪检部','外勤部','会长团'],
@@ -60,10 +61,10 @@ Page({
                 name: '执行会长'
             }]
         ],
-        date: '1999-01-23',
+        date: '2000-06-15',
         region: ['黑龙江', '哈尔滨市', '香坊区'],
         index:null,
-        picker: ['共青团员', '入党积极分子', '预备党员', '共产党员', '群众'],
+        picker: ['共青团员', '入党积极分子', '预备党员', '中共党员', '群众'],
         address:""
     },
 
@@ -144,7 +145,7 @@ Page({
     },
     /*检验中文 */
     ischina(str) {
-        var reg = /^[\u4E00-\u9FA5]{2,15}$/;   /*定义验证表达式*/
+        var reg = /^[\u4E00-\u9FA5]{1,15}$/;   /*定义验证表达式*/
         return reg.test(str);     /*进行验证*/
     },
     /*校验学号 */
@@ -225,12 +226,92 @@ Page({
                     //console.log(this.data.userInfo)
                    
                     if (res.confirm) {
+                        wx.showLoading({
+                            title: '提交中',
+                        })
+                        const promiseArr = [];
+                        for (let i = 0; i < this.data.imgList.length; i++) {
+                            promiseArr.push(new Promise((resolve, reject) => {
+                                let item = this.data.imgList[i];
+                                // 上传图片
+                                wx.cloud.uploadFile({
+                                    config: {
+                                        env: 'wumei-2070bb',
+                                    },
+                                    cloudPath: this.data.multiArray[0][this.data.multiIndex[0]] + this.data.multiArray[1][this.data.multiIndex[1]]+ this.data.wumeiInfo.name + '.png', // 上传至云端的路径
+                                    filePath: item, // 小程序临时文件路径
+                                    success: res => {
+                                        // 返回文件 ID
+                                        this.setData({
+                                            fileIds: this.data.fileIds.concat(res.fileID)
+                                        });
+                                        
+                                        resolve();
+                                    },
+                                    fail: err => {
+                                        
+                                        console.error
+                                        reject();
+                                    }
+                                })
+                            }));
+
+                        }
                         this.setData({
                             //设置时间 数据库增加个time字段为提交时间
                             time: this.getDate()
                         })
-                        const db = wx.cloud.database({
-                            env: 'wumei-test-37e2a6'
+
+                        // 插入到云数据库
+                        Promise.all(promiseArr).then(res => {
+                            const db = wx.cloud.database({
+                                env: 'wumei-2070bb'/* 当前环境ID */
+                            })
+                            db.collection('wumeiInfo').add({
+                                data: {
+                                    _id: this.data.multiArray[0][this.data.multiIndex[0]] + this.data.multiArray[1][this.data.multiIndex[1]]+  this.data.wumeiInfo.name,
+                                    _fileIds: this.data.fileIds,
+                                    _name: this.data.wumeiInfo.name,//协会成员姓名
+                                    _sex: this.data.wumeiInfo.sex,//性别
+                                    _studentNumber: this.data.wumeiInfo.studentNumber,//学号
+                                    _academy: this.data.wumeiInfo.academy,//学院
+                                    _major: this.data.wumeiInfo.major,//专业
+                                    _phone: this.data.wumeiInfo.phone,//联系方式手机
+                                    _dormitory: this.data.wumeiInfo.dormitory,//寝室
+                                    _nation: this.data.wumeiInfo.nation,//民族
+                                    _department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
+                                    _position: this.data.multiArray[1][this.data.multiIndex[1]],//职务
+                                    _politicsFace: this.data.picker[this.data.index],//政治面貌
+                                    _familyAddress: this.data.address,//家庭住址
+                                    _birth: this.data.date,
+                                    _isGL: 0,
+                                    _isWM: 0,
+                                    _time: this.data.time,//提交时间
+                                    _isZB: 0,
+                                    _is1:1,
+                                    _is2:0,
+                                }
+                            }).then(res => {
+                                wx.redirectTo({
+                                    //前面加/ 绝对路径 否则报错
+                                    url: '/pages/profile/showinfo/showinfo'
+                                })
+                                wx.hideLoading();
+                            }).catch(err => {
+
+                            })
+                        }).catch(err => {
+
+                        });
+
+
+
+
+
+
+                        
+                        /* const db = wx.cloud.database({
+                            env: 'wumei-2070bb'
                         })
                         const naxinInfo = db.collection('wumeiInfo')
                         db.collection('wumeiInfo').add({
@@ -253,6 +334,8 @@ Page({
                                 _isGL: 0,
                                 _isWM: 0,
                                 _time: this.data.time,//提交时间
+                                _isZB:0,
+                              
                             },
                             success: function (res) {
                                 wx.showToast({
@@ -270,7 +353,7 @@ Page({
                                 })
                             }
 
-                        })
+                        }) */
                         console.log('用户点击确定')
                     } else if (res.cancel) {
                         console.log('用户点击取消')

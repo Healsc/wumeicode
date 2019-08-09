@@ -28,7 +28,7 @@
 
     <view class="cu-form-group pad-left">
         <view class="title">班级</view>
-        <input type="text" name="major" placeholder="请填写（例：管一1703）" placeholder-class="text-margin"></input>
+        <input type="text" name="major" placeholder="请填写（例：微机1707）" placeholder-class="text-margin"></input>
     </view>
     <view class="cu-form-group pad-left">
         <view class="title">民族</view>
@@ -64,7 +64,7 @@
 
   <view class="cu-form-group pad-left">
     <view class="title">出生日期</view>
-    <picker mode="date" value="{{date}}" start="1996-01-01" end="2004-12-31" bindchange="DateChange">
+    <picker mode="date" value="{{date}}" start="1990-01-01" end="2006-12-31" bindchange="DateChange">
       <view class="picker">
         {{date}}
       </view>
@@ -80,7 +80,7 @@
   </view>
 
 
- <!--  <view class="cu-bar bg-white margin-top pl-img">
+  <view class="cu-bar bg-white margin-top pl-img">
     <view class="action">
       本人近期照片上传
     </view>
@@ -95,11 +95,13 @@
           <text class="icon-close"></text>
         </view>
       </view>
-      <view class="padding-xs solids" bindtap="ChooseImage" wx:if="{{imgList.length<2}}">
+      <view class="padding-xs solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
         <text class="icon-cameraadd"></text>
       </view>
     </view>
-  </view> -->
+  </view>
+
+
     <view class="padding flex flex-direction bg-white margin-top">
         <button form-type="submit" class="cu-btn bg-green margin-tb-sm lg" >确认提交</button>
     </view>

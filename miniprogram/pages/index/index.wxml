@@ -1,7 +1,7 @@
 
-<swiper class="screen-swiper  round-dot " indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">  
+<swiper class="screen-swiper  round-dot " indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">  
   <swiper-item wx:for="{{showList}}" wx:key>  
-        <image class='show-img' src="{{item.url}}"></image>
+        <image class='show-img' src="{{item._url}}"></image>
   </swiper-item>
 </swiper>
    

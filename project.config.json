@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -161,6 +161,27 @@
 					"id": -1,
 					"name": "log",
 					"pathName": "pages/profile/about/about",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "renzheng",
+					"pathName": "pages/profile/showWMinfo/showWMinfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "renzheng",
+					"pathName": "pages/profile/identity/identity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "renzheng",
+					"pathName": "pages/identity/identity",
 					"scene": null
 				}
 			]

@@ -1,16 +1,16 @@
 
 <view wx:for="{{showList}}" wx:key="{{index}}" class='conten-top'>
     <view class='content-nav' >
-        <text>{{item.content}}</text>
+        <text>{{item._content}}</text>
     </view>
     <view>
-        <block wx:for="{{item.fileIds}}" wx:key="{{index}}">
+        <block wx:for="{{item._fileIds}}" wx:key="{{index}}">
             <image class='show-img' src="{{item}}"></image>
         </block>
     </view>
 </view>
 <view class='fengexian' wx:if="{{isBGS}}"></view>
-<block wx:if="{{isBGS}}">
+<block wx:if="{{isZB}}">
     <view class=''>
         <form bindsubmit="submit" bindreset="formReset">
             <!-- <input type="text" name="content"  placeholder='内容'></input> -->

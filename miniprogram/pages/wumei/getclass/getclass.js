@@ -40,7 +40,7 @@ Page({
             classInfo: e.detail.value,
         })
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
+            env: 'wumei-2070bb'
         })
         db.collection('wumeiInfo').where({
             _openid: this.data.openid // 填入当前用户 openid
@@ -70,14 +70,14 @@ Page({
                         time: this.getDate()
                     })
                     const db = wx.cloud.database({
-                        env: 'wumei-test-37e2a6'
+                        env: 'wumei-2070bb'
                     })
                     db.collection('class-week-' +this.data.weekId).add({
                         // data 字段表示需新增的 JSON 数据
                         data: {
-                            // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+                            _id: this.data.wumeiInfo._department + this.data.wumeiInfo._name, 
                             _name: this.data.wumeiInfo._name,//姓名
-                            _department: this.data.wumeiInfo._department,//部门一
+                            _department: this.data.wumeiInfo._department,//部门
                             _position: this.data.wumeiInfo._position,
                             _time: this.data.time,//提交时间
                             _isTJ: 1,

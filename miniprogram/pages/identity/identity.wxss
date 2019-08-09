@@ -18,3 +18,15 @@
 .pad-left-cont{
     padding-left:100rpx; 
 }
+
+
+/* .cu-form-group .title {
+  min-width: calc(4em + 30rpx);
+}
+.pad-right{
+    padding-right:6rpx; 
+}
+
+.pl-img{
+    padding-left: 20rpx;
+} */

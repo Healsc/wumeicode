@@ -21,7 +21,7 @@ Page({
     },
     goIdenitity() {
         const db = wx.cloud.database({
-            env: 'wumei-test-37e2a6'
+            env: 'wumei-2070bb'
         })
         db.collection('wumeiInfo').where({
             _openid: this.data.openid // 填入当前用户 openid
