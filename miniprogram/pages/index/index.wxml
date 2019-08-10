@@ -40,13 +40,3 @@
  </view>
 
 
-<!-- <navigator class="content indexLeft" url="/pages/info/naxininfo/naxininfo" hover-class="none">
-    <text class="text-grey indexColor">纳新通知</text>
-</navigator>
-<navigator class="content" url="/pages/identity/identity" hover-class="none">
-    
-</navigator>
-
-<view class="content indexRight" bindtap='goIdentity' hover-class="none">
-    <text class="text-grey indexColor">报名入口</text>
-</view> -->
