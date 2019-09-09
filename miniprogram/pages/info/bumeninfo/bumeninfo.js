@@ -13,7 +13,7 @@ Page({
      */
     onLoad: function (options) {
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+            //env: 'wumei-2070bb'
         })
         db.collection('department-info').where({
             _departmentID: options.bumenid

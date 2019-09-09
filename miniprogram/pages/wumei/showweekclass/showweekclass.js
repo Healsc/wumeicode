@@ -15,7 +15,7 @@ Page({
     onLoad: function (options) {
         this.getOpenid();
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'/* 当前环境ID */
+            //env: 'wumei-2070bb'/* 当前环境ID */
         })
         db.collection('show-week-class').get({
             success: (res) => {

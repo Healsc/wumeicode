@@ -14,7 +14,7 @@ Page({
     onLoad: function (options) {
 
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+            //env: 'wumei-2070bb'
         })
         db.collection('wumeiLog').get({
             success: (res) => {

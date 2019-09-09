@@ -59,7 +59,7 @@ Page({
     //跳转到报名信息页面 已提交报名信息跳转到已经提交的信息
     goIdentity(){
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+           // env: 'wumei-2070bb'
         })
         db.collection('naxinInfo').where({
             _openid: this.data.openid // 填入当前用户 openid
@@ -83,7 +83,7 @@ Page({
 
     getImagesList(e) {
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+            //env: 'wumei-2070bb'
         })
         db.collection('home-swiper-images').get({
             success: res => {
@@ -110,7 +110,7 @@ Page({
     /* 数据库notice */
     upLoadNoticeInfo(){
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+           // env: 'wumei-2070bb'
         })
         db.collection('notice-info').orderBy('_order', 'desc')
             .get({

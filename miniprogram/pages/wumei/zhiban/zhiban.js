@@ -48,7 +48,7 @@ Page({
                             // 上传图片
                             wx.cloud.uploadFile({
                                 config:{
-                                    env: 'wumei-2070bb',
+                                   // env: 'wumei-2070bb',
                                 }, 
                                 cloudPath: new Date().getTime() + '.png', // 上传至云端的路径
                                 filePath: item, // 小程序临时文件路径
@@ -72,7 +72,7 @@ Page({
                     // 插入到云数据库
                     Promise.all(promiseArr).then(res => {
                         const db = wx.cloud.database({
-                            env: 'wumei-2070bb'/* 当前环境ID */
+                            //env: 'wumei-2070bb'/* 当前环境ID */
                         })
                         db.collection('zhibanInfo').add({
                             data: {
@@ -109,7 +109,7 @@ Page({
      */
     upLoadData(e){
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+            //env: 'wumei-2070bb'
         })
         db.collection('zhibanInfo').get({
             success: res => {
@@ -129,7 +129,7 @@ Page({
     },
     isZB(){
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+            //env: 'wumei-2070bb'
         })
         db.collection('wumeiInfo').where({
             

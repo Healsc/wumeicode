@@ -32,7 +32,7 @@ Page({
             weekId:options.weekId
         })
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+           // env: 'wumei-2070bb'
         })
         db.collection('class-week-' + this.data.weekId).where({
             _department: this.data.departmentId  

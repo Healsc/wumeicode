@@ -14,7 +14,7 @@ Page({
     onLoad: function (options) {
         console.log(options.titleid)
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'
+            //env: 'wumei-2070bb'
         })
         db.collection('notice-info').where({
             _title: options.titleid

@@ -16,7 +16,7 @@ Page({
     onLoad: function (options) {
         this.getOpenid();
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'/* 当前环境ID */
+           // env: 'wumei-2070bb'/* 当前环境ID */
         })
         db.collection('get-week-class').get({
             success: (res) => {
@@ -100,7 +100,7 @@ Page({
             weekId:event.target.dataset.weekid
         })
         const db = wx.cloud.database({
-            env: 'wumei-2070bb'/* 当前环境ID */
+           // env: 'wumei-2070bb'/* 当前环境ID */
         })
         db.collection('class-week-'+this.data.weekId).where({
             _openid: this.data.openid,  /* 填入当前用户 openid */

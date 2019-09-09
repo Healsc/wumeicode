@@ -169,7 +169,7 @@ Page({
 
         //console.log("0",e.detail.value)
         //console.log("1",this.data.wumeiInfo)
-        if (this.data.wumeiInfo.name == "" || this.data.wumeiInfo.sex == "" || this.data.wumeiInfo.studentNumber == "" || this.data.wumeiInfo.academy == "" || this.data.wumeiInfo.major == "" || this.data.wumeiInfo.nation == "" || this.data.wumeiInfo.phone == "" || this.data.wumeiInfo.dormitory == ""){
+        if (this.data.wumeiInfo.name == "" || this.data.wumeiInfo.sex == "" || this.data.wumeiInfo.studentNumber == "" || this.data.wumeiInfo.academy == "" || this.data.wumeiInfo.major == "" || this.data.wumeiInfo.nation == "" || this.data.wumeiInfo.phone == "" || this.data.wumeiInfo.dormitory == "" ){
             wx.showModal({
                 title: '',
                 content: '信息不完整',
@@ -215,7 +215,14 @@ Page({
                 cancelText: '退出',
                 confirmText: '继续',
             })
-        } else {
+        } else if (this.data.imgList.length == 0){
+            wx.showModal({
+                title: '提示',
+                content: '请提交照片！',
+                cancelText: '退出',
+                confirmText: '继续',
+            })
+        }else {
             //console.log("e", this.data.wumeiInfo)
             wx.showModal({
                 title: '',
@@ -236,7 +243,7 @@ Page({
                                 // 上传图片
                                 wx.cloud.uploadFile({
                                     config: {
-                                        env: 'wumei-2070bb',
+                                        //env: 'wumei-2070bb',
                                     },
                                     cloudPath: this.data.multiArray[0][this.data.multiIndex[0]] + this.data.multiArray[1][this.data.multiIndex[1]]+ this.data.wumeiInfo.name + '.png', // 上传至云端的路径
                                     filePath: item, // 小程序临时文件路径
@@ -265,7 +272,7 @@ Page({
                         // 插入到云数据库
                         Promise.all(promiseArr).then(res => {
                             const db = wx.cloud.database({
-                                env: 'wumei-2070bb'/* 当前环境ID */
+                                //env: 'wumei-2070bb'/* 当前环境ID */
                             })
                             db.collection('wumeiInfo').add({
                                 data: {
