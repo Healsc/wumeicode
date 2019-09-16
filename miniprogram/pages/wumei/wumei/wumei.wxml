@@ -22,7 +22,7 @@
     <view class="cu-item bg-img shadow-blur" 
         style="background-image:url(https://image.weilanwl.com/color2.0/plugin/qpczdh2307.jpg)" bindtap='goQiandao'>
         <view class="cardTitle">
-            位置签到
+            活动信息
         </view>
     </view>
   </view>

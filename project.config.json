@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -196,6 +196,13 @@
 					"id": -1,
 					"name": "认证",
 					"pathName": "pages/profile/profile/profile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "舞美",
+					"pathName": "pages/wumei/wumei/wumei",
 					"scene": null
 				}
 			]
