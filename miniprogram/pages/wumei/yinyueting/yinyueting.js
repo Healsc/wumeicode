@@ -104,6 +104,13 @@ Page({
         })
 
     },
+    showQrcode(e) {
+        console.log(e.target.dataset.imgurl)
+        wx.previewImage({
+            urls: [e.target.dataset.imgurl],
+            current: e.target.dataset.imgurl // 当前显示图片的http链接      
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */

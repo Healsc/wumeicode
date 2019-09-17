@@ -22,7 +22,7 @@ Page({
                     weekId:res.data
                     /* weekId: res.data[0]._showList */
                 })
-               // console.log(this.data.weekId)
+                //console.log(this.data.weekId)
             },
             fail: (res) => {
                 wx.showModal({
@@ -32,12 +32,12 @@ Page({
             }
         })
     },
-    goDetail(event) {
+    /* goDetail(event) {
         //console.log(event)
         wx.navigateTo({
             url: '/pages/wumei/huodongshi/hdsdetail/hdsdetail?weekId=' + event.target.dataset.weekid + '&dayId=' + event.target.dataset.dayid,
         })
-    },
+    }, */
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

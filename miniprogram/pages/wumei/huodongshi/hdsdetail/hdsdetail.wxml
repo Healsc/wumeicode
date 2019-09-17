@@ -12,10 +12,12 @@
     </view>
     <view>
         <block wx:for="{{item._fileIds}}" wx:key="{{index}}">
-            <image class='show-img' mode='widthFix' src="{{item}}"></image>
+            <image class='show-img' mode='widthFix' src="{{item}}" bindtap="showQrcode" data-imgUrl="{{item}}"></image>
         </block>
     </view>
+    <!-- <button bindtap='upDate' data-id="{{item._id}}">修改</button> -->
 </view>
+
 <view class='fengexian' wx:if="{{isBGS}}"></view>
 <block wx:if="{{isKX}}">
     <view class=''>

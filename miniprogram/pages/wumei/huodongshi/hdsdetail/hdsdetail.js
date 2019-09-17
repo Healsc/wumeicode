@@ -12,7 +12,8 @@ Page({
         fileIds: [],
         content: "",
         showList: [],
-        isKX: 0
+        isKX: 0,
+        upDataId:''
     },
     uPLoadImage() {
         // 选择图片
@@ -114,7 +115,6 @@ Page({
         //console.log(options)
         this.setData({
             weekId: options.weekId,
-            dayId:options.dayId
         })
        // console.log(this.data.weekId)
         //console.log(this.data.dayId)
@@ -161,7 +161,7 @@ Page({
                         isKX: 1
                     })
                 }
-                //console.log(this.data.isKX)
+                console.log(this.data.isKX)
             },
             fail: (res) => {
                 wx.showModal({
@@ -171,6 +171,28 @@ Page({
             }
         })
     },
+    showQrcode(e) {
+        console.log(e.target.dataset.imgurl)
+        wx.previewImage({
+            urls: [e.target.dataset.imgurl],
+            current: e.target.dataset.imgurl // 当前显示图片的http链接      
+        })
+    },
+   /*  upDate(e){
+        this.setData({
+            upDataId: e.target.dataset.id
+        })
+        console.log(this.data.upDataId)
+        const db = wx.cloud.database({
+            //env: 'wumei-2070bb'
+        })
+        db.collection('info-kexue-' + this.data.weekId).where({
+            _id: this.data.upDataId
+        }).remove({
+            success: console.log,
+            fail: console.error
+        })
+    }, */
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

@@ -15,7 +15,7 @@ Page({
         const db = wx.cloud.database({
             
         })
-        db.collection('show-huodong').get({
+        /* db.collection('show-huodong').get({
             success: (res) => {
                 this.setData({
                     showList: res.data[0]._showList
@@ -28,7 +28,7 @@ Page({
                     content: '请刷新重试',
                 })
             }
-        })
+        }) */
     },
 
     /**
