@@ -1,18 +1,20 @@
-// pages/wumei/zhiban/zhiban.js
+// pages/wumei/huodongshi/hdsdetail/hdsdetail.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        images:[],
-        fileIds:[],
-        content:"",
-        showList:[],
-        isZB:0
+        weekId:'',
+        dayId:'',
+        dayList:[],
+        images: [],
+        fileIds: [],
+        content: "",
+        showList: [],
+        isKX: 0
     },
-  
-    uPLoadImage(){
+    uPLoadImage() {
         // 选择图片
         wx.chooseImage({
             count: 9,
@@ -28,13 +30,13 @@ Page({
             }
         })
     },
-    submit(e){
+    submit(e) {
         wx.showModal({
             title: '',
             content: '确定发布',
             cancelText: '否',
             confirmText: '是',
-            success: res => {        
+            success: res => {
 
                 if (res.confirm) {
                     this.setData({
@@ -47,9 +49,9 @@ Page({
                             let item = this.data.images[i];
                             // 上传图片
                             wx.cloud.uploadFile({
-                                config:{
-                                   // env: 'wumei-2070bb',
-                                }, 
+                                config: {
+                                    // env: 'wumei-2070bb',
+                                },
                                 cloudPath: new Date().getTime() + '.png', // 上传至云端的路径
                                 filePath: item, // 小程序临时文件路径
                                 success: res => {
@@ -74,7 +76,7 @@ Page({
                         const db = wx.cloud.database({
                             //env: 'wumei-2070bb'/* 当前环境ID */
                         })
-                        db.collection('zhibanInfo').add({
+                        db.collection('info-kexue-' + this.data.weekId).add({
                             data: {
                                 _content: this.data.content,
                                 _fileIds: this.data.fileIds
@@ -87,6 +89,7 @@ Page({
                             wx.navigateBack({
                                 delta: 1
                             })
+                          
                         }).catch(err => {
                             wx.showToast({
                                 title: '提交失败',
@@ -96,26 +99,43 @@ Page({
 
                     });
                 } else if (res.cancel) {
-                    
+
                 }
 
             }
 
         })
-        
+
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    upLoadData(e){
+    onLoad: function (options) {
+        //console.log(options)
+        this.setData({
+            weekId: options.weekId,
+            dayId:options.dayId
+        })
+       // console.log(this.data.weekId)
+        //console.log(this.data.dayId)
+        const db = wx.cloud.database({
+
+        })
+       
+        //console.log(this.data.weekId)
+
+        this.upLoadData();
+        this.isKX();
+    },
+    upLoadData(e) {
         const db = wx.cloud.database({
             //env: 'wumei-2070bb'
         })
-        db.collection('zhibanInfo').get({
+        db.collection('info-kexue-' + this.data.weekId).get({
             success: res => {
                 //这一步很重要，给classInfo赋值，没有这一步的话，前台就不会显示值      
                 this.setData({
-                    showList:res.data
+                    showList: res.data
                 })
                 //console.log(this.data.showList)
             },
@@ -127,21 +147,21 @@ Page({
             }
         })
     },
-    isZB(){
+    isKX() {
         const db = wx.cloud.database({
             //env: 'wumei-2070bb'
         })
         db.collection('wumeiInfo').where({
-            
+
         }).get({
             success: res => {
-                //console.log(res.data)
-                if (res.data[0]._isZB){
+               // console.log(res.data)
+                if (res.data[0]._isKX) {
                     this.setData({
-                        isZB: 1
+                        isKX: 1
                     })
-                }    
-                //console.log(this.data.isZB)
+                }
+                //console.log(this.data.isKX)
             },
             fail: (res) => {
                 wx.showModal({
@@ -151,11 +171,6 @@ Page({
             }
         })
     },
-    onLoad: function (options) {
-        this.upLoadData();
-        this.isZB();
-    },
-
     /**
      * 生命周期函数--监听页面初次渲染完成
      */

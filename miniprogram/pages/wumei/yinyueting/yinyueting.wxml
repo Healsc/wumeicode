@@ -10,12 +10,12 @@
     </view>
 </view>
 <view class='fengexian' wx:if="{{isBGS}}"></view>
-<block wx:if="{{isZB}}">
+<block wx:if="{{isYYT}}">
     <view class=''>
         <form bindsubmit="submit" bindreset="formReset">
             <!-- <input type="text" name="content"  placeholder='内容'></input> -->
             <view class='sub-nav'>
-                <input type="text" name="content"  placeholder='请输入内容 例：第xx周值班表'></input>
+                <input type="text" name="content"  placeholder='请输入内容 例：9.23-9.23水利学院迎新 负责：办公室'></input>
             </view>
             <view>
             <block wx:for="{{images}}" wx:key="{{index}}">

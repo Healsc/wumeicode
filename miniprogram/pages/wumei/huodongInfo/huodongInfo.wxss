@@ -1,0 +1,12 @@
+.top{
+    width: 100%;
+    height: 24vh;
+    background-color: #c3c;
+}
+
+.top-nav{
+    margin-top: 0;
+}
+.show-content{
+    text-align: center;
+}

@@ -17,6 +17,10 @@
         "pages/wumei/showclass/showclass",
         "pages/wumei/classdetail/classdetail",
         "pages/wumei/showweekclass/showweekclass",
+        "pages/wumei/huodongInfo/huodongInfo",
+        "pages/wumei/yinyueting/yinyueting",
+        "pages/wumei/huodongshi/hdsweek/hdsweek",
+        "pages/wumei/huodongshi/hdsdetail/hdsdetail",
         "pages/wumei/zhiban/zhiban"
     ],
     "window": {

@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 24,
+			"current": 25,
 			"list": [
 				{
 					"id": -1,
@@ -203,6 +203,13 @@
 					"id": -1,
 					"name": "舞美",
 					"pathName": "pages/wumei/wumei/wumei",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "舞美",
+					"pathName": "pages/wumei/huodongInfo/huodongInfo",
 					"scene": null
 				}
 			]

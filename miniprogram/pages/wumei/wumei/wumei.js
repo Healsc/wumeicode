@@ -94,9 +94,8 @@ Page({
         }).get({
             success: (res) => {
                 if (res.data.length) {
-                    wx.showModal({
-                        title: '抱歉',
-                        content: '暂未完善此功能，敬请期待',
+                    wx.navigateTo({
+                        url: '/pages/wumei/huodongInfo/huodongInfo',
                     })
                 } else {
                     wx.showModal({

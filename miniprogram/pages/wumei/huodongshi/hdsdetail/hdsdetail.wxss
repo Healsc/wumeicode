@@ -1,3 +1,10 @@
+.show-content{
+    text-align: center;
+}
+.mt-10{
+    margin-top: 10rpx;
+}
+
 .cont-center{
     text-align: center
 }
