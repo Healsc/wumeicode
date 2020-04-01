@@ -90,6 +90,7 @@ Page({
         })
         db.collection('wumeiInfo').where({
             _openid: this.data.openid,// 填入当前用户 openid
+            _isGG:1,
             _isWM: 1 //验证是否为舞美成员
         }).get({
             success: (res) => {
@@ -100,7 +101,7 @@ Page({
                 } else {
                     wx.showModal({
                         title: '抱歉',
-                        content: '您尚未进行舞美认证或认证审核中',
+                        content: '暂无内容',
                     })
                 }
             },

@@ -6,13 +6,27 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
 	},
 	"appid": "wxb667384622c4d18d",
 	"projectname": "wumeicode",
-	"libVersion": "2.2.5",
+	"libVersion": "2.10.3",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -27,6 +41,10 @@
 			"list": []
 		},
 		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -218,6 +236,40 @@
 					"name": "舞美",
 					"pathName": "pages/wumei/huodongshi/hdsdetail/hdsdetail",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/profile/profile/profile",
+					"pathName": "pages/profile/profile/profile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/admin/admin",
+					"pathName": "pages/admin/admin/admin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/addNotice/addNotice",
+					"pathName": "pages/admin/addNotice/addNotice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/noticeList/noticeList",
+					"pathName": "pages/admin/noticeList/noticeList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/noticeList/noticeList",
+					"pathName": "pages/admin/noticeList/noticeList",
 					"scene": null
 				}
 			]

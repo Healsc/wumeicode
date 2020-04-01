@@ -29,3 +29,4 @@
        <text class='text-center pad-left-cont'>{{naxinInfo._major}}</text>
     </view>
 </view>
+<button wx:if="{{isAdmin}}" bindtap="goToAdmin">Admin</button>

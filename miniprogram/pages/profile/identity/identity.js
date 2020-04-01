@@ -150,7 +150,7 @@ Page({
     },
     /*校验学号 */
     isSNo(str) {
-        var reg = /^(A([012]\d{1}[1][56789]\d{4}))$/;
+        var reg = /^(A([012]\d{1}[12][0123456789]\d{4}))$/;
         return reg.test(str);     /*进行验证*/
     },
 
@@ -297,6 +297,8 @@ Page({
                                     _isZB: 0,
                                     _is1:1,
                                     _is2:0,
+                                    _isAdmin:false,
+                                    _isSuperAdmin:false
                                 }
                             }).then(res => {
                                 wx.redirectTo({
@@ -311,56 +313,6 @@ Page({
 
                         });
 
-
-
-
-
-
-                        
-                        /* const db = wx.cloud.database({
-                            env: 'wumei-2070bb'
-                        })
-                        const naxinInfo = db.collection('wumeiInfo')
-                        db.collection('wumeiInfo').add({
-                            // data 字段表示需新增的 JSON 数据
-                            data: {
-                                // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-                                _name: this.data.wumeiInfo.name,//协会成员姓名
-                                _sex: this.data.wumeiInfo.sex,//性别
-                                _studentNumber: this.data.wumeiInfo.studentNumber,//学号
-                                _academy: this.data.wumeiInfo.academy,//学院
-                                _major: this.data.wumeiInfo.major,//专业
-                                _phone: this.data.wumeiInfo.phone,//联系方式手机
-                                _dormitory: this.data.wumeiInfo.dormitory,//寝室
-                                _nation: this.data.wumeiInfo.nation,//民族
-                                _department: this.data.multiArray[0][this.data.multiIndex[0]],//所在部门
-                                _position: this.data.multiArray[1][this.data.multiIndex[1]],//职务
-                                _politicsFace: this.data.picker[this.data.index],//政治面貌
-                                _familyAddress: this.data.address,//家庭住址
-                                _birth: this.data.date,
-                                _isGL: 0,
-                                _isWM: 0,
-                                _time: this.data.time,//提交时间
-                                _isZB:0,
-                              
-                            },
-                            success: function (res) {
-                                wx.showToast({
-                                    title: '成功',
-                                    icon: 'success',
-                                    duration: 3000
-                                })
-
-                            },
-                            complete: function (res) {
-                                console.log("complete gotoshowInfo")
-                                wx.redirectTo({
-                                    //前面加/ 绝对路径 否则报错
-                                    url: '/pages/profile/showinfo/showinfo'
-                                })
-                            }
-
-                        }) */
                         console.log('用户点击确定')
                     } else if (res.cancel) {
                         console.log('用户点击取消')

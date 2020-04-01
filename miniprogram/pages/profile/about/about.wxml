@@ -5,7 +5,7 @@
     <view class='margin-xl bg-white padding-xl radius shadow-lg ab-content clearfix'>
         <view class='text-center margin-bottom text-lg  text-grey'>{{aboutWumei[0]._title}}</view>
         <view class='text-content'>
-            <view class='margin-top-sm' wx:for="{{aboutWumei[0]._describe}}" wx:key="{{index}}">{{item}}</view>
+            <view class='margin-top-sm' wx:for="{{aboutWumei[0]._describe}}" wx:key="index">{{item}}</view>
            
         </view>
     </view>

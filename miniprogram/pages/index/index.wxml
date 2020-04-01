@@ -1,6 +1,6 @@
 
 <swiper class="screen-swiper  round-dot " indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">  
-  <swiper-item wx:for="{{showList}}" wx:key>  
+  <swiper-item wx:for="{{showList}}" wx:key="index">  
         <image class='show-img' src="{{item._url}}"></image>
   </swiper-item>
 </swiper>
@@ -9,7 +9,7 @@
  
 
   <view class="cu-list grid col-3 no-border">
-    <view class="cu-item" wx:for="{{iconList}}" wx:key="{{index}}">
+    <view class="cu-item" wx:for="{{iconList}}" wx:key="index">
         <navigator url='/pages/info/bumeninfo/bumeninfo?bumenid={{item.name}}' hover-class="none">
             <view class="icon-{{item.icon}} text-{{item.color}}"></view>
             <text>{{item.name}}</text>
@@ -29,7 +29,7 @@
     <view class='notice-nav'>
         <view class="icon-notice text-cyan">信息通知</view>
     </view>
-    <block wx:for="{{noticeInfo}}" wx:key="{{index}}">
+    <block wx:for="{{noticeInfo}}" wx:key="index">
         <navigator url='/pages/info/noticeinfo/noticeinfo?titleid={{item._title}}' hover-class='none'>
             <view class='notice-nav'>
                 <view class="" style='padding-left:14rpx'>{{item._title}}</view>

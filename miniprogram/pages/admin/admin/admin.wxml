@@ -1,0 +1,24 @@
+<scroll-view scroll-y class="scrollPage">
+	<view class="cu-list menu   margin-bottom-xl shadow-lg radius" style='margin-top:1rpx'>
+		<view class="cu-item arrow" bindtap="goNoticeList">
+			<text class="text-grey">信息通知</text>
+		</view>
+
+		<view class="cu-item arrow" bindtap="goAddNotice">
+			<text class="text-grey">发布通知</text>
+
+		</view>
+
+
+		<view class="cu-item arrow">
+			<text class="text-grey">部门介绍</text>
+		</view>
+		<view class="cu-item arrow">
+			<text class="text-grey">报名信息</text>
+		</view>
+		<view class="cu-item arrow">
+			<text class="text-grey">舞美认证</text>
+		</view>
+	</view>
+	<view class="cu-tabbar-height"></view>
+</scroll-view>

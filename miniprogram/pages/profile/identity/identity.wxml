@@ -90,8 +90,8 @@
   </view>
   <view class="cu-form-group">
     <view class="grid col-4 grid-square flex-sub">
-      <view class="padding-xs bg-img" style="background-image:url({{imgList[index]}})" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
-        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+      <view class="padding-xs bg-img" style="background-image:url({{imgList[index]}})" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <view class="cu-tag bg-red" catchtap="DelImg" data-index="index">
           <text class="icon-close"></text>
         </view>
       </view>

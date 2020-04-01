@@ -21,7 +21,12 @@
         "pages/wumei/yinyueting/yinyueting",
         "pages/wumei/huodongshi/hdsweek/hdsweek",
         "pages/wumei/huodongshi/hdsdetail/hdsdetail",
-        "pages/wumei/zhiban/zhiban"
+        "pages/wumei/zhiban/zhiban",
+
+        "pages/admin/admin/admin",
+        "pages/admin/noticeList/noticeList",
+        "pages/admin/addNotice/addNotice",
+        "pages/admin/noticeDetail/noticeDetail"
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -54,5 +59,11 @@
         ],
         "selectedColor": "#A0EEE1"
     },
-    "sitemapLocation": "sitemap.json"
+    "sitemapLocation": "sitemap.json",
+    "plugins": {
+        "htmltowxml": {
+            "version": "1.4.0",
+            "provider": "wxa51b9c855ae38f3c"
+        }
+    }
 }

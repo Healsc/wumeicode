@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "htmltowxml": "plugin://htmltowxml/view"
+  },
+  "enablePullDownRefresh": true ,
+  "backgroundTextStyle": "dark" 
+}

@@ -6,7 +6,8 @@ Page({
      */
     data: {
         naxinInfo: {},
-        openid:""
+        openid:"",
+        isAdmin:false
     },
     // 获取用户openid
     getOpenid() {
@@ -28,11 +29,15 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
+    goToAdmin(){
+        wx.navigateTo({
+          url: '/pages/admin/admin/admin',
+        })
+    },
     onLoad: function (options) {
-       
         
         //this.getOpenid();
-        console.log(this.data.openid)
+       // console.log(this.data.openid)
         const db = wx.cloud.database({
             //env: 'wumei-2070bb'
         })
@@ -40,11 +45,14 @@ Page({
             _openid: this.data.openid // 填入当前用户 openid
         }).get({
             success: (res) => {
-                console.log(res.data)
-                console.log(res.data[0])
+               // console.log(res.data)
+               // console.log(res.data[0])
                 this.setData({
-                    naxinInfo: res.data[res.data.length - 1]
+                    naxinInfo: res.data[res.data.length - 1],
+                    isAdmin:res.data[res.data.length - 1]._isAdmin
                 })
+               
+               
             },
             fail: (res) => {
                 wx.showModal({
