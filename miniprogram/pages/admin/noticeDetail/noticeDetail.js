@@ -23,8 +23,8 @@ Page({
                     noticeDetail: res.result.data
                 })
             },
-            fail: (err) => {
-                console.log(err)
+            fail: () => {
+              /*   console.log(err) */
                 wx.showToast({
                     title: '失败！请重试',
                     icon: 'fail',
