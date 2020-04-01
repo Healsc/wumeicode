@@ -1,1 +1,9 @@
-/* pages/admin/noticeDetail/noticeDetail.wxss */
+.detail {
+    padding: .4rem 1rem;
+}
+
+.del-btn {
+    margin: 2rem .4rem;
+    background-color: #FF3030;
+
+}

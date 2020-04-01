@@ -1,2 +1,5 @@
-<htmltowxml text="{{noticeDetail._content}}" />
-<button  bindtap="delNotice">删除</button>
+<view class="detail">  
+	<htmltowxml text="{{noticeDetail._content}}" />
+</view>
+
+<button  class="del-btn" bindtap="delNotice">删除</button>

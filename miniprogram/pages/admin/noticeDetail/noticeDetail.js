@@ -10,21 +10,43 @@ Page({
         noticeDetail: {}
     },
     getNoticeDetail() {
-        db.collection('notice').doc(this.data.id).get().then(res => {
-            //console.log(res)
-            this.setData({
-                noticeDetail: res.data
-            })
-
-        }).catch(err => {
-
-            console.error(err)
-            wx.showToast({
-                title: '失败！请重试',
-                icon: 'fail',
-                duration: 2000
-            })
+        let that = this;
+        console.log(that.data.id)
+        wx.cloud.callFunction({
+            name: "getNoticeDetail",
+            data: {
+                id: that.data.id
+            },
+            success: (res) => {
+                console.log(res)
+                that.setData({
+                    noticeDetail: res.result.data
+                })
+            },
+            fail: (err) => {
+                console.log(err)
+                wx.showToast({
+                    title: '失败！请重试',
+                    icon: 'fail',
+                    duration: 2000
+                })
+            }
         })
+        /*  db.collection('notice').doc(this.data.id).get().then(res => {
+             //console.log(res)
+             this.setData({
+                 noticeDetail: res.data
+             })
+
+         }).catch(err => {
+
+             console.error(err)
+             wx.showToast({
+                 title: '失败！请重试',
+                 icon: 'fail',
+                 duration: 2000
+             })
+         }) */
     },
     delNotice() {
         let that = this;
