@@ -1,44 +1,33 @@
-// pages/admin/admin/admin.js
+// pages/admin/applyInfo/applyInfo.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        applyInfo: []
+    },
 
-    },
-    goNoticeList(){
-        wx.navigateTo({
-          url: '/pages/admin/noticeList/noticeList',
-        })
-    },
-    goAddNotice(){
-        wx.navigateTo({
-          url: '/pages/admin/addNotice/addNotice',
-        })
-    },
-    goDepartment(){
-      wx.navigateTo({
-        url: '/pages/admin/departmentList/departmentList',
-      })
-    },
-    goApplyInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/applyInfo/applyInfo',
-      })
-    },
-    goWumeiInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/wumeiInfo/wumeiInfo',
-      })
-    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getApplyInfo();
     },
-
+    getApplyInfo() {
+        wx.cloud.callFunction({
+            name: "getApplyInfo",
+            data: {
+                skip: this.data.applyInfo.length
+            },
+            success: (res) => {
+                this.setData({
+                    applyInfo: this.data.applyInfo.concat(res.result.data)
+                })
+                console.log(res)
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -78,7 +67,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        this.getApplyInfo();
     },
 
     /**

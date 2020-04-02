@@ -1,0 +1,64 @@
+<view class='part' wx:for="{{wumeiInfo}}" wx:key="index">
+	<view wx:for="{{item._fileIds}}" wx:key="index">
+		<image src="{{item}}"></image>
+	</view>
+
+	<view class="cu-form-group margin-top pad-left">
+		<view class="title">姓名</view>
+		<text class='text-center pad-left-cont'>{{item._name}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">部门</view>
+		<text class='text-center pad-left-cont'>{{item._department}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">职务</view>
+		<text class='text-center pad-left-cont'>{{item._position}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">性别</view>
+		<text class='text-center pad-left-cont'>{{item._sex}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">学号</view>
+		<text class='text-center pad-left-cont'>{{item._studentNumber}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">学院</view>
+		<text class='text-center pad-left-cont'>{{item._academy}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">班级</view>
+		<text class='text-center pad-left-cont'>{{item._major}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">手机号</view>
+		<text class='text-center pad-left-cont'>{{item._phone}}</text>
+	</view>
+
+	<view class="cu-form-group pad-left">
+		<view class="title">部门</view>
+		<text class='text-center pad-left-cont'>{{item._department}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">职务</view>
+		<text class='text-center pad-left-cont'>{{item._position}}</text>
+	</view>
+
+	<view class="cu-form-group pad-left">
+		<view class="title">寝室</view>
+		<text class='text-center pad-left-cont'>{{item._dormitory}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">家乡</view>
+		<text class='text-center pad-left-cont'>{{item._familyAddress}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">民族</view>
+		<text class='text-center pad-left-cont'>{{item._nation}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">birth</view>
+		<text class='text-center pad-left-cont'>{{item._birth}}</text>
+	</view>
+</view>

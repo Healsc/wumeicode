@@ -5,5 +5,7 @@ cloud.init()
 const db = cloud.database();
 // 云函数入口函数
 exports.main = async (event, context) => {
-    return  await db.collection('notice').orderBy('_createTime','desc').skip(event.skip).limit(20).get()
+   
+
+    return await db.collection('naxinInfo').orderBy('_createTime','desc').skip(event.skip).limit(10).get()
 }

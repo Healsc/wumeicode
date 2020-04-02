@@ -1,0 +1,9 @@
+<scroll-view scroll-y class="scrollPage">
+	<view class="cu-list menu   margin-bottom-xl shadow-lg radius" style='margin-top:1rpx'>
+		<view class="cu-item arrow" wx:for="{{departmentList}}" wx:key="index" data-id="{{item.id}}" bindtap="goDepartmentDetail">
+			<text class="text-grey">{{item.name}}</text>
+		</view>
+		
+	</view>
+	<view class="cu-tabbar-height"></view>
+</scroll-view>

@@ -4,6 +4,9 @@
         "pages/profile/profile/profile",
         "pages/info/noticeinfo/noticeinfo",
         "pages/info/bumeninfo/bumeninfo",
+        "pages/info/noticeList/noticeList",
+        "pages/info/noticeDetail/noticeDetail",
+
         "pages/profile/about/about",
         "pages/profile/identity/identity",
         "pages/profile/showinfo/showinfo",
@@ -26,7 +29,13 @@
         "pages/admin/admin/admin",
         "pages/admin/noticeList/noticeList",
         "pages/admin/addNotice/addNotice",
-        "pages/admin/noticeDetail/noticeDetail"
+        "pages/admin/noticeDetail/noticeDetail",
+        "pages/admin/departmentList/departmentList",
+        "pages/admin/departmentDetail/departmentDetail",
+        "pages/admin/updateDepartment/updateDepartment",
+        "pages/admin/applyInfo/applyInfo",
+        "pages/admin/wumeiInfo/wumeiInfo"
+
     ],
     "window": {
         "backgroundColor": "#F6F6F6",
@@ -36,8 +45,7 @@
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
-        "list": [
-            {
+        "list": [{
                 "pagePath": "pages/index/index",
                 "text": "首页",
                 "iconPath": "images/icon/home.png",
@@ -55,7 +63,7 @@
                 "iconPath": "images/icon/wode.png",
                 "selectedIconPath": "images/icon/wode-sel.png"
             }
-            
+
         ],
         "selectedColor": "#A0EEE1"
     },
@@ -64,6 +72,11 @@
         "htmltowxml": {
             "version": "1.4.0",
             "provider": "wxa51b9c855ae38f3c"
+        },
+        "wxparserPlugin": {
+            "version": "0.3.0",
+            "provider": "wx9d4d4ffa781ff3ac"
         }
     }
+   
 }

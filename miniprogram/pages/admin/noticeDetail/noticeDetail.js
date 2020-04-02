@@ -7,7 +7,10 @@ Page({
      */
     data: {
         id: "",
-        noticeDetail: {}
+        noticeDetail: {
+
+        },
+        content:""
     },
     getNoticeDetail() {
         let that = this;
@@ -20,7 +23,8 @@ Page({
             success: (res) => {
                 console.log(res)
                 that.setData({
-                    noticeDetail: res.result.data
+                    noticeDetail: res.result.data,
+                    content:res.result.data._content
                 })
             },
             fail: () => {

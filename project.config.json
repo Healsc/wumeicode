@@ -270,6 +270,27 @@
 					"id": -1,
 					"name": "pages/admin/noticeList/noticeList",
 					"pathName": "pages/admin/noticeList/noticeList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/departmentList/departmentList",
+					"pathName": "pages/admin/departmentList/departmentList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/updateDepartment/updateDepartment",
+					"pathName": "pages/admin/updateDepartment/updateDepartment",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/info/noticeList/noticeList",
+					"pathName": "pages/info/noticeList/noticeList",
 					"scene": null
 				}
 			]

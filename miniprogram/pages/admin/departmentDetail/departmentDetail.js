@@ -1,4 +1,4 @@
-// pages/admin/admin/admin.js
+// pages/admin/departmentDetail/departmentDetail.js
 Page({
 
     /**
@@ -7,36 +7,12 @@ Page({
     data: {
 
     },
-    goNoticeList(){
-        wx.navigateTo({
-          url: '/pages/admin/noticeList/noticeList',
-        })
-    },
-    goAddNotice(){
-        wx.navigateTo({
-          url: '/pages/admin/addNotice/addNotice',
-        })
-    },
-    goDepartment(){
-      wx.navigateTo({
-        url: '/pages/admin/departmentList/departmentList',
-      })
-    },
-    goApplyInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/applyInfo/applyInfo',
-      })
-    },
-    goWumeiInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/wumeiInfo/wumeiInfo',
-      })
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.log(options.id)
     },
 
     /**

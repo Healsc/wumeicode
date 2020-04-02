@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "信息通知",
+  "enablePullDownRefresh": true ,
+  "backgroundTextStyle": "dark" 
+}

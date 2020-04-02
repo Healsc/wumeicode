@@ -1,42 +1,32 @@
-// pages/admin/admin/admin.js
+// pages/admin/wumeiInfo/wumeiInfo.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        wumeiInfo: []
+    },
 
-    },
-    goNoticeList(){
-        wx.navigateTo({
-          url: '/pages/admin/noticeList/noticeList',
+    getWumeiInfo() {
+        wx.cloud.callFunction({
+            name: "getWumeiInfo",
+            data: {
+                skip: this.data.wumeiInfo.length
+            },
+            success: (res) => {
+                console.log(res)
+                this.setData({
+                    wumeiInfo: this.data.wumeiInfo.concat(res.result.data)
+                })
+            }
         })
-    },
-    goAddNotice(){
-        wx.navigateTo({
-          url: '/pages/admin/addNotice/addNotice',
-        })
-    },
-    goDepartment(){
-      wx.navigateTo({
-        url: '/pages/admin/departmentList/departmentList',
-      })
-    },
-    goApplyInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/applyInfo/applyInfo',
-      })
-    },
-    goWumeiInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/wumeiInfo/wumeiInfo',
-      })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.getWumeiInfo();
     },
 
     /**
@@ -78,7 +68,7 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        this.getWumeiInfo();
     },
 
     /**

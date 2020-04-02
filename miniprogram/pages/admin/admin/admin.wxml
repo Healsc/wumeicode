@@ -10,13 +10,13 @@
 		</view>
 
 
-		<view class="cu-item arrow">
+		<view class="cu-item arrow" bindtap="goDepartment">
 			<text class="text-grey">部门介绍</text>
 		</view>
-		<view class="cu-item arrow">
+		<view class="cu-item arrow" bindtap="goApplyInfo">
 			<text class="text-grey">报名信息</text>
 		</view>
-		<view class="cu-item arrow">
+		<view class="cu-item arrow" bindtap="goWumeiInfo">
 			<text class="text-grey">舞美认证</text>
 		</view>
 	</view>

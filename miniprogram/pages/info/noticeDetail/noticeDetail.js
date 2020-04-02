@@ -1,42 +1,36 @@
-// pages/admin/admin/admin.js
+// pages/info/noticeDetail/noticeDetail.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        id: "",
+        content: ""
     },
-    goNoticeList(){
-        wx.navigateTo({
-          url: '/pages/admin/noticeList/noticeList',
+    getNoticeDetail() {
+        wx.cloud.callFunction({
+            name: 'getNoticeDetail',
+            data: {
+                id: this.data.id
+            },
+            success: (res) => {
+                console.log(res)
+                this.setData({
+                    content: res.result.data._content
+                })
+            }
         })
-    },
-    goAddNotice(){
-        wx.navigateTo({
-          url: '/pages/admin/addNotice/addNotice',
-        })
-    },
-    goDepartment(){
-      wx.navigateTo({
-        url: '/pages/admin/departmentList/departmentList',
-      })
-    },
-    goApplyInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/applyInfo/applyInfo',
-      })
-    },
-    goWumeiInfo(){
-      wx.navigateTo({
-        url: '/pages/admin/wumeiInfo/wumeiInfo',
-      })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            id: options.id
+        })
+        console.log(options.id)
+        this.getNoticeDetail();
     },
 
     /**
@@ -85,6 +79,11 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+      
+        return {
+            title: '东农舞美',
+            path:  "/pages/info/noticeDetail/noticeDetail?id="+this.data.id
+        }
     }
+   
 })
