@@ -117,7 +117,7 @@ Page({
     },
     getNoticeList() {
         const db = wx.cloud.database();
-        db.collection('notice').orderBy('_createTime', 'desc').limit(8).get().then(res => {
+        db.collection('notice').orderBy('_createTime', 'desc').limit(6).get().then(res => {
             //console.log(res)
             this.setData({
                 noticeList: res.data
