@@ -1,0 +1,38 @@
+<view class="admin">
+	<view class="admin-number">现有管理员</view>
+	<view class='part' wx:for="{{adminNumber}}" wx:key="index">
+		<view class="cu-form-group margin-top pad-left">
+			<view class="title">姓名</view>
+			<text class='text-center pad-left-cont'>{{item._name}}</text>
+		</view>
+		<view class="cu-form-group pad-left">
+			<view class="title">部门</view>
+			<text class='text-center pad-left-cont'>{{item._department}}</text>
+		</view>
+		<view class="cu-form-group pad-left">
+			<view class="title">职务</view>
+			<text class='text-center pad-left-cont'>{{item._position}}</text>
+		</view>
+         <button data-id="{{item._id}}" bindtap="delAdmin" class="del-btn">取消为管理员</button>
+	</view>
+</view>
+
+<view class="wumei">
+	<view class="wumei-number">舞美成员</view>
+	<view class='part' wx:for="{{WMNumber}}" wx:key="index">
+		<view class="cu-form-group margin-top pad-left">
+			<view class="title">姓名</view>
+			<text class='text-center pad-left-cont'>{{item._name}}</text>
+		</view>
+		<view class="cu-form-group pad-left">
+			<view class="title">部门</view>
+			<text class='text-center pad-left-cont'>{{item._department}}</text>
+		</view>
+		<view class="cu-form-group pad-left">
+			<view class="title">职务</view>
+			<text class='text-center pad-left-cont'>{{item._position}}</text>
+		</view>
+        <button data-id="{{item._id}}" bindtap="addAdmin" class="wumei-btn">添加为管理员</button>
+	</view>
+   
+</view>

@@ -1,25 +1,56 @@
-// pages/admin/wumeiInfo/wumeiInfo.js
+// pages/admin/isWMNumber/isWMNumber.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        wumeiInfo: []
+        wumeiInfo: [],
+        count: ''
     },
-
     getWumeiInfo() {
         wx.cloud.callFunction({
             name: "getWumeiInfo",
             data: {
                 skip: this.data.wumeiInfo.length,
-                isWM:1
+                isWM: 0
             },
             success: (res) => {
-                console.log(res)
+                //console.log(res)
                 this.setData({
                     wumeiInfo: this.data.wumeiInfo.concat(res.result.data)
                 })
+            }
+        })
+    },
+    getNoticeCount() {
+        let db = wx.cloud.database();
+        db.collection('wumeiInfo').where({
+            _isWM: 0
+        }).count().then(res => {
+            this.setData({
+                count: res.total
+            })
+        })
+
+    },
+    isWM(e) {
+       // console.log(e.target.dataset.id)
+        wx.cloud.callFunction({
+            name:"updateIsWM",
+            data:{
+                id:e.target.dataset.id
+            },
+            success:(res)=>{
+                this.setData({
+                    wumeiInfo: [],
+                    count: ""
+                })
+                this.getWumeiInfo();
+                this.getNoticeCount();
+            },
+            fail:(err)=>{
+                console.error(err)
             }
         })
     },
@@ -28,6 +59,7 @@ Page({
      */
     onLoad: function (options) {
         this.getWumeiInfo();
+        this.getNoticeCount();
     },
 
     /**
@@ -63,13 +95,22 @@ Page({
      */
     onPullDownRefresh: function () {
 
+        this.setData({
+            wumeiInfo: [],
+            count: ""
+        })
+        this.getWumeiInfo();
+        this.getNoticeCount();
+
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        this.getWumeiInfo();
+        if (this.data.count != this.data.wumeiInfo.length) {
+            this.getWumeiInfo();
+        }
     },
 
     /**

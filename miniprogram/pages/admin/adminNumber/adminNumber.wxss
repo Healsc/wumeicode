@@ -1,0 +1,32 @@
+.admin{
+    margin-top: .4rem;
+}
+.admin .admin-number{
+    width: 100vw;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: skyblue;
+}
+.wumei{
+    margin-top: 2rem;
+}
+.admin .del-btn{
+    margin: .2rem .6rem;
+    background-color: #ff0000;
+}
+.wumei .wumei-number{
+    width: 100vw;
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: skyblue;
+}
+.wumei-btn{
+    margin: .2rem .6rem;
+    background-color: springgreen;
+}

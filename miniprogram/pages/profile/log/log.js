@@ -16,7 +16,7 @@ Page({
         const db = wx.cloud.database({
             //env: 'wumei-2070bb'
         })
-        db.collection('wumeiLog').get({
+        db.collection('wumeiLog').orderBy('_order','desc').get({
             success: (res) => {
 
                 this.setData({

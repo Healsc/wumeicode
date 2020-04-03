@@ -1,3 +1,5 @@
 .detail{
-    padding: .4rem .6rem;
+    padding: 1rem .6rem;
+    background-color: #fff;
+    margin: .6rem .8rem;
 }

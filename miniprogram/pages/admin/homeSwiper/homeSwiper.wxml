@@ -1,0 +1,25 @@
+  <view class="tishi">
+  	照片不易过大，500KB以内，比例4:3最合适
+  </view>
+  <view class="cu-bar bg-white margin-top pl-img">
+  	<view class="action">
+  		首页轮播图
+  	</view>
+  	<view class="action">
+  		{{imgList.length}}/8
+  	</view>
+  </view>
+  <view class="cu-form-group">
+  	<view class="grid col-4 grid-square flex-sub">
+  		<view class="padding-xs bg-img" style="background-image:url({{imgList[index]}})" wx:for="{{imgList}}" wx:key="index" bindtap="ViewImage" data-url="{{imgList[index]}}">
+  			<view class="cu-tag bg-red" catchtap="DelImg" data-index="index">
+  				<text class="icon-close"></text>
+  			</view>
+  		</view>
+  		<view class="padding-xs solids" bindtap="ChooseImage" wx:if="{{imgList.length<8}}">
+  			<text class="icon-cameraadd"></text>
+  		</view>
+  	</view>
+  </view>
+
+  <button class="submit-btn" bindtap="submit">submit</button>

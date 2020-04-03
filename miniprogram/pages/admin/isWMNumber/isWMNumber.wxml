@@ -37,6 +37,15 @@
 	</view>
 
 	<view class="cu-form-group pad-left">
+		<view class="title">部门</view>
+		<text class='text-center pad-left-cont'>{{item._department}}</text>
+	</view>
+	<view class="cu-form-group pad-left">
+		<view class="title">职务</view>
+		<text class='text-center pad-left-cont'>{{item._position}}</text>
+	</view>
+
+	<view class="cu-form-group pad-left">
 		<view class="title">寝室</view>
 		<text class='text-center pad-left-cont'>{{item._dormitory}}</text>
 	</view>
@@ -52,5 +61,5 @@
 		<view class="title">birth</view>
 		<text class='text-center pad-left-cont'>{{item._birth}}</text>
 	</view>
-	
+	<button bindtap="isWM" data-id="{{item._id}}">通过</button>
 </view>

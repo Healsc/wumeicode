@@ -186,42 +186,7 @@ Page({
                         })
 
               
-                        /* const db = wx.cloud.database({
-                            env: 'wumei-2070bb'
-                        })
-                        const naxinInfo = db.collection('naxinInfo')
-                        db.collection('naxinInfo').add({
-                            // data 字段表示需新增的 JSON 数据
-                            data: {
-                                _id: this.data.userInfo.major + this.data.userInfo.name + "意愿" + this.data.picker[this.data.index], 
-                                _name: this.data.userInfo.name,//姓名
-                                _sex: this.data.userInfo.sex,//性别
-                                _studentNumber: this.data.userInfo.studentNumber,//学号
-                                _academy: this.data.userInfo.academy,//学院
-                                _major: this.data.userInfo.major,//专业
-                                _adjust: this.data.userInfo.adjust,//调剂
-                                _phone: this.data.userInfo.phone,//联系方式
-                                _department1: this.data.picker[this.data.index],//部门一
-                                _department2: this.data.picker2[this.data.index2],//部门二
-                                _time: this.data.time,//提交时间
-                            },
-                            success: function (res) {
-                                // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-                                wx.showToast({
-                                    title: '成功',
-                                    icon: 'success',
-                                    duration: 3000
-                                })
-
-                            },
-                            complete: function (res) {
-                                wx.redirectTo({
-                                    //前面加/ 绝对路径 否则报错
-                                    url: '/pages/baominginfo/baominginfo'
-                                })
-                                console.log("complete 跳转到显示所填写信息")
-                            }
-                        }) */
+                     
                     } else if (res.cancel) {
                         console.log('用户点击取消')
                       }

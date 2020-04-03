@@ -17,7 +17,16 @@
 			<text class="text-grey">报名信息</text>
 		</view>
 		<view class="cu-item arrow" bindtap="goWumeiInfo">
-			<text class="text-grey">舞美认证</text>
+			<text class="text-grey">舞美认证成功</text>
+		</view>
+		<view class="cu-item arrow" bindtap="goIsWM">
+			<text class="text-grey">舞美认证中</text>
+		</view>
+		<view class="cu-item arrow" bindtap="goHomeSwiper">
+			<text class="text-grey">首页轮播图</text>
+		</view>
+		<view wx:if="{{isAdmin}}" class="cu-item arrow" bindtap="goAdmin">
+			<text class="text-grey">管理员管理</text>
 		</view>
 	</view>
 	<view class="cu-tabbar-height"></view>

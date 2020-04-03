@@ -1,6 +1,6 @@
 <swiper class="screen-swiper  round-dot " indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">
 	<swiper-item wx:for="{{showList}}" wx:key="index">
-		<image class='show-img' src="{{item._url}}"></image>
+		<image class='show-img' src="{{item}}"></image>
 	</swiper-item>
 </swiper>
 
@@ -9,7 +9,7 @@
 
 <view class="cu-list grid col-3 no-border">
 	<view class="cu-item" wx:for="{{iconList}}" wx:key="index">
-		<navigator url='/pages/info/bumeninfo/bumeninfo?bumenid={{item.name}}' hover-class="none">
+		<navigator url='/pages/info/bumeninfo/bumeninfo?bumenid={{item.name}}&id={{item.id}}' hover-class="none">
 			<view class="icon-{{item.icon}} text-{{item.color}}"></view>
 			<text>{{item.name}}</text>
 		</navigator>

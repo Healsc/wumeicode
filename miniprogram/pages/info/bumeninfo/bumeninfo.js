@@ -5,32 +5,29 @@ Page({
      * 页面的初始数据
      */
     data: {
-        bumenInfo:{}
+        bumenInfo: {},
+        id: "",
+        content: "",
+        name: ""
     },
-
+    getNoticeDetail() {
+        const db = wx.cloud.database();
+        db.collection('departmentInfo').doc(this.data.id).get().then(res => {
+            //console.log(res.data._content)
+            this.setData({
+                content: res.data._content,
+                name: res.data._name
+            })
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const db = wx.cloud.database({
-            //env: 'wumei-2070bb'
+        this.setData({
+            id: options.id
         })
-        db.collection('department-info').where({
-            _departmentID: options.bumenid
-        }).get({
-            success: (res) => {
-                this.setData({
-                    bumenInfo: res.data[0]
-                })
-                console.log(this.data.bumenInfo)
-            },
-            fail: (res) => {
-                wx.showModal({
-                    title: '提示',
-                    content: '请刷新',
-                })
-            }
-        })
+        this.getNoticeDetail();
     },
 
     /**
@@ -80,5 +77,9 @@ Page({
      */
     onShareAppMessage: function () {
 
+        return {
+            title: '东农舞美_' + this.data.name,
+            path: "/pages/info/bumeninfo/bumeninfo?id=" + this.data.id
+        }
     }
 })

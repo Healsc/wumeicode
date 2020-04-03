@@ -1,12 +1,12 @@
 
 <view class="cu-timeline">
-    <view class="cu-item text-red log-color" wx:for="{{wumeiLog}}" wx:key="{{index}}">
+    <view class="cu-item text-red log-color" wx:for="{{wumeiLog}}" wx:key="index">
         <view class="bg-green content shadow-blur log-bg">
         <view class="cu-capsule radius">
             <view class="cu-tag bg-white text-green">{{item._date}}</view>
             <view class="cu-tag line-white">{{item._virsion}}</view>
         </view>
-        <view class="margin-top-sm text-content" wx:for="{{item._describe}}" wx:key="{{index}}">
+        <view class="margin-top-sm text-content" wx:for="{{item._describe}}" wx:key="index">
             <view>{{item}}</view>          
         </view>
         </view>

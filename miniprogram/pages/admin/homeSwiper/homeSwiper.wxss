@@ -1,0 +1,9 @@
+.submit-btn{
+    margin-top: 1rem;
+    background-color: seagreen;
+}
+.tishi{
+    text-align: centern;
+    padding: 1rem;
+    background-color: #fff;
+}

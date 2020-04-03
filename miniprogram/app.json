@@ -34,7 +34,10 @@
         "pages/admin/departmentDetail/departmentDetail",
         "pages/admin/updateDepartment/updateDepartment",
         "pages/admin/applyInfo/applyInfo",
-        "pages/admin/wumeiInfo/wumeiInfo"
+        "pages/admin/wumeiInfo/wumeiInfo",
+        "pages/admin/homeSwiper/homeSwiper",
+        "pages/admin/isWMNumber/isWMNumber",
+        "pages/admin/adminNumber/adminNumber"
 
     ],
     "window": {

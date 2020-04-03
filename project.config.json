@@ -291,6 +291,34 @@
 					"id": -1,
 					"name": "pages/info/noticeList/noticeList",
 					"pathName": "pages/info/noticeList/noticeList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/homeSwiper/homeSwiper",
+					"pathName": "pages/admin/homeSwiper/homeSwiper",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/wumeiInfo/wumeiInfo",
+					"pathName": "pages/admin/wumeiInfo/wumeiInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/admin/admin",
+					"pathName": "pages/admin/admin/admin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/adminNumber/adminNumber",
+					"pathName": "pages/admin/adminNumber/adminNumber",
 					"scene": null
 				}
 			]

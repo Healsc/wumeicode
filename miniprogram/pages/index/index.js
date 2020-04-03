@@ -7,32 +7,39 @@ Page({
         iconList: [{
                 icon: 'cardboardfill',
                 color: 'orange',
-                name: '办公室'
+                name: '办公室',
+                id:"bangongshi"
             }, {
                 icon: 'discoverfill',
                 color: 'yellow',
-                name: '技术部'
+                name: '技术部',
+                id:"jishubu"
             }, {
                 icon: 'news',
                 color: 'olive',
-                name: '干训部'
+                name: '干训部',
+                id:"ganxunbu"
             }, {
                 icon: 'picfill',
                 color: 'green',
-                name: '宣传部'
+                name: '宣传部',
+                id:"xuanchuanbu"
             }, {
                 icon: 'likefill',
                 color: 'red',
-                name: '舞美'
+                name: '舞美',
+                id:"wumei"
             },
             {
                 icon: 'upstagefill',
                 color: 'blue',
-                name: '纪检部'
+                name: '纪检部',
+                id:"jijianbu"
             }, {
                 icon: 'choiceness',
                 color: 'mauve',
-                name: '外勤部'
+                name: '外勤部',
+                id:"waiqinbu"
             }
         ],
         bumenId: "",
@@ -93,11 +100,12 @@ Page({
         const db = wx.cloud.database({
             //env: 'wumei-2070bb'
         })
-        db.collection('home-swiper-images').get({
+        db.collection('home-swiper-images').doc('4ac6beb8-eba6-4ddf-8899-5661a0b13557').get({
             success: res => {
+                //console.log(res)
                 //这一步很重要，给classInfo赋值，没有这一步的话，前台就不会显示值      
                 this.setData({
-                    showList: res.data
+                    showList: res.data._url
                 })
                 //console.log(this.data.showList)
             },
@@ -137,26 +145,6 @@ Page({
             url: '/pages/info/noticeDetail/noticeDetail?id=' + e.target.dataset.id,
         })
     },
-    /* 数据库notice */
-    /* upLoadNoticeInfo(){
-        const db = wx.cloud.database({
-           // env: 'wumei-2070bb'
-        })
-        db.collection('notice-info').orderBy('_order', 'desc')
-            .get({
-                success:(res) =>{
-                    this.setData({
-                        noticeInfo:res.data
-                    })
-                }, 
-                fail: (res) => {
-                    wx.showModal({
-                        title: '提示',
-                        content: '请刷新',
-                    })
-                }
-        })
-    }, */
     onPullDownRefresh: function () {
         this.onLoad();
     },
