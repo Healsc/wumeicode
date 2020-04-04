@@ -8,10 +8,44 @@
 			<text class="text-grey">发布通知</text>
 
 		</view>
+		<view class="cu-item arrow" bindtap="goDahuoList">
+			<text class="text-grey">大活活动</text>
+		</view>
 
+		<view class="cu-item arrow" bindtap="addDahuo">
+			<text class="text-grey">添加大活活动</text>
+
+		</view>
+
+		<view class="cu-item arrow" bindtap="goJuchang">
+			<text class="text-grey">音乐厅活动</text>
+		</view>
+
+		<view class="cu-item arrow" bindtap="goAddJuchang">
+			<text class="text-grey">添加音乐厅活动</text>
+
+		</view>
+
+		<view class="cu-item arrow" bindtap="goYinyueting">
+			<text class="text-grey">音乐厅活动室</text>
+		</view>
+
+		<view class="cu-item arrow" bindtap="addHuodongshi">
+			<text class="text-grey">添加音乐厅活动室</text>
+
+		</view>
+
+		<view class="cu-item arrow" bindtap="goZhiban">
+			<text class="text-grey">值班信息管理</text>
+		</view>
+
+		<view class="cu-item arrow" bindtap="addZhiban">
+			<text class="text-grey">添加值班</text>
+
+		</view>
 
 		<view class="cu-item arrow" bindtap="goDepartment">
-			<text class="text-grey">部门介绍</text>
+			<text class="text-grey">部门介绍管理</text>
 		</view>
 		<view class="cu-item arrow" bindtap="goApplyInfo">
 			<text class="text-grey">报名信息</text>
@@ -23,9 +57,9 @@
 			<text class="text-grey">舞美认证中</text>
 		</view>
 		<view class="cu-item arrow" bindtap="goHomeSwiper">
-			<text class="text-grey">首页轮播图</text>
+			<text class="text-grey">首页轮播图管理</text>
 		</view>
-		<view wx:if="{{isAdmin}}" class="cu-item arrow" bindtap="goAdmin">
+		<view wx:if="{{isSuperAdmin}}" class="cu-item arrow" bindtap="goAdmin">
 			<text class="text-grey">管理员管理</text>
 		</view>
 	</view>

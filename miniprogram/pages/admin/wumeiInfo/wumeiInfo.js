@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        wumeiInfo: []
+        wumeiInfo: [],
+        count: []
     },
 
     getWumeiInfo() {
@@ -13,7 +14,7 @@ Page({
             name: "getWumeiInfo",
             data: {
                 skip: this.data.wumeiInfo.length,
-                isWM:1
+                isWM: 1
             },
             success: (res) => {
                 console.log(res)
@@ -23,10 +24,43 @@ Page({
             }
         })
     },
+    delNumber(e) {
+        wx.cloud.callFunction({
+            name: "updateIsWM",
+            data: {
+                id: e.target.dataset.id,
+                isWM: 0
+            },
+            success: (res) => {
+                let that = this;
+                that.setData({
+                    wumeiInfo: [],
+                    count: ""
+                })
+                that.getWumeiInfo();
+                that.getCount();
+            },
+            fail: (err) => {
+                console.error(err)
+            }
+        })
+    },
+    getCount() {
+        let db = wx.cloud.database();
+        db.collection('wumeiInfo').where({
+            _isWM: 0
+        }).count().then(res => {
+            this.setData({
+                count: res.total
+            })
+        })
+
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        this.getCount();
         this.getWumeiInfo();
     },
 
@@ -62,14 +96,23 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        let that = this;
+        that.setData({
+            wumeiInfo: [],
+            count: ""
+        })
+        that.getWumeiInfo();
+        that.getCount();
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        this.getWumeiInfo();
+        if (this.data.count != this.data.wumeiInfo.length) {
+            this.getWumeiInfo();
+        }
+
     },
 
     /**

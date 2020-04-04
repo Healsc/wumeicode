@@ -9,7 +9,7 @@ exports.main = async (event, context) => {
 
     return await db.collection('wumeiInfo').doc(event.id).update({
         data:{
-            _isWM: 1
+            _isWM: event.isWM
         }
     })
 }

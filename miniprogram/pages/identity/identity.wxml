@@ -60,7 +60,7 @@
 
   <view class="cu-bar bg-white margin-top pl-img">
     <view class="action">
-      本人近期照片上传（选填）
+      本人照片上传
     </view>
     <view class="action">
       {{imgList.length}}/3

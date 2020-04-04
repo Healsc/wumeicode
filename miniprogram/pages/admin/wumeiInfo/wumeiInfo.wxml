@@ -52,5 +52,5 @@
 		<view class="title">birth</view>
 		<text class='text-center pad-left-cont'>{{item._birth}}</text>
 	</view>
-	
+	<button data-id="{{item._id}}" bindtap="delNumber" class="del-btn">删除</button>
 </view>

@@ -1,0 +1,21 @@
+.detail{
+    padding: 1rem;
+    background-color: #fff;
+    margin: .4rem;
+}
+.content{
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+.content .content-week{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    font-weight: 500;
+}
+.content .del-btn{
+    background-color: red;
+    margin: 1rem 0;
+   
+}

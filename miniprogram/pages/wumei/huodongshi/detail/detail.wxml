@@ -1,0 +1,4 @@
+<view class="detail">
+	<view class="detail-week">{{detail._week}}</view>
+	<wxparser rich-text="{{detail._content}}" />
+</view>

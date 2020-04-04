@@ -1,0 +1,9 @@
+<view class="detail">
+	<block wx:for="{{list}}" wx:key="index">
+		<view class="content">
+			<view class="content-week">{{item._week}}</view>
+			<wxparser rich-text="{{item._content}}" />
+            <button data-id="{{item._id}}" bindtap="delZhiban" class="del-btn">删除</button>
+		</view>
+	</block>
+</view>

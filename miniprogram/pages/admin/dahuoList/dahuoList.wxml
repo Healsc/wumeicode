@@ -1,0 +1,9 @@
+<view class="container">
+	<block wx:for="{{dahuoList}}" wx:key="index">
+		<view class="content">
+			<view class="content-week">第{{item._week}}周</view>
+			<wxparser rich-text="{{item._content}}" />
+			<button data-id="{{item._id}}" bindtap="delDahuo" class="del-btn">删除</button>
+		</view>
+	</block>
+</view>

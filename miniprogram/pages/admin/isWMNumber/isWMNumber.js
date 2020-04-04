@@ -39,7 +39,8 @@ Page({
         wx.cloud.callFunction({
             name:"updateIsWM",
             data:{
-                id:e.target.dataset.id
+                id:e.target.dataset.id,
+                isWM:1
             },
             success:(res)=>{
                 this.setData({

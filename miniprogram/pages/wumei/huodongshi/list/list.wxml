@@ -1,0 +1,19 @@
+<view class="detail">
+
+	<scroll-view scroll-y class="scrollPage">
+		<block wx:for="{{huodongshiList}}" wx:key="index">
+			<navigator url='/pages/wumei/huodongshi/detail/detail?id={{item._id}}' hover-class='none'>
+				<view class="cu-list menu   margin-bottom-xl shadow-lg radius" style='margin-top:1rpx'>
+					<view class="cu-item arrow">
+						<text class="text-grey">{{item._week}}</text>
+					</view>
+				</view>
+
+			</navigator>
+
+
+		</block>
+
+	</scroll-view>
+
+</view>

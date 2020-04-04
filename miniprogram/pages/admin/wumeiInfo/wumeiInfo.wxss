@@ -1,4 +1,9 @@
 
 .part{
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+.del-btn{
+    background-color: #ff0000;
+    font-size: 14px;
+    margin: .4rem 1rem;
 }

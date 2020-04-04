@@ -6,7 +6,7 @@ Page({
    */
   data: {
     openid: "",
-    isAdmin: false
+    isSuperAdmin: false
   },
   goNoticeList() {
     wx.navigateTo({
@@ -63,9 +63,9 @@ Page({
       _openid: this.data.openid // 填入当前用户 openid
     }).get({
       success: (res) => {
-       // console.log(res.data)
+        // console.log(res.data)
         this.setData({
-          isAdmin: res.data[0]._isSuperAdmin
+          isSuperAdmin: res.data[0]._isSuperAdmin
         })
       },
       fail: (res) => {
@@ -73,9 +73,49 @@ Page({
       }
     })
   },
-  goAdmin(){
+  goAdmin() {
     wx.navigateTo({
       url: '/pages/admin/adminNumber/adminNumber',
+    })
+  },
+  goDahuoList() {
+    wx.navigateTo({
+      url: '/pages/admin/dahuoList/dahuoList',
+    })
+  },
+  addDahuo() {
+    wx.navigateTo({
+      url: '/pages/admin/addDahuo/addDahuo',
+    })
+  },
+  goJuchang(){
+    wx.navigateTo({
+      url: '/pages/admin/juchang/juchang',
+    })
+  },
+  goAddJuchang(){
+    wx.navigateTo({
+      url: '/pages/admin/addJuchang/addJuchang',
+    })
+  },
+  goYinyueting(){
+    wx.navigateTo({
+      url: '/pages/admin/huodongshi/huodongshi',
+    })
+  },
+  addHuodongshi(){
+    wx.navigateTo({
+      url: '/pages/admin/addHuodongshi/addHuodongshi',
+    })
+  },
+  goZhiban(){
+    wx.navigateTo({
+      url: '/pages/admin/zhibanList/zhibanList',
+    })
+  },
+  addZhiban(){
+    wx.navigateTo({
+      url: '/pages/admin/addZhiban/addZhiban',
     })
   },
   /**

@@ -3,3 +3,8 @@
     padding-bottom: 2rem;
     
 }
+.add-btn{
+    background-color: seagreen;
+    margin: .4rem 1rem;
+    font-size: 14px;
+}

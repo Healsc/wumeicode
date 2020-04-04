@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "发布消息通知",
+  "disableScroll": true,
+
+  "usingComponents": {
+    "htmltowxml": "plugin://htmltowxml/view"
+  }
+
+}

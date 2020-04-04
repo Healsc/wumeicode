@@ -1,0 +1,19 @@
+.content {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.content .content-title {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+}
+.content .content-del{
+    background-color: red;
+    font-size: 14px;
+    height: 2rem;
+    width: 40%;
+   
+    margin-top: 2rem;
+}

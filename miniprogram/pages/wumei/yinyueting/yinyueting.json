@@ -1,4 +1,7 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "htmltowxml": "plugin://htmltowxml/view",
+        "wxparser": "plugin://wxparserPlugin/wxparser"
+    },
     "navigationBarTitleText": "音乐厅"
 }

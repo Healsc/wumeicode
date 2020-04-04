@@ -1,32 +1,26 @@
-<!-- <scroll-view scroll-y class="scrollPage">
-    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" >
-        <view class="cu-item arrow"  wx:for="{{showList}}" wx:key="{{item._id}}">
-        <navigator url='/pages/wumei/showclass/showclass?weekid={{item}}' class="content" hover-class="none">
-            <view class="content"  hover-class="none">
-                <text class="text-grey">{{item._name}}</text>
-            </view>
-        </navigator>
-        </view>
-    </view>
-    <view class="cu-tabbar-height"></view>
-</scroll-view> -->
-
 <scroll-view scroll-y class="scrollPage">
-    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius" >
+	<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+		<view class="cu-item arrow">
+			<navigator url='/pages/wumei/huodongshi/hdsweek/hdsweek' class="content" hover-class="none">
+				<view class="content" hover-class="none">
+					<text class="text-grey">音乐厅剧场</text>
+				</view>
+			</navigator>
+		</view>
         <view class="cu-item arrow">
-        <navigator url='/pages/wumei/yinyueting/yinyueting' class="content" hover-class="none">
-            <view class="content"  hover-class="none">
-                <text class="text-grey">音乐厅</text>
-            </view>
-        </navigator>
-        </view>
-        <view class="cu-item arrow">
-        <navigator url='/pages/wumei/huodongshi/hdsweek/hdsweek' class="content" hover-class="none">
-            <view class="content"  hover-class="none">
-                <text class="text-grey">科学文化中心</text>
-            </view>
-        </navigator>
-        </view>
-    </view>
-    <view class="cu-tabbar-height"></view>
+			<navigator url='/pages/wumei/huodongshi/list/list' class="content" hover-class="none">
+				<view class="content" hover-class="none">
+					<text class="text-grey">音乐厅活动室</text>
+				</view>
+			</navigator>
+		</view>
+		<view class="cu-item arrow">
+			<navigator url='/pages/wumei/dahuo/dahuo' class="content" hover-class="none">
+				<view class="content" hover-class="none">
+					<text class="text-grey">大学生活动中心</text>
+				</view>
+			</navigator>
+		</view>
+	</view>
+	<view class="cu-tabbar-height"></view>
 </scroll-view>

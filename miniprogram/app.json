@@ -6,7 +6,6 @@
         "pages/info/bumeninfo/bumeninfo",
         "pages/info/noticeList/noticeList",
         "pages/info/noticeDetail/noticeDetail",
-
         "pages/profile/about/about",
         "pages/profile/identity/identity",
         "pages/profile/showinfo/showinfo",
@@ -22,10 +21,12 @@
         "pages/wumei/showweekclass/showweekclass",
         "pages/wumei/huodongInfo/huodongInfo",
         "pages/wumei/yinyueting/yinyueting",
-        "pages/wumei/huodongshi/hdsweek/hdsweek",
-        "pages/wumei/huodongshi/hdsdetail/hdsdetail",
+        "pages/wumei/huodongshi/detail/detail",
+        "pages/wumei/huodongshi/list/list",
         "pages/wumei/zhiban/zhiban",
-
+        "pages/wumei/dahuo/dahuo",
+        "pages/wumei/dahuoDetail/dahuoDetail",
+        "pages/wumei/actives/actives",
         "pages/admin/admin/admin",
         "pages/admin/noticeList/noticeList",
         "pages/admin/addNotice/addNotice",
@@ -37,7 +38,15 @@
         "pages/admin/wumeiInfo/wumeiInfo",
         "pages/admin/homeSwiper/homeSwiper",
         "pages/admin/isWMNumber/isWMNumber",
-        "pages/admin/adminNumber/adminNumber"
+        "pages/admin/adminNumber/adminNumber",
+        "pages/admin/dahuoList/dahuoList",
+        "pages/admin/addDahuo/addDahuo",
+        "pages/admin/juchang/juchang",
+        "pages/admin/addJuchang/addJuchang",
+        "pages/admin/huodongshi/huodongshi",
+        "pages/admin/addHuodongshi/addHuodongshi",
+        "pages/admin/addZhiban/addZhiban",
+        "pages/admin/zhibanList/zhibanList"
 
     ],
     "window": {

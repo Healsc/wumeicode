@@ -1,30 +1,16 @@
-.cont-center{
-    text-align: center
+.detail{
+    padding: 1rem;
+    background-color: #fff;
+    margin: .4rem;
 }
-/* pages/wumei/zhiban/zhiban.wxss */
-.content-nav,.sub-nav{
-    min-height: 100rpx;
-    background-color:#fff;
-    font-size: 30rpx;
-    line-height:100rpx;
-    text-align: center; 
-    margin-top: 10rpx;
+.content{
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    border-bottom: 1px solid #ddd;
 }
-.show-img{
-    margin-top: 1rpx;
-    width: 100vw;
-}
-.sub-nav{
-    padding: 30rpx 30rpx;
-}
-.conten-top{
-    padding: 10rpx 10rpx;
-    margin-bottom: 10rpx;
-}
-
-.fengexian{
-    width: 100vw;
-    border: 1rpx #A0EEE1 solid;
-    margin-top: 30rpx;
-    margin-bottom: 30rpx;
+.content .content-week{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 16px;
+    font-weight: 500;
 }

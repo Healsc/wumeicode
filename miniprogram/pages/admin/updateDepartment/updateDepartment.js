@@ -143,7 +143,7 @@ Page({
       success: function (res) {
         let suffix = /\.[^\.]+$/.exec(res.tempFilePaths)[0];
         wx.cloud.uploadFile({
-          cloudPath: 'notice/' + that.data.title + new Date().getTime() + suffix, // 上传至云端的路径
+          cloudPath: 'department/' + that.data.title + new Date().getTime() + suffix, // 上传至云端的路径
           filePath: res.tempFilePaths[0], // 小程序临时文件路径
           success: res => {
             that.editorCtx.insertImage({

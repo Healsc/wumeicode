@@ -1,0 +1,11 @@
+<view class="detail">
+	<block wx:for="{{juchangList}}" wx:key="index">
+		<view class="content">
+			<view class="content-title">{{item._title}}</view>
+			<wxparser rich-text="{{item._content}}" />
+            <button data-id="{{item._id}}" bindtap="delJuchang" class="content-del">删除</button>
+		</view>
+	</block>
+	<!-- <htmltowxml text="{{content}}" />
+	 -->
+</view>

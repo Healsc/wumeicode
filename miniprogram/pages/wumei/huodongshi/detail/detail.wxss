@@ -1,0 +1,10 @@
+.detail{
+    padding: 1rem;
+    background-color: #fff;
+}
+.detail .detail-week{
+    text-align: center;
+    width: 100%;
+    min-height: 3rem;
+    
+}

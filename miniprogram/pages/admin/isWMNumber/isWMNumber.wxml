@@ -61,5 +61,5 @@
 		<view class="title">birth</view>
 		<text class='text-center pad-left-cont'>{{item._birth}}</text>
 	</view>
-	<button bindtap="isWM" data-id="{{item._id}}">通过</button>
+	<button class="add-btn" bindtap="isWM" data-id="{{item._id}}">通过</button>
 </view>

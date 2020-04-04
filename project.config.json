@@ -319,6 +319,111 @@
 					"id": -1,
 					"name": "pages/admin/adminNumber/adminNumber",
 					"pathName": "pages/admin/adminNumber/adminNumber",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/wumei/wumei",
+					"pathName": "pages/wumei/wumei/wumei",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/huodongInfo/huodongInfo",
+					"pathName": "pages/wumei/huodongInfo/huodongInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/dahuo/dahuo",
+					"pathName": "pages/wumei/dahuo/dahuo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/dahuoList/dahuoList",
+					"pathName": "pages/admin/dahuoList/dahuoList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/addDahuo/addDahuo",
+					"pathName": "pages/admin/addDahuo/addDahuo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/dahuoList/dahuoList",
+					"pathName": "pages/admin/dahuoList/dahuoList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/dahuo/dahuo",
+					"pathName": "pages/wumei/dahuo/dahuo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/juchang/juchang",
+					"pathName": "pages/admin/juchang/juchang",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/huodongshi/huodongshi",
+					"pathName": "pages/admin/huodongshi/huodongshi",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/yinyueting/yinyueting",
+					"pathName": "pages/wumei/yinyueting/yinyueting",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/huodongshi/list/list",
+					"pathName": "pages/wumei/huodongshi/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/admin/admin",
+					"pathName": "pages/admin/admin/admin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/addZhiban/addZhiban",
+					"pathName": "pages/admin/addZhiban/addZhiban",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/zhibanList/zhibanList",
+					"pathName": "pages/admin/zhibanList/zhibanList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/wumei/zhiban/zhiban",
+					"pathName": "pages/wumei/zhiban/zhiban",
 					"scene": null
 				}
 			]

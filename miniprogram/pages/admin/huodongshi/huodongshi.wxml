@@ -1,0 +1,11 @@
+<view class="detail">
+	<block wx:for="{{huodongshiList}}" wx:key="index">
+		<view class="content">
+			<view class="content-week">{{item._week}}</view>
+			<wxparser rich-text="{{item._content}}" />
+            <button data-id="{{item._id}}" bindtap="delHuodongshi" class="content-del">删除</button>
+		</view>
+	</block>
+
+
+</view>
